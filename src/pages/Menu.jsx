@@ -37,6 +37,7 @@ function Menu() {
           <h3>{m.title}</h3>
           <h3>{m.price}</h3>
           <h3>{m.description}</h3>
+          <h2>hej</h2>
           <Link className="link-style" to={`/cart/${m.id}`}>Order</Link>
         </div>
       ))}
