@@ -1,0 +1,22 @@
+{
+  "order": [
+      {
+        "id":1,
+        "title": "Classic Burger",
+        "price": 8.99,
+        "quantity": 1,
+        "image": "/images/buger1.png"
+      },
+      {
+        "id": 2,
+        "title": "Sweet Potato Fries",
+        "price": 4.99,
+        "quantity": 1,
+        "image": "/images/sides2.png"
+      }
+    ],
+    "totalPrice": 13.98
+}
+
+
+
