@@ -49,7 +49,8 @@ fetch("http://localhost:3001/order", postOptions);
               <img src={item.image} />
               <h3>{item.title}</h3>
               <input type="number" placeholder="amount" value={item.quantity} />
-              <h3>{item.price}</h3>
+
+              <h3>{item.price} hej</h3>
             </div>
           ))}
         <h3>Total price: {order.totalPrice}</h3>
