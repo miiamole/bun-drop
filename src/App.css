@@ -1,19 +1,27 @@
 body {
   background-color: rgb(247, 238, 226);
 }
-.link-style{
+.link-style {
   background-color: darkorange;
-  color:aliceblue;
+  color: aliceblue;
   border-radius: 10px;
   text-decoration: none;
 }
-button{
+button {
   background-color: burlywood;
   border: none;
   margin-left: 10px;
   border-radius: 5px;
-
 }
-.filter-category{
+.filter-category {
   text-align: center;
+}
+.header-links {
+  background-color: darkorange;
+  color: aliceblue;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.header-wrapper {
 }

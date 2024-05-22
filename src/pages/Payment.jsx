@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 function Payment() {
-    return ( 
-    <>
-    
-    </> );
+  return <></>;
 }
 
 export default Payment;
