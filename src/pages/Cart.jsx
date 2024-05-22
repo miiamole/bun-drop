@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const [menu, setMenu] = useState({});
@@ -36,6 +37,20 @@ function Cart() {
     fetch("http://localhost:3001/order", postOptions);
   }
 
+
+function deleteItem(itemToDelete){
+const deleteOptions = {
+  method: "DELETE",
+  headers: { "Content-Type": "application/json" },
+};
+
+fetch(`http://localhost:3001/order/${itemToDelete.id}`, deleteOptions)
+.then((res) => {setOrder(order.filter((item) => item.id !== itemToDelete.id))
+
+});
+
+}
+
   return (
     <>
       <h3>Your order:</h3>
@@ -47,9 +62,12 @@ function Cart() {
             <input type="number" placeholder="amount" value={item.quantity} />
 
             <h3>{item.price}</h3>
+            <button onClick={deleteItem}>Remove item</button>
           </div>
         ))}
       <h3>Total price: {order.totalPrice}</h3>
+
+      <Link to="/payment">Go to Payment</Link>
     </>
   );
 }
