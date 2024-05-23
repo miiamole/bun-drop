@@ -6,7 +6,7 @@
       "price": 8.99,
       "description": "A classic beef burger with lettuce, tomato, and cheese.",
       "category": "burgers",
-      "image": "/images/buger1.png"
+      "image": "images/burger 1.png"
     },
     {
       "id": 2,
@@ -14,119 +14,121 @@
       "price": 4.99,
       "description": "Crispy sweet potato fries topped with fresh parsley.",
       "category": "sides",
-      "image": "/images/sides2.png"
+      "image": "images/sides 2.png"
     },
     {
       "id": 3,
-      "title": "Cheese burger",
+      "title": "Cheese Burger",
       "price": 6.99,
-      "description": "A classic cheese burger, plain and simple.",
+      "description": "A classic cheeseburger, plain and simple.",
       "category": "burgers",
-      "image": "/images/burger6.png"
+      "image": "/images/burger 6.png"
     },
     {
       "id": 4,
-      "title": "No carb burger",
+      "title": "No Carb Burger",
       "price": 6.99,
-      "description": "A burger without the bun",
+      "description": "A burger without the bun.",
       "category": "burgers",
-      "image": "/images/burger7.png"
+      "image": "/images/burger 7.png"
     },
     {
       "id": 5,
-      "title": "Vegan burger",
+      "title": "Vegan Burger",
       "price": 4.99,
-      "description": "Plant burger",
+      "description": "Plant-based burger.",
       "category": "burgers",
-      "image": "/images/burger6.png"
+      "image": "/images/burger 6.png"
     },
     {
       "id": 6,
-      "title": "Bacon burger",
+      "title": "Bacon Burger",
       "price": 9.99,
-      "description": "Bacon and cheese in perfect combination",
+      "description": "Bacon and cheese in perfect combination.",
       "category": "burgers",
-      "image": "/images/burger2.png"
+      "image": "/images/burger 2.png"
     },
     {
       "id": 7,
-      "title": "Sundae treat",
+      "title": "Sundae Treat",
       "price": 3.99,
-      "description": "Sundae with sprinkles and caramel sauce",
+      "description": "Sundae with sprinkles and caramel sauce.",
       "category": "desserts",
-      "image": "/images/dessert1.png"
+      "image": "/images/dessert 1.png"
     },
     {
       "id": 8,
-      "title": "Party sundae",
+      "title": "Party Sundae",
       "price": 2.99,
-      "description": "Sundae with sprinkles",
+      "description": "Sundae with sprinkles.",
       "category": "desserts",
-      "image": "/images/dessert2.png"
+      "image": "/images/dessert 2.png"
     },
     {
       "id": 9,
-      "title": "Pistachio sundae",
+      "title": "Pistachio Sundae",
       "price": 4.99,
-      "description": "Sundae with cruched pistachios",
+      "description": "Sundae with crushed pistachios.",
       "category": "desserts",
-      "image": "/images/dessert3.png"
+      "image": "/images/dessert 3.png"
     },
     {
       "id": 10,
-      "title": "Fresh apples",
+      "title": "Fresh Apples",
       "price": 2.99,
-      "description": "Healthy apple slices",
+      "description": "Healthy apple slices.",
       "category": "sides",
-      "image": "/images/sides3.png"
+      "image": "/images/sides 3.png"
     },
     {
       "id": 11,
-      "title": "onion rings",
+      "title": "Onion Rings",
       "price": 2.99,
-      "description": "freshly fried onion rings",
+      "description": "Freshly fried onion rings.",
       "category": "sides",
-      "image": "/images/sides4.png"
+      "image": "/images/sides 4.png"
     },
     {
       "id": 12,
       "title": "Fanta",
       "price": 1.99,
-      "description": "The best bevrage",
+      "description": "A refreshing beverage.",
       "category": "drinks",
-      "image": "/images/drink1.png"
+      "image": "/images/drink 1.png"
     },
     {
       "id": 13,
-      "title": "Apple juice",
+      "title": "Apple Juice",
       "price": 1.99,
-      "description": "Ice cold apple juice",
+      "description": "Ice cold apple juice.",
       "category": "drinks",
-      "image": "/images/drink2.png"
+      "image": "/images/drink 2.png"
     },
     {
       "id": 14,
-      "title": "Fresh smoothie",
+      "title": "Fresh Smoothie",
       "price": 6.99,
-      "description": "Freshly made smoothie with avocado, mango and spinach",
+      "description": "Freshly made smoothie with avocado, mango, and spinach.",
       "category": "drinks",
-      "image": "/images/drink6.png"
+      "image": "/images/drink 6.png"
     },
     {
       "id": 15,
-      "title": "Straberry smoothie",
+      "title": "Strawberry Smoothie",
       "price": 2.99,
-      "description": "Freshly made strawberry smoothie with blueberries",
+      "description": "Freshly made strawberry smoothie with blueberries.",
       "category": "drinks",
-      "image": "/images/drink5.png"
+      "image": "/images/drink 5.png"
     },
     {
       "id": 16,
-      "title": "Friut smoothie",
+      "title": "Fruit Smoothie",
       "price": 2.99,
-      "description": "Freshly made fruit smoothie with mango and passionfruit",
+      "description": "Freshly made fruit smoothie with mango and passionfruit.",
       "category": "drinks",
-      "image": "/images/drink4.png"
+      "image": "/images/drink 4.png"
     }
-  ]
+  ],
+  "users": [],
+  "orders": []
 }

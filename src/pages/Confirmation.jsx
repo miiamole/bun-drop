@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Confirmation() {
   const [order, setOrder] = useState([]);
+  const [deliveryTime, setDeliveryTime] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:3001/order`)
@@ -9,15 +10,20 @@ function Confirmation() {
       .then((data) => {
         setOrder(data);
       });
+
+//ville ha ett heltal mellan 10 och 45.
+const randomTime = Math.floor(Math.random() * (45-10 +1)) +10;
+setDeliveryTime(randomTime);
+
   }, []);
 
-  const deliveryTime = Math.random(10 - 45);
+  
 
   return (
     <>
       <h3>Thank you for your order</h3>
       <p>it is now beeing prepared</p>
-      <p>estimated time to delivery: {deliveryTime} minutes</p>
+      <p>Estimated time to delivery: {deliveryTime} minutes</p>
 
       <h4>You can look forward to devouring these delicious items:</h4>
       {Array.isArray(order) &&

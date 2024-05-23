@@ -1,40 +1,95 @@
 body {
-  background-color: rgb(247, 238, 226);
+  background-color: rgba(243, 241, 240, 0.594);
 }
-.link-style {
-  background-color: darkorange;
+
+.order-link {
+  background-color: rgba(255, 140, 0, 0.434);
   color: aliceblue;
   border-radius: 10px;
   text-decoration: none;
+  height: 2rem;
+  width: 4rem;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
-button {
-  background-color: burlywood;
+
+
+.menu-btn {
+ 
+  flex: 1; 
+  background-color: transparent;
   border: none;
-  margin-left: 10px;
   border-radius: 5px;
+  color: rgb(13, 22, 30);
+  height: 2rem;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }
-.filter-category {
-  text-align: center;
+
+.menu-btn-container {
+  display: flex; 
+  justify-content: center; 
+  gap: 10px;
+  padding-bottom: 20px;
 }
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+ background-color: rgba(243, 241, 240, 0.594);
+}
+
+.logo-image {
+  height: 7rem;
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
 .header-links {
-  background-color: darkorange;
-  color: aliceblue;
+  background-color: transparent;
+   color: rgb(3, 11, 18);
   border-radius: 10px;
   text-decoration: none;
   margin-left: 10px;
+  padding: 10px 20px;
+
 }
+
+.cart-link {
+  background-color: transparent;
+  color: rgb(3, 11, 18);
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
 .user-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
 }
-user-form input,
+
+.user-form input,
 .user-form button {
   padding: 10px;
   font-size: 16px;
@@ -49,4 +104,120 @@ user-form input,
 
 .user-form button:hover {
   background-color: #2d6730;
+}
+
+input[type="text"] {
+  font-size: 1rem;
+  padding: 10px;
+  border: 2px solid rgba(100, 51, 51, 0.475);
+  border-radius: 5px;
+  color: rgba(86, 45, 45, 0.356);
+}
+
+.menu-image {
+  height: 7rem;
+  width: 7rem;
+  object-fit: cover;
+}
+.menu-text{
+  color: rgb(62, 11, 11);
+  text-align: center;
+}
+
+.menu-card {
+  padding: 10px;
+  margin: 10px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 3px 3px 4px rgb(159, 123, 123);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+  transform: scale(1.05); /* Skala upp elementet något */
+  box-shadow: 4px 6px 6px 6px rgb(159, 123, 123); /* Lägg till en större skugga */
+}
+
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.footer-container{
+  display:flex;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  padding:20px;
+  margin:10px;
+  color: rgba(74, 38, 38, 0.897);
+}
+
+/* För alla knappar och länkar */
+.menu-btn:hover,
+.order-link:hover,
+.header-links:hover,
+.cart-link:hover {
+  transform: scale(1.05); /* Skala upp elementet något */
+  background-color: rgba(255, 140, 0, 0.6); /* Ändra bakgrundsfärgen */
+  color: white; /* Ändra textfärgen */
+  transition: transform 0.3s, background-color 0.3s, color 0.3s; /* Mjuk övergång för alla förändringar */
+}
+
+/* Specifik hover-effekt för menu-btn */
+.menu-btn:hover {
+  background-color: rgba(255, 140, 0, 0.6); /* Ändra bakgrundsfärgen specifikt för menuknappar */
+}
+
+/* Specifik hover-effekt för order-link */
+.order-link:hover {
+  background-color: rgba(255, 140, 0, 0.6); /* Ändra bakgrundsfärgen specifikt för order-länkar */
+}
+
+/* Specifik hover-effekt för header-links och cart-link */
+.header-links:hover,
+.cart-link:hover {
+  background-color: rgba(255, 140, 0, 0.6); /* Ändra bakgrundsfärgen specifikt för header- och cart-länkar */
+}
+.welcome{
+  text-align: center;
+}
+.welcome-text{
+  text-align: center;
+}
+.home-page-text{
+  text-align: center;
+}
+.logo-img-home{
+height:40%;
+width: 40%;
+opacity: 0.4; 
+position: absolute; /* Absolut positionering för att kunna placera loggan */
+  right: 50px; /* Avståndet från vänsterkanten */
+ 
+  z-index: -1; 
+
+}
+.img-collage {
+  display: flex;
+  justify-content:end;
+   
+
+}
+
+.img-collage img {
+ 
+ 
+  width: calc(25% - 10px); /* Sätt bredden till en fjärdedel av förälderelementets bredd minus avståndet mellan bilderna */
+  height: auto;
+  border-radius: 10px;
+  padding-top: 20px;
 }

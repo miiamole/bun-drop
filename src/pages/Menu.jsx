@@ -21,27 +21,38 @@ function Menu() {
 
   return (
     <>
-      <h1>Menu</h1>
-      <div className="filter-category">
-        <button onClick={() => filterList("")}>All</button>
+      <h1 className="menu-text">Our menu</h1>
+      <div className="menu-btn-container">
+        <button className="menu-btn" onClick={() => filterList("")}>
+          All
+        </button>
 
-        <button onClick={() => filterList("burgers")}>Burgers</button>
-        <button onClick={() => filterList("sides")}>Sides</button>
-        <button onClick={() => filterList("drinks")}>Drinks</button>
-        <button onClick={() => filterList("desserts")}>Desserts</button>
+        <button className="menu-btn" onClick={() => filterList("burgers")}>
+          Burgers
+        </button>
+        <button className="menu-btn" onClick={() => filterList("sides")}>
+          Sides
+        </button>
+        <button className="menu-btn" onClick={() => filterList("drinks")}>
+          Drinks
+        </button>
+        <button className="menu-btn" onClick={() => filterList("desserts")}>
+          Desserts
+        </button>
       </div>
-
-      {filteredMenu.map((m) => (
-        <div key={m.id}>
-          <img src={m.image} />
-          <h3>{m.title}</h3>
-          <h3>{m.price}</h3>
-          <h3>{m.description}</h3>
-          <Link className="link-style" to={`/cart/${m.id}`}>
-            Order
-          </Link>
-        </div>
-      ))}
+      <div className="menu-container">
+        {filteredMenu.map((m) => (
+          <div key={m.id} className="menu-card">
+            <img className="menu-image" src={`${m.image}`} />
+            <h3>{m.title}</h3>
+            <h3>${m.price}</h3>
+            <h3>{m.description}</h3>
+            <Link className="order-link" to={`/cart/${m.id}`}>
+              Order
+            </Link>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

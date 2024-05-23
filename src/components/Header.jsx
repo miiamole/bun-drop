@@ -6,14 +6,16 @@ function Header() {
   return (
     <>
       <div className="header-wrapper">
-        <Link className="header-links" to="/">
-          Home
-        </Link>
-        <Link className="header-links" to="/menu">
-          Menu
-        </Link>
-        <Link className="header-links" to="/cart/:menuId">
-          {" "}
+        <img className="logo-image" src="/images/logo color.png" alt="Logo" />
+        <div className="nav-links-wrapper">
+          <Link className="header-links" to="/">
+            Home
+          </Link>
+          <Link className="header-links" to="/menu">
+            Menu
+          </Link>
+        </div>
+        <Link className="cart-link" to="/cart/:menuId">
           Cart
           {/* <FontAwesomeIcon icon={faCartShopping} /> */}
         </Link>
