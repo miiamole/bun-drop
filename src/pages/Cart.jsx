@@ -7,6 +7,7 @@ function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [order, setOrder] = useState([]);
   const { menuId } = useParams();
+  
 
   useEffect(() => {
     fetch(`http://localhost:3000/menu/${menuId}`)
@@ -17,57 +18,74 @@ function Cart() {
   }, [menuId]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/order`)
+    fetch(`http://localhost:3000/orders`)
       .then((res) => res.json())
       .then((data) => {
         setOrder(data);
       });
   }, []);
 
-  function addToOrder() {
-    setOrder([...order, menu]);
-    setTotalPrice(totalPrice + menu.price);
-    //total price fungerar inte, dock står det rätt i dbOrder.json
+  //   function addToOrder() {
+  //     setOrder([...order, menu]);
+  //     setTotalPrice(totalPrice + menu.price);
+  //     //total price fungerar inte, dock står det rätt i dbOrder.json
 
-    const postOptions = {
-      method: "POST",
+  //     const postOptions = {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(menu),
+  //     };
+  //     fetch("http://localhost:3000/orders", postOptions);
+  //   }
+
+  function deleteItem(itemToDelete) {
+    console.log("deleting")
+    const deleteOptions = {
+      method: "DELETE",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(menu),
     };
-    fetch("http://localhost:3001/order", postOptions);
+
+    fetch(
+      `http://localhost:3000/orders/${itemToDelete.id}`,
+      deleteOptions
+    ).then((res) => {
+      setOrder(order.filter((item) => item.id !== itemToDelete.id));
+    });
   }
-
-
-function deleteItem(itemToDelete){
-const deleteOptions = {
-  method: "DELETE",
-  headers: { "Content-Type": "application/json" },
-};
-
-fetch(`http://localhost:3001/order/${itemToDelete.id}`, deleteOptions)
-.then((res) => {setOrder(order.filter((item) => item.id !== itemToDelete.id))
-
-});
-
-}
 
   return (
     <>
-      <h3>Your order:</h3>
-      {Array.isArray(order) &&
-        order.map((item) => (
-          <div key={item.id}>
-            <img src={item.image} />
-            <h3>{item.title}</h3>
-            <input type="number" placeholder="amount" value={item.quantity} />
+      <h3 className="cart-text">Your order:</h3>
+      <div className="menu-container">
+        {Array.isArray(order) &&
+          order.map((item) => (
+            <div key={item.id} className="menu-card">
+              <img src={`${item.image}`} className="menu-image" />
+              <h3>{item.title}</h3>
+              <input
+                type="number"
+                placeholder={item.quantity}
+                value={item.quantity}
+                className="cart-input-amount"
+                min="1"
+                max="40"
+              />
 
-            <h3>{item.price}</h3>
-            <button onClick={deleteItem}>Remove item</button>
-          </div>
-        ))}
+              <h3>{item.price}</h3>
+
+              <button onClick={() => deleteItem(item)} className="delete-btn">
+                Remove item
+              </button>
+            </div>
+          ))}
+      </div>
       <h3>Total price: {order.totalPrice}</h3>
 
-      <Link to="/payment">Go to Payment</Link>
+      <Link to="/menu" className="header-links cart-add-more-items">
+        Add more items
+      </Link>
+
+      <Link to="/payment">Place your order</Link>
     </>
   );
 }

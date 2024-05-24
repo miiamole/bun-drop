@@ -5,7 +5,7 @@ function Confirmation() {
   const [deliveryTime, setDeliveryTime] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/order`)
+    fetch(`http://localhost:3000/orders`)
       .then((res) => res.json())
       .then((data) => {
         setOrder(data);

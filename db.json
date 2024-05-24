@@ -1,134 +1,213 @@
 {
   "menu": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Classic Burger",
       "price": 8.99,
       "description": "A classic beef burger with lettuce, tomato, and cheese.",
       "category": "burgers",
-      "image": "images/burger 1.png"
+      "image": "images/burger 1.png",
+      "quantity": 0
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Sweet Potato Fries",
       "price": 4.99,
       "description": "Crispy sweet potato fries topped with fresh parsley.",
       "category": "sides",
-      "image": "images/sides 2.png"
+      "image": "images/sides 2.png",
+      "quantity": 0
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Cheese Burger",
       "price": 6.99,
       "description": "A classic cheeseburger, plain and simple.",
       "category": "burgers",
-      "image": "/images/burger 6.png"
+      "image": "/images/burger 6.png",
+      "quantity": 0
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "No Carb Burger",
       "price": 6.99,
       "description": "A burger without the bun.",
       "category": "burgers",
-      "image": "/images/burger 7.png"
+      "image": "/images/burger 7.png",
+      "quantity": 0
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Vegan Burger",
       "price": 4.99,
       "description": "Plant-based burger.",
       "category": "burgers",
-      "image": "/images/burger 6.png"
+      "image": "/images/burger 6.png",
+      "quantity": 0
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Bacon Burger",
       "price": 9.99,
       "description": "Bacon and cheese in perfect combination.",
       "category": "burgers",
-      "image": "/images/burger 2.png"
+      "image": "/images/burger 2.png",
+      "quantity": 0
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Sundae Treat",
       "price": 3.99,
       "description": "Sundae with sprinkles and caramel sauce.",
       "category": "desserts",
-      "image": "/images/dessert 1.png"
+      "image": "/images/dessert 1.png",
+      "quantity": 0
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Party Sundae",
       "price": 2.99,
       "description": "Sundae with sprinkles.",
       "category": "desserts",
-      "image": "/images/dessert 2.png"
+      "image": "/images/dessert 2.png",
+      "quantity": 0
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Pistachio Sundae",
       "price": 4.99,
       "description": "Sundae with crushed pistachios.",
       "category": "desserts",
-      "image": "/images/dessert 3.png"
+      "image": "/images/dessert 3.png",
+      "quantity": 0
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Fresh Apples",
       "price": 2.99,
       "description": "Healthy apple slices.",
       "category": "sides",
-      "image": "/images/sides 3.png"
+      "image": "/images/sides 3.png",
+      "quantity": 0
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Onion Rings",
       "price": 2.99,
       "description": "Freshly fried onion rings.",
       "category": "sides",
-      "image": "/images/sides 4.png"
+      "image": "/images/sides 4.png",
+      "quantity": 0
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Fanta",
       "price": 1.99,
       "description": "A refreshing beverage.",
       "category": "drinks",
-      "image": "/images/drink 1.png"
+      "image": "/images/drink 1.png",
+      "quantity": 0
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Apple Juice",
       "price": 1.99,
       "description": "Ice cold apple juice.",
       "category": "drinks",
-      "image": "/images/drink 2.png"
+      "image": "/images/drink 2.png",
+      "quantity": 0
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "Fresh Smoothie",
       "price": 6.99,
       "description": "Freshly made smoothie with avocado, mango, and spinach.",
       "category": "drinks",
-      "image": "/images/drink 6.png"
+      "image": "/images/drink 6.png",
+      "quantity": 0
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "Strawberry Smoothie",
       "price": 2.99,
       "description": "Freshly made strawberry smoothie with blueberries.",
       "category": "drinks",
-      "image": "/images/drink 5.png"
+      "image": "/images/drink 5.png",
+      "quantity": 0
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Fruit Smoothie",
       "price": 2.99,
       "description": "Freshly made fruit smoothie with mango and passionfruit.",
       "category": "drinks",
-      "image": "/images/drink 4.png"
+      "image": "/images/drink 4.png",
+      "quantity": 0
+    },
+    {
+      "id": "17",
+      "title": "Garlic Aioli",
+      "price": 1.99,
+      "description": "Creamy garlic aioli perfect for dipping.",
+      "category": "sides",
+      "image": "/images/dressing 1.png",
+      "quantity": 0
+    },
+    {
+      "id": "18",
+      "title": "Spicy Mayo",
+      "price": 1.99,
+      "description": "Tangy mayo with a spicy kick.",
+      "category": "sides",
+      "image": "/images/dressing 2.png",
+      "quantity": 0
+    },
+    {
+      "id": "19",
+      "title": "Ketchup",
+      "price": 0.99,
+      "description": "Classic tomato ketchup.",
+      "category": "sides",
+      "image": "/images/dressing 3.png",
+      "quantity": 0
+    },
+    {
+      "id": "20",
+      "title": "Honey Mustard",
+      "price": 1.99,
+      "description": "Sweet and tangy honey mustard sauce.",
+      "category": "sides",
+      "image": "/images/dressing 4.png"
     }
   ],
   "users": [],
-  "orders": []
+  "orders": [
+    {
+      "id": "2",
+      "title": "Sweet Potato Fries",
+      "price": 4.99,
+      "description": "Crispy sweet potato fries topped with fresh parsley.",
+      "category": "sides",
+      "image": "images/sides 2.png",
+      "quantity": 0
+    },
+    {
+      "id": "2",
+      "title": "Sweet Potato Fries",
+      "price": 4.99,
+      "description": "Crispy sweet potato fries topped with fresh parsley.",
+      "category": "sides",
+      "image": "images/sides 2.png",
+      "quantity": 0
+    },
+    {
+      "id": "2",
+      "title": "Sweet Potato Fries",
+      "price": 4.99,
+      "description": "Crispy sweet potato fries topped with fresh parsley.",
+      "category": "sides",
+      "image": "images/sides 2.png",
+      "quantity": 0
+    }
+  ]
 }

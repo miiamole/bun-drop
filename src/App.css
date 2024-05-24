@@ -197,27 +197,40 @@ input[type="text"] {
   text-align: center;
 }
 .logo-img-home{
-height:40%;
-width: 40%;
-opacity: 0.4; 
-position: absolute; /* Absolut positionering för att kunna placera loggan */
-  right: 50px; /* Avståndet från vänsterkanten */
- 
-  z-index: -1; 
+height:15rem;
+opacity: 0.5;
 
 }
-.img-collage {
-  display: flex;
-  justify-content:end;
-   
+.home-text-and-logo{
+ display:flex;
+}
 
+.img-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .img-collage img {
- 
- 
-  width: calc(25% - 10px); /* Sätt bredden till en fjärdedel av förälderelementets bredd minus avståndet mellan bilderna */
+  width: 100%;
   height: auto;
+}
+/* cart page */
+.delete-btn{
+  background-color: rgb(244, 102, 102);
+  border:none;
   border-radius: 10px;
-  padding-top: 20px;
+}
+.cart-add-more-items{
+  border: 2px solid rgb(223, 130, 130)
+}
+.cart-text{
+  text-align: center;
+}
+.cart-input-amount{
+  border-radius: 5px;
+  border: 1px solid black;
+padding: 5px 10px; /* Justera kudden för att göra det mer visuellt tilltalande */
+  width: 50px; /* Anpassa bredden efter ditt behov */
+  font-size: 16px; /* Justera teckensnittstorleken för att passa in i din design */
+  text-align: center; 
 }
