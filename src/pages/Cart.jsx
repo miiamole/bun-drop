@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Cart() {
   const [menu, setMenu] = useState({});
-  const [totalPrice, setTotalPrice] = useState(0);
+//  const [totalPrice, setTotalPrice] = useState(0);
   const [order, setOrder] = useState([]);
   const [quantity, setQuantity] = useState(1); 
   const { menuId } = useParams();
@@ -24,19 +24,17 @@ function Cart() {
         setOrder(data);
       });
   }, []);
+//PROBLEM 1 ------varför syns inte alla bilder, ex första burgaren?
 
-  //   function addToOrder() {
-  //     setOrder([...order, menu]);
-  //     setTotalPrice(totalPrice + menu.price);
-  //     //total price fungerar inte, dock står det rätt i dbOrder.json
+//PROBLEM 2 ----setQuantity fungerar ej
 
-  //     const postOptions = {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(menu),
-  //     };
-  //     fetch("http://localhost:3000/orders", postOptions);
-  //   }
+//PROBLEM 3 -----KAN EJ BERÄKNA TOTAL PRICE
+
+
+//  const priceOfOrder = 
+  //TÄNKTE ATT MAN KUNDE LOOPA ÖVER ALLA PRISER OCH KVANTITETER OCH GÖRA LITE MATTE
+  //(hade förut totalprice i databasen)
+//  setTotalPrice(priceOfOrder)
 
   function handleQuantityChange(e) {
     setQuantity(e.target.value);
@@ -88,13 +86,16 @@ function Cart() {
             </div>
           ))}
       </div>
-      <h3>Total price: {order.totalPrice}</h3>
-
-      <Link to="/menu" className="header-links cart-add-more-items">
-        Add more items
-      </Link>
-
-      <Link to="/payment">Place your order</Link>
+      {/* <h3>Total price: {priceOfOrder}</h3> */}
+      
+      <div className="cart-links-wrapper">
+        <Link to="/payment" className="payment-btn place-order-btn">
+          Place your order
+        </Link>
+        <Link to="/menu" className="header-links cart-add-more-items">
+          Add more items
+        </Link>
+      </div>
     </>
   );
 }

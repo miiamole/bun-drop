@@ -25,14 +25,23 @@ setDeliveryTime(randomTime);
       <p>it is now beeing prepared</p>
       <p>Estimated time to delivery: {deliveryTime} minutes</p>
 
-      <h4>You can look forward to devouring these delicious items:</h4>
-      {Array.isArray(order) &&
-        order.map((item) => (
-          <div key={item.id}>
-            <img src={item.image} />
-            <h3>{item.title}</h3>
-          </div>
-        ))}
+      
+      <h4>
+        You can look forward to devouring{" "}
+        {order.length === 1
+          ? "this delicious item"
+          : "these delicious items"}
+        :
+      </h4>
+      <div className="menu-container">
+        {Array.isArray(order) &&
+          order.map((item) => (
+            <div key={item.id} className="menu-card">
+              <img src={item.image} className="menu-image" />
+              <h3>{item.title}</h3>
+            </div>
+          ))}
+      </div>
     </>
   );
 }

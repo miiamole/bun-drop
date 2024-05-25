@@ -192,12 +192,21 @@
       "quantity": 0
     },
     {
-      "id": "7",
-      "title": "Sundae Treat",
-      "price": 3.99,
-      "description": "Sundae with sprinkles and caramel sauce.",
-      "category": "desserts",
-      "image": "/images/dessert 1.png",
+      "id": "1",
+      "title": "Classic Burger",
+      "price": 8.99,
+      "description": "A classic beef burger with lettuce, tomato, and cheese.",
+      "category": "burgers",
+      "image": "images/burger 1.png",
+      "quantity": 0
+    },
+    {
+      "id": "10",
+      "title": "Fresh Apples",
+      "price": 2.99,
+      "description": "Healthy apple slices.",
+      "category": "sides",
+      "image": "/images/sides 3.png",
       "quantity": 0
     }
   ]
