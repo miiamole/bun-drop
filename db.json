@@ -183,30 +183,21 @@
   "users": [],
   "orders": [
     {
-      "id": "2",
-      "title": "Sweet Potato Fries",
-      "price": 4.99,
-      "description": "Crispy sweet potato fries topped with fresh parsley.",
-      "category": "sides",
-      "image": "images/sides 2.png",
+      "id": "4",
+      "title": "No Carb Burger",
+      "price": 6.99,
+      "description": "A burger without the bun.",
+      "category": "burgers",
+      "image": "/images/burger 7.png",
       "quantity": 0
     },
     {
-      "id": "2",
-      "title": "Sweet Potato Fries",
-      "price": 4.99,
-      "description": "Crispy sweet potato fries topped with fresh parsley.",
-      "category": "sides",
-      "image": "images/sides 2.png",
-      "quantity": 0
-    },
-    {
-      "id": "2",
-      "title": "Sweet Potato Fries",
-      "price": 4.99,
-      "description": "Crispy sweet potato fries topped with fresh parsley.",
-      "category": "sides",
-      "image": "images/sides 2.png",
+      "id": "7",
+      "title": "Sundae Treat",
+      "price": 3.99,
+      "description": "Sundae with sprinkles and caramel sauce.",
+      "category": "desserts",
+      "image": "/images/dessert 1.png",
       "quantity": 0
     }
   ]

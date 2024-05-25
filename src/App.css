@@ -75,7 +75,19 @@ body {
   text-decoration: none;
   padding: 10px 20px;
 }
+/* PAYMENT PAGE */
+.user-form-swish input[type=number]::-webkit-inner-spin-button,
+.user-form-swish input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.payment-container{
+  text-align: center;
+}
+.payment-btn{
+margin: 10px;
 
+}
 .user-form {
   display: flex;
   flex-direction: column;
@@ -90,20 +102,24 @@ body {
 }
 
 .user-form input,
-.user-form button {
+.user-form button,
+.payment-btn{
   padding: 10px;
   font-size: 16px;
 }
 
-.user-form button {
-  background-color: #4caf50;
+.user-form button,
+.payment-btn {
+  background-color: rgba(255, 140, 0, 0.6);
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
-.user-form button:hover {
-  background-color: #2d6730;
+.user-form button:hover,
+.payment-btn:hover {
+  background-color: rgba(255, 140, 0, 0.913);
 }
 
 input[type="text"] {
@@ -113,7 +129,7 @@ input[type="text"] {
   border-radius: 5px;
   color: rgba(86, 45, 45, 0.356);
 }
-
+/* MENU PAGE?? */
 .menu-image {
   height: 7rem;
   width: 7rem;
@@ -140,8 +156,8 @@ input[type="text"] {
 }
 
 .menu-card:hover {
-  transform: scale(1.05); /* Skala upp elementet något */
-  box-shadow: 4px 6px 6px 6px rgb(159, 123, 123); /* Lägg till en större skugga */
+  transform: scale(1.05); 
+  box-shadow: 4px 6px 6px 6px rgb(159, 123, 123); 
 }
 
 
@@ -161,39 +177,38 @@ input[type="text"] {
   color: rgba(74, 38, 38, 0.897);
 }
 
-/* För alla knappar och länkar */
+
 .menu-btn:hover,
 .order-link:hover,
 .header-links:hover,
 .cart-link:hover {
-  transform: scale(1.05); /* Skala upp elementet något */
-  background-color: rgba(255, 140, 0, 0.6); /* Ändra bakgrundsfärgen */
-  color: white; /* Ändra textfärgen */
-  transition: transform 0.3s, background-color 0.3s, color 0.3s; /* Mjuk övergång för alla förändringar */
+  transform: scale(1.05); 
+  background-color: rgba(255, 140, 0, 0.6);
+  color: white;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s; 
 }
 
-/* Specifik hover-effekt för menu-btn */
+
 .menu-btn:hover {
-  background-color: rgba(255, 140, 0, 0.6); /* Ändra bakgrundsfärgen specifikt för menuknappar */
+  background-color: rgba(255, 140, 0, 0.6);
 }
 
-/* Specifik hover-effekt för order-link */
+
 .order-link:hover {
-  background-color: rgba(255, 140, 0, 0.6); /* Ändra bakgrundsfärgen specifikt för order-länkar */
+  background-color: rgba(255, 140, 0, 0.6); 
 }
 
-/* Specifik hover-effekt för header-links och cart-link */
+
 .header-links:hover,
 .cart-link:hover {
-  background-color: rgba(255, 140, 0, 0.6); /* Ändra bakgrundsfärgen specifikt för header- och cart-länkar */
+  background-color: rgba(255, 140, 0, 0.6); 
 }
-.welcome{
-  text-align: center;
-}
-.welcome-text{
-  text-align: center;
-}
+/* HOME PAGE */
+
 .home-page-text{
+  text-align: center;
+}
+.home-text{
   text-align: center;
 }
 .logo-img-home{
@@ -214,7 +229,7 @@ opacity: 0.5;
   width: 100%;
   height: auto;
 }
-/* cart page */
+/* CART PAGE */
 .delete-btn{
   background-color: rgb(244, 102, 102);
   border:none;

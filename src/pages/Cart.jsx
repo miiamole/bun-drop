@@ -6,8 +6,8 @@ function Cart() {
   const [menu, setMenu] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
   const [order, setOrder] = useState([]);
+  const [quantity, setQuantity] = useState(1); 
   const { menuId } = useParams();
-  
 
   useEffect(() => {
     fetch(`http://localhost:3000/menu/${menuId}`)
@@ -38,8 +38,15 @@ function Cart() {
   //     fetch("http://localhost:3000/orders", postOptions);
   //   }
 
+  function handleQuantityChange(e) {
+    setQuantity(e.target.value);
+  }
+  function handleChangeForm(e) {
+    e.preventDefault();
+  }
+
   function deleteItem(itemToDelete) {
-    console.log("deleting")
+    console.log("deleting");
     const deleteOptions = {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
@@ -62,15 +69,17 @@ function Cart() {
             <div key={item.id} className="menu-card">
               <img src={`${item.image}`} className="menu-image" />
               <h3>{item.title}</h3>
-              <input
-                type="number"
-                placeholder={item.quantity}
-                value={item.quantity}
-                className="cart-input-amount"
-                min="1"
-                max="40"
-              />
-
+              <form onChange={handleChangeForm}>
+                <input
+                  type="number"
+                  placeholder={item.quantity}
+                  value={quantity}
+                  className="cart-input-amount"
+                  min="1"
+                  max="40"
+                  onChange={handleQuantityChange}
+                />
+              </form>
               <h3>{item.price}</h3>
 
               <button onClick={() => deleteItem(item)} className="delete-btn">
