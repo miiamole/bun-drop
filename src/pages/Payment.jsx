@@ -1,15 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function Payment() {
   const [user, setUser] = useState({});
   const [paymentMethod, setPaymentMethod] = useState(""); //borde kanske ha null??
   const [warning, setWarning] = useState("");
+  const [cart, setCart] = useState([]);
+  const [order, setOrder] = useState([]);
+  const { getLocalStorage, removeLocalStorage } = useLocalStorage();
 
+  useEffect(() => {
+    const itemsInCart = getLocalStorage("cart");
+    if (itemsInCart) {
+      setCart(itemsInCart);
+    }
+  }, []);
+
+  function placeOrder() {
+    const order = {
+      items: cart.map((item) => ({
+        name: item.title,
+        price: item.price,
+        quantity: item.quantity,
+        image: item.image
+      })), 
+      customer: `${user.firstName} ${user.lastName}`,
+    };
+
+    // Ta alla saker från cart i local storage till order på db.json
+    
+      const postOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order),
+      };
+
+      fetch("http://localhost:3000/orders", postOptions);
+    
+
+    // Ta bort allt från cart efter att de har lagts till i order
+    removeLocalStorage("cart");
+    setOrder([]);
+  }
 
   function chooseCard() {
     setPaymentMethod("card");
-
   }
 
   function chooseSwish() {
@@ -44,15 +80,10 @@ function Payment() {
 
   function handlePaymentCardForm(e) {
     e.preventDefault();
-    
   }
 
   function handlePaymentSwishForm(e) {
     e.preventDefault();
-    
-  }
-  function placeOrder(){
-    console.log("placing order...")
   }
 
   return (
@@ -79,7 +110,6 @@ function Payment() {
             <input type="number" placeholder="CVV" max="3" />
             <label>Expiration date:</label>
             <input type="text" placeholder="MM/YY" />
-            {/* <button className="payment-btn">Send us your money</button> */}
           </form>
         </div>
       )}
@@ -92,7 +122,6 @@ function Payment() {
           >
             <label>Phone number:</label>
             <input type="number" placeholder="555-34578" />
-            {/* <button className="payment-btn">Send us your money</button> */}
           </form>
         </div>
       )}
@@ -129,8 +158,14 @@ function Payment() {
               value={user.city}
               onChange={handleCityChange}
             />
-           
-            <Link to="/confirmation" className="payment-btn place-order-btn" onClick ={placeOrder}>Place order</Link>
+
+            <Link
+              to="/confirmation"
+              className="payment-btn place-order-btn"
+              onClick={placeOrder}
+            >
+              Place order
+            </Link>
           </div>
         </form>
       )}

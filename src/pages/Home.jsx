@@ -6,7 +6,7 @@ function Home() {
       <div>
         <div className="home-wrapper">
           <div className="home-text-and-logo">
-            <div classname="home-text">
+            <div className="home-text">
               <h1 className="welcome">Welcome to Bun drop!</h1>
               <p className="welcome-text">
                 At Bun Drop, we're dedicated to delivering the hottest and most

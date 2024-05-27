@@ -6,8 +6,8 @@
       "price": 8.99,
       "description": "A classic beef burger with lettuce, tomato, and cheese.",
       "category": "burgers",
-      "image": "images/burger 1.png",
-      "quantity": 0
+      "image": "/images/burger 1.png",
+      "quantity": 1
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "description": "Crispy sweet potato fries topped with fresh parsley.",
       "category": "sides",
       "image": "images/sides 2.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "3",
@@ -25,7 +25,7 @@
       "description": "A classic cheeseburger, plain and simple.",
       "category": "burgers",
       "image": "/images/burger 6.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "4",
@@ -34,7 +34,7 @@
       "description": "A burger without the bun.",
       "category": "burgers",
       "image": "/images/burger 7.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "5",
@@ -43,7 +43,7 @@
       "description": "Plant-based burger.",
       "category": "burgers",
       "image": "/images/burger 6.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "6",
@@ -52,7 +52,7 @@
       "description": "Bacon and cheese in perfect combination.",
       "category": "burgers",
       "image": "/images/burger 2.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "7",
@@ -61,7 +61,7 @@
       "description": "Sundae with sprinkles and caramel sauce.",
       "category": "desserts",
       "image": "/images/dessert 1.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "8",
@@ -70,7 +70,7 @@
       "description": "Sundae with sprinkles.",
       "category": "desserts",
       "image": "/images/dessert 2.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "9",
@@ -79,7 +79,7 @@
       "description": "Sundae with crushed pistachios.",
       "category": "desserts",
       "image": "/images/dessert 3.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "10",
@@ -88,7 +88,7 @@
       "description": "Healthy apple slices.",
       "category": "sides",
       "image": "/images/sides 3.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "11",
@@ -97,7 +97,7 @@
       "description": "Freshly fried onion rings.",
       "category": "sides",
       "image": "/images/sides 4.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "12",
@@ -106,7 +106,7 @@
       "description": "A refreshing beverage.",
       "category": "drinks",
       "image": "/images/drink 1.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "13",
@@ -115,7 +115,7 @@
       "description": "Ice cold apple juice.",
       "category": "drinks",
       "image": "/images/drink 2.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "14",
@@ -124,7 +124,7 @@
       "description": "Freshly made smoothie with avocado, mango, and spinach.",
       "category": "drinks",
       "image": "/images/drink 6.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "15",
@@ -133,7 +133,7 @@
       "description": "Freshly made strawberry smoothie with blueberries.",
       "category": "drinks",
       "image": "/images/drink 5.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "16",
@@ -142,7 +142,7 @@
       "description": "Freshly made fruit smoothie with mango and passionfruit.",
       "category": "drinks",
       "image": "/images/drink 4.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "17",
@@ -151,7 +151,7 @@
       "description": "Creamy garlic aioli perfect for dipping.",
       "category": "sides",
       "image": "/images/dressing 1.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "18",
@@ -160,7 +160,7 @@
       "description": "Tangy mayo with a spicy kick.",
       "category": "sides",
       "image": "/images/dressing 2.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "19",
@@ -169,7 +169,7 @@
       "description": "Classic tomato ketchup.",
       "category": "sides",
       "image": "/images/dressing 3.png",
-      "quantity": 0
+      "quantity": 1
     },
     {
       "id": "20",
@@ -177,37 +177,59 @@
       "price": 1.99,
       "description": "Sweet and tangy honey mustard sauce.",
       "category": "sides",
-      "image": "/images/dressing 4.png"
+      "image": "/images/dressing 4.png",
+      "quantity": 1
     }
   ],
   "users": [],
   "orders": [
     {
-      "id": "4",
-      "title": "No Carb Burger",
-      "price": 6.99,
-      "description": "A burger without the bun.",
-      "category": "burgers",
-      "image": "/images/burger 7.png",
-      "quantity": 0
+      "id": "dd8c",
+      "items": [
+        {
+          "name": "Classic Burger",
+          "price": 8.99,
+          "quantity": 1,
+          "image": "images/burger 1.png"
+        },
+        {
+          "name": "Classic Burger",
+          "price": 8.99,
+          "quantity": 1,
+          "image": "images/burger 1.png"
+        },
+        {
+          "name": "Cheese Burger",
+          "price": 6.99,
+          "quantity": 1,
+          "image": "/images/burger 6.png"
+        },
+        {
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "images/sides 2.png"
+        },
+        {
+          "name": "No Carb Burger",
+          "price": 6.99,
+          "quantity": 1,
+          "image": "/images/burger 7.png"
+        }
+      ],
+      "customer": "undefined undefined"
     },
     {
-      "id": "1",
-      "title": "Classic Burger",
-      "price": 8.99,
-      "description": "A classic beef burger with lettuce, tomato, and cheese.",
-      "category": "burgers",
-      "image": "images/burger 1.png",
-      "quantity": 0
-    },
-    {
-      "id": "10",
-      "title": "Fresh Apples",
-      "price": 2.99,
-      "description": "Healthy apple slices.",
-      "category": "sides",
-      "image": "/images/sides 3.png",
-      "quantity": 0
+      "id": "7130",
+      "items": [
+        {
+          "name": "Classic Burger",
+          "price": 8.99,
+          "quantity": 1,
+          "image": "/images/burger 1.png"
+        }
+      ],
+      "customer": "undefined undefined"
     }
   ]
 }
