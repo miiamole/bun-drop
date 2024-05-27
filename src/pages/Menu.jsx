@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, json } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//  import { } from "@fortawesome/free-solid-svg-icons";
 
 function Menu() {
   const [menu, setMenu] = useState([]);
@@ -27,7 +29,14 @@ function Menu() {
   //LÄGG TILL I LOCAL STORAGE
   const addToCart = (menuItem) => {
     setLocalStorage("cart", menuItem);
+    console.log("adding ",menuItem)
   };
+
+
+function addToFavoutite(){
+    console.log()
+}
+
 
   return (
     <>
@@ -64,6 +73,12 @@ function Menu() {
                   Add to cart
                 </Link>
               </button>
+              <button onClick={addToFavoutite}>
+                Add to favourite
+                 {/* <FontAwesomeIcon icon="fa-regular fa-heart" /> */}
+                 
+              </button>
+             
             </div>
           </div>
         ))}

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function Confirmation() {
   const [order, setOrder] = useState([]);
   const [deliveryTime, setDeliveryTime] = useState(null);
+//   const { orderId } = useParams();
 
   useEffect(() => {
     fetch(`http://localhost:3000/orders`)
@@ -18,7 +20,7 @@ setDeliveryTime(randomTime);
   }, []);
 
   
-
+console.log("the current order is: ", order.slice(-1))
   return (
     <>
       <h3>Thank you for your order</h3>
@@ -33,9 +35,12 @@ setDeliveryTime(randomTime);
           : "these delicious items"}
         :
       </h4>
+     
       <div className="menu-container">
         {Array.isArray(order) &&
-          order.map((item) => (
+        //   order.map((item) => (
+             order.slice(-1).map((item) => (
+            
             <div key={item.id} className="menu-card">
               <img src={item.image} className="menu-image" />
               <h3>{item.title}</h3>

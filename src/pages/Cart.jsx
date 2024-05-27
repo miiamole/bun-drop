@@ -20,6 +20,7 @@ function Cart() {
   //     setOrder(itemsInCart);
   //   }, []);
 
+  //HÄMTAR ALLT JAG HAR I MIN CART
   useEffect(() => {
     const itemsInCart = getLocalStorage("cart");
     if (itemsInCart) {
@@ -60,11 +61,24 @@ function Cart() {
     e.preventDefault();
   }
 
-  function goToPayment() {}
+  function deleteItem(itemToDelete) {
+   removeLocalStorage("cart", itemToDelete);
+   
+    console.log("really deleting??");
 
-  function deleteItem() {
-    removeLocalStorage();
+    setCart(cart.filter((item) => item.id !== itemToDelete.id));
   }
+
+  // function deleteItem(itemToDelete) {
+  //   const updatedCart = cart.filter((item) => item.id !== itemToDelete.id);
+  //   removeLocalStorage("cart", updatedCart); // Skicka med uppdaterad kundvagn
+  
+  //   setCart(updatedCart);
+  // }
+
+  //   function goToPayment() {
+
+  //   }
 
   return (
     <>
@@ -97,14 +111,14 @@ function Cart() {
       {/* <h3>Total price: {priceOfOrder}</h3> */}
 
       <div className="cart-links-wrapper">
-        <Link to="/payment" className="payment-btn place-order-btn">
+        <Link
+          to="/payment"
+          //   onClick={goToPayment}
+          className="payment-btn place-order-btn"
+        >
           Go to payment
         </Link>
-        <Link
-          to="/menu"
-          className="header-links cart-add-more-items"
-          onClick={goToPayment}
-        >
+        <Link to="/menu" className="header-links cart-add-more-items">
           Add more items
         </Link>
       </div>

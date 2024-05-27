@@ -10,6 +10,8 @@ function Payment() {
   const [order, setOrder] = useState([]);
   const { getLocalStorage, removeLocalStorage } = useLocalStorage();
 
+
+  //hämtar allt i carten från local storage
   useEffect(() => {
     const itemsInCart = getLocalStorage("cart");
     if (itemsInCart) {
@@ -17,31 +19,33 @@ function Payment() {
     }
   }, []);
 
+  
+  // Ta alla saker från cart i local storage till och lägger till det som ett order objekt på db.json
+
   function placeOrder() {
     const order = {
       items: cart.map((item) => ({
         name: item.title,
         price: item.price,
         quantity: item.quantity,
-        image: item.image
-      })), 
+        image: item.image,
+      })),
       customer: `${user.firstName} ${user.lastName}`,
     };
 
-    // Ta alla saker från cart i local storage till order på db.json
-    
-      const postOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(order),
-      };
+    const postOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(order),
+    };
 
-      fetch("http://localhost:3000/orders", postOptions);
-    
-
+    fetch("http://localhost:3000/orders", postOptions)
+   
     // Ta bort allt från cart efter att de har lagts till i order
     removeLocalStorage("cart");
     setOrder([]);
+
+    //här lägger jag till en order, måste också skicka just denna order till nästa sida, för att där displaya just denna order
   }
 
   function chooseCard() {
@@ -160,7 +164,9 @@ function Payment() {
             />
 
             <Link
-              to="/confirmation"
+            //  to={`/confirmation/${order.Id}`}
+            to="/confirmation"
+             
               className="payment-btn place-order-btn"
               onClick={placeOrder}
             >
@@ -172,5 +178,6 @@ function Payment() {
     </>
   );
 }
+
 
 export default Payment;

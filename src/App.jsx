@@ -6,8 +6,10 @@ import Cart from "./pages/Cart";
 import Confirmation from "./pages/Confirmation";
 import Menu from "./pages/Menu";
 import Payment from "./pages/Payment";
-import Header from "./components/Header";
+import LogIn from "./pages/LogIn";
+import Register from "./pages/Register";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<LogIn/>}/>
           <Route path="/cart/:menuId" element={<Cart />} />
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/menu" element={<Menu />} />

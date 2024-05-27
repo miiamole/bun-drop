@@ -23,14 +23,22 @@ function useLocalStorage() {
 
   function getLocalStorage(key) {
     const localStorageItem = localStorage.getItem(key);
-
+    
     return JSON.parse(localStorageItem);
   }
 
   function removeLocalStorage(key) {
     console.log("Removing...");
     localStorage.removeItem(key);
+    console.log("deleting", key)
   }
+//chat gpt
+// function removeLocalStorage(key, updatedData) {
+//   console.log("Removing...");
+//   localStorage.setItem(key, JSON.stringify(updatedData)); // Spara den uppdaterade datan tillbaka i local storage
+//   console.log("Deleting everything from", key);
+// }
+
   return { setLocalStorage, getLocalStorage, removeLocalStorage };
 }
 
