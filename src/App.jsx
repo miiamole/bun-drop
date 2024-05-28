@@ -8,6 +8,7 @@ import Menu from "./pages/Menu";
 import Payment from "./pages/Payment";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
+import Favourites from "./pages/Favourites";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<LogIn/>}/>
+          <Route path="/favourites" element={<Favourites/>}/>
           <Route path="/cart/:menuId" element={<Cart />} />
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/menu" element={<Menu />} />

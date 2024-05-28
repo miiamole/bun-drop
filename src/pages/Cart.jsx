@@ -13,12 +13,6 @@ function Cart() {
     useLocalStorage();
   const itemsInCart = [];
 
-  //   useEffect(() => {
-  //     setLocalStorage();
-  //     removeLocalStorage();
-  //     const itemsInCart = getLocalStorage("cart");
-  //     setOrder(itemsInCart);
-  //   }, []);
 
   //HÄMTAR ALLT JAG HAR I MIN CART
   useEffect(() => {
@@ -28,21 +22,7 @@ function Cart() {
     }
   }, []);
 
-  //   useEffect(() => {
-  //     fetch(`http://localhost:3000/menu/${menuId}`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setMenu(data);
-  //       });
-  //   }, [menuId]);
-
-  //   useEffect(() => {
-  //     fetch(`http://localhost:3000/orders`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setCart(data);
-  //       });
-  //   }, []);
+  
   //PROBLEM 1 ------varför syns inte alla bilder, ex första burgaren?
 
   //PROBLEM 2 ----setQuantity fungerar ej
@@ -62,20 +42,14 @@ function Cart() {
   }
 
   function deleteItem(itemToDelete) {
-   removeLocalStorage("cart", itemToDelete);
+    removeLocalStorage("cart", itemToDelete);
    
     console.log("really deleting??");
 
     setCart(cart.filter((item) => item.id !== itemToDelete.id));
   }
 
-  // function deleteItem(itemToDelete) {
-  //   const updatedCart = cart.filter((item) => item.id !== itemToDelete.id);
-  //   removeLocalStorage("cart", updatedCart); // Skicka med uppdaterad kundvagn
   
-  //   setCart(updatedCart);
-  // }
-
   //   function goToPayment() {
 
   //   }

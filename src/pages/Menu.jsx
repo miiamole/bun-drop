@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, json } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//  import { } from "@fortawesome/free-solid-svg-icons";
+ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+ import { faHeart} from "@fortawesome/free-solid-svg-icons";
 
 function Menu() {
   const [menu, setMenu] = useState([]);
@@ -73,10 +73,9 @@ function addToFavoutite(){
                   Add to cart
                 </Link>
               </button>
-              <button onClick={addToFavoutite}>
-                Add to favourite
-                 {/* <FontAwesomeIcon icon="fa-regular fa-heart" /> */}
-                 
+              
+              <button onClick={addToFavoutite} className="heart-btn">
+                 <FontAwesomeIcon icon={faHeart} className="heart-shape"/>
               </button>
              
             </div>

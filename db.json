@@ -181,7 +181,33 @@
       "quantity": 1
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "1",
+      "username": "user",
+      "password": "password"
+    },
+    {
+      "id": "b93a",
+      "newUser": {
+        "username": "miia"
+      }
+    },
+    {
+      "id": "e9d5",
+      "newUser": {
+        "username": "kaos",
+        "password": "katastrof"
+      }
+    },
+    {
+      "id": "b8b3",
+      "newUser": {
+        "username": "jek",
+        "password": "lkala"
+      }
+    }
+  ],
   "orders": [
     {
       "id": "dd8c",
