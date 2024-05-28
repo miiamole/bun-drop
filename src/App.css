@@ -12,13 +12,15 @@ body {
   display: flex; 
   justify-content: center; 
   align-items: center; 
+  border:none;
 }
+
 
 
 .menu-btn {
   flex: 1; 
   background-color: transparent;
-  border: none;
+  border:none;
   border-radius: 5px;
   color: rgb(13, 22, 30);
   height: 2rem;
@@ -135,22 +137,32 @@ input[type="text"] {
   color: rgba(86, 45, 45, 0.356);
 }
 /* MENU PAGE?? */
+.add-to-cart-link-and-btn{
+  display: flex;
+  justify-content:space-between;
+  position: relative;
+  
+}
 .heart-shape{
 height:1.4rem;
+
+
 }
 .heart-btn{
   height:2rem;
 background-color: transparent;
 border:none;
 color: red;
+position: absolute;
+left: 120px;
+
+
 }
 .heart-btn:hover{
-  
 transform: scale(1.05); 
-  border: 2px solid red;
+  border: 1px solid red;
   color: rgb(255, 0, 0);
   transition: transform 0.3s, background-color 0.3s, color 0.3s; 
-
 }
 .menu-image {
   height: 7rem;
@@ -173,17 +185,14 @@ transform: scale(1.05);
   align-items: center;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 2px 3px 3px 4px rgb(159, 123, 123);
+  box-shadow:  2px 4px rgb(159, 123, 123);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative; 
 }
-
 .menu-card:hover {
   transform: scale(1.05); 
   box-shadow: 4px 6px 6px 6px rgb(159, 123, 123); 
 }
-
-
 .menu-container {
   display: flex;
   flex-wrap: wrap;
@@ -199,8 +208,6 @@ transform: scale(1.05);
   margin:10px;
   color: rgba(74, 38, 38, 0.897);
 }
-
-
 .menu-btn:hover,
 .order-link:hover,
 .header-links:hover,
@@ -210,18 +217,12 @@ transform: scale(1.05);
   color: white;
   transition: transform 0.3s, background-color 0.3s, color 0.3s; 
 }
-
-
 .menu-btn:hover {
   background-color: rgba(255, 140, 0, 0.6);
 }
-
-
 .order-link:hover {
   background-color: rgba(255, 140, 0, 0.6); 
 }
-
-
 .header-links:hover,
 .cart-link:hover {
   background-color: rgba(255, 140, 0, 0.6); 

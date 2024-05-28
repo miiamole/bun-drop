@@ -45,7 +45,6 @@ function addToFavoutite(){
         <button className="menu-btn" onClick={() => filterList("")}>
           All
         </button>
-
         <button className="menu-btn" onClick={() => filterList("burgers")}>
           Burgers
         </button>
@@ -66,13 +65,14 @@ function addToFavoutite(){
             <h3>{m.title}</h3>
             <h3>${m.price}</h3>
             <h3>{m.description}</h3>
-            <div className="add-to-cart-input-and-button">
-              <button onClick={() => addToCart(m)}>
+            <div className="add-to-cart-link-and-btn">
+              {/* <button onClick={() => addToCart(m)} className="Add-to-cart-btn">
                 {" "}
                 <Link className="order-link" to={`/cart/${m.id}`}>
                   Add to cart
                 </Link>
-              </button>
+              </button> */}
+              <Link onClick={() => addToCart(m)} className="order-link" to={`/cart/${m.id}`} >Add to cart</Link>
               
               <button onClick={addToFavoutite} className="heart-btn">
                  <FontAwesomeIcon icon={faHeart} className="heart-shape"/>
