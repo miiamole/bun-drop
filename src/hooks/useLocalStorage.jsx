@@ -34,7 +34,7 @@ function useLocalStorage() {
   //     console.log("deleting", key)
   //   }
 
-  //MED DENNA TAS INGET BORT
+  //MED DENNA TAS rätt sak bort
   function removeLocalStorage(key, itemToDelete) {
     console.log("deleting", itemToDelete);
     //hämta hela cart:en
@@ -53,7 +53,37 @@ function useLocalStorage() {
     localStorage.setItem(key, JSON.stringify(updatedCart));
   }
 
-  return { setLocalStorage, getLocalStorage, removeLocalStorage };
+//chat gpt ang ändra kvantitet
+function updateQuantityInLocalStorage(key, itemId, newQuantity) {
+    console.log(
+      "Updating quantity in local storage:",
+      key,
+      itemId,
+      newQuantity
+    );
+  // Hämta hela localStorage
+  let localStorageItem = getLocalStorage(key);
+
+  // Avsluta om det inte finns någon cart i localStorage
+  if (!localStorageItem) return;
+
+  // Uppdatera siffran för den produkten jag klickat på
+  localStorageItem = localStorageItem.map((item) => {
+    if (item.id === itemId) {
+      return { ...item, quantity: newQuantity };
+    }
+    return item;
+  });
+
+  // Spara den uppdaterade carten till localStorage
+  localStorage.setItem(key, JSON.stringify(localStorageItem));
+}
+
+
+
+
+
+  return { setLocalStorage, getLocalStorage, removeLocalStorage, updateQuantityInLocalStorage };
 }
 
 export default useLocalStorage;

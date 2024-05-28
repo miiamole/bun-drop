@@ -5,11 +5,11 @@ import useLocalStorage from "../hooks/useLocalStorage";
 
 function Cart() {
   const [menu, setMenu] = useState({});
-  //  const [totalPrice, setTotalPrice] = useState(0);
+   const [totalPrice, setTotalPrice] = useState(0);
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const { menuId } = useParams();
-  const { setLocalStorage, getLocalStorage, removeLocalStorage } =
+  const { setLocalStorage, getLocalStorage, removeLocalStorage, updateQuantityInLocalStorage} =
     useLocalStorage();
   const itemsInCart = [];
 
@@ -20,23 +20,52 @@ function Cart() {
     if (itemsInCart) {
       setCart(itemsInCart);
     }
+   
   }, []);
 
   
   //PROBLEM 1 ------varför syns inte alla bilder, ex första burgaren?
 
-  //PROBLEM 2 ----setQuantity fungerar ej
+  //PROBLEM 2 ----QUANTITY ÄNDRAS, MEN REFLEKTERAS EJ I TOTAL PRICE
 
-  //PROBLEM 3 -----KAN EJ BERÄKNA TOTAL PRICE
+  //PROBLRM 3 ---- MAN KAN KLICKA PÅ GÅ TO PAYMENT TROTS ATT CART:EN ÄR TOM
 
-  //  const priceOfOrder =
-  //TÄNKTE ATT MAN KUNDE LOOPA ÖVER ALLA PRISER OCH KVANTITETER OCH GÖRA LITE MATTE
-  //(hade förut totalprice i databasen)
-  //  setTotalPrice(priceOfOrder)
+  
+function priceOfOrder() {
+  let totalPrice = 0;  
+  cart.forEach((item) => {
+    
+    totalPrice += item.price * item.quantity;
+  });
 
-  function handleQuantityChange(e) {
-    setQuantity(e.target.value);
-  }
+  return totalPrice.toFixed(2);
+}
+  
+
+//   function handleQuantityChange(e) {
+//     setQuantity(e.target.value);
+//   }
+
+function handleQuantityChange(e, itemId) {
+  const newQuantity = e.target.value;
+  console.log("New quantity:", newQuantity);
+  updateQuantityInLocalStorage("cart", itemId, newQuantity);
+
+  // Uppdatera state för carten med den nya kvantiteten
+  setCart((prevCart) =>
+    prevCart.map((item) => {
+      if (item.id === itemId) {
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    })
+  );
+}
+
+
+
+
+
   function handleChangeForm(e) {
     e.preventDefault();
   }
@@ -67,14 +96,15 @@ function Cart() {
                 <input
                   type="number"
                   placeholder={item.quantity}
-                  value={quantity}
+                  value={item.quantity || ""}
                   className="cart-input-amount"
                   min="1"
                   max="40"
-                  onChange={handleQuantityChange}
+                  //   onChange={handleQuantityChange}
+                  onChange={(e) => handleQuantityChange(e, item.id)}
                 />
               </form>
-              <h3>{item.price}</h3>
+              <h3>${item.price}</h3>
 
               <button onClick={() => deleteItem(item)} className="delete-btn">
                 Remove item
@@ -82,7 +112,7 @@ function Cart() {
             </div>
           ))}
       </div>
-      {/* <h3>Total price: {priceOfOrder}</h3> */}
+      <h3>Total price: ${priceOfOrder()}</h3>
 
       <div className="cart-links-wrapper">
         <Link

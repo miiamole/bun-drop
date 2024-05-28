@@ -15,7 +15,7 @@
       "price": 4.99,
       "description": "Crispy sweet potato fries topped with fresh parsley.",
       "category": "sides",
-      "image": "images/sides 2.png",
+      "image": "/images/sides 2.png",
       "quantity": 1
     },
     {
