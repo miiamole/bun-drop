@@ -186,6 +186,34 @@
       "id": "1",
       "username": "user",
       "password": "password"
+    },
+    {
+      "id": "0043",
+      "newUser": {
+        "userName": "ss",
+        "password": "l"
+      }
+    },
+    {
+      "id": "03ab",
+      "newUser": {
+        "userName": "s",
+        "password": "s"
+      }
+    },
+    {
+      "id": "7431",
+      "newUser": {
+        "userName": "s",
+        "password": "s"
+      }
+    },
+    {
+      "id": "dffd",
+      "newUser": {
+        "userName": "",
+        "password": ""
+      }
     }
   ],
   "orders": [
@@ -198,6 +226,125 @@
           "price": 4.99,
           "quantity": 1,
           "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716975124850",
+      "items": [],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716976957303",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "d d"
+    },
+    {
+      "id": "1716977082130",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "a a"
+    },
+    {
+      "id": "1716979413029",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716979423403",
+      "items": [],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716980644486",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716980675274",
+      "items": [],
+      "customer": "lll undefined"
+    },
+    {
+      "id": "1716981794100",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "ww www"
+    },
+    {
+      "id": "1716981813372",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716982471081",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716982557568",
+      "items": [
+        {
+          "id": "3",
+          "name": "Cheese Burger",
+          "price": 6.99,
+          "quantity": 1,
+          "image": "/images/burger 6.png"
         }
       ],
       "customer": "undefined undefined"

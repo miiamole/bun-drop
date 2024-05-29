@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { fireEvent } from "@testing-library/react";
 
 function Payment() {
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    phoneNumber: "",
+    cardNumber: "",
+    expirationDate: "",
+    cvv: "",
+  };
+
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const [user, setUser] = useState({});
   const [paymentMethod, setPaymentMethod] = useState(""); //borde kanske ha null??
-  const [warning, setWarning] = useState("");
+  //const [warning, setWarning] = useState(false);
   const [cart, setCart] = useState([]);
   const [order, setOrder] = useState([]);
   const { getLocalStorage, removeLocalStorage, clearLocalStorage } =
@@ -21,20 +36,104 @@ function Payment() {
     }
   }, []);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target; //minns ej vad detta  var bra för
+    setUser({ ...user, [name]: value }); // samma med detta
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    // console.log(formErrors);
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      //   console.log(user);
+    }
+  }, [formErrors]);
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (!values.firstName) {
+      errors.firstName = "Firstname is required!";
+    } else if (values.firstName.length < 2) {
+      errors.firstName = "Firstname must be at least 2 characters!";
+    }
+    if (!values.lastName) {
+      errors.lastName = "Lastname is required!";
+    } else if (values.lastName.length < 2) {
+      errors.lastName = "Lastname must be at least 2 characters!";
+    }
+    if (!values.address) {
+      errors.address = "Address is required!";
+    } else if (values.address.length < 5) {
+      errors.address = "Address must be at least 5 characters!";
+    }
+    if (!values.city) {
+      errors.city = "City is required!";
+    } else if (values.city.length < 2) {
+      errors.city = "City must be at least 2 characters!";
+    }
+    if (!values.cardNumber) {
+      errors.cardNumber = "Card number is required!";
+    } else if (values.cardNumber.length < 15) {
+      errors.cardNumber = "Card number must be at least 15 characters!";
+    }
+    if (!values.expirationDate) {
+      errors.expirationDate = "Expiration date is required!";
+    } else if (values.expirationDate.length < 4) {
+      errors.expirationDate = "Expiration date must be at least 4 characters!";
+    }
+    if (!values.cvv) {
+      errors.cvv = "CVV is required!";
+    } else if (values.cvv.length < 3) {
+      errors.cvv = "CVV must be at least 3 characters!";
+    }
+    if (!values.phoneNumber) {
+      errors.phoneNumber = "Phone number is required!";
+    } else if (values.phoneNumber.length < 10) {
+      errors.phoneNumber = "Phone number must be at least 10 characters!";
+    }
+
+    return errors;
+  };
+
+  function addingCustomer() {
+    const newCustomer = {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      address: user.address,
+      city: user.city,
+      cardNumber: user.cardNumber,
+      expirationDate: user.expirationDate,
+      cvv: user.cvv,
+      phoneNumber: user.phoneNumber,
+    };
+
+    const postOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ newCustomer }),
+    };
+    fetch("http://localhost:3000/users", postOptions);
+    // inte så jag vill göra för jag vill lägga detta till ordern
+  }
+
   // Ta alla saker från cart i local storage till och lägger till det som ett order objekt på db.json
-
   function placeOrder() {
-    // Generera ett random id, tiden just nu
+    // Validate- här ska jag göra det
+    setFormErrors(validate(user));
+    setIsSubmit(true);
 
+    addingCustomer();
+    // Generera ett random id baserat på tiden just nu
     const orderId = Date.now().toString();
-    // Använd det id:t när du skapar din order
-    // Skicka det id:t till nästa sida (confirmation)
-    // Hämta korrekt order med det skickade id:t på nästa sida (confirmation)
 
+    // Använd det id:t när du skapar din order
     const order = {
       id: orderId,
       items: cart.map((item) => ({
-        // id: item.id,
         id: item.id,
         name: item.title,
         price: item.price,
@@ -56,9 +155,8 @@ function Payment() {
     clearLocalStorage("cart");
     setOrder([]); // kanske inte ska ha detta,
 
-    //navigate("/confirmation");
+    // Skicka det id:t till nästa sida (confirmation)
     navigate(`/confirmation/${orderId}`);
-    //här lägger jag till en order, måste också skicka just denna order till nästa sida, för att där displaya just denna order
   }
 
   function chooseCard() {
@@ -69,39 +167,39 @@ function Payment() {
     setPaymentMethod("swish");
   }
 
-  function handleFirstNameChange(e) {
-    setUser((prev) => ({ ...prev, firstName: e.target.value }));
-  }
+  // function handleFirstNameChange(e) {
+  //     setUser((prev) => ({ ...prev, firstName: e.target.value }));
+  // }
 
-  function handleLastNameChange(e) {
-    setUser((prev) => ({ ...prev, lastName: e.target.value }));
-  }
+  // function handleLastNameChange(e) {
+  //   setUser((prev) => ({ ...prev, lastName: e.target.value }));
+  // }
 
-  function handleAddressChange(e) {
-    setUser((prev) => ({ ...prev, address: e.target.value }));
-  }
+  // function handleAddressChange(e) {
+  //   setUser((prev) => ({ ...prev, address: e.target.value }));
+  // }
 
-  function handleCityChange(e) {
-    setUser((prev) => ({ ...prev, city: e.target.value }));
-  }
+  // function handleCityChange(e) {
+  //   setUser((prev) => ({ ...prev, city: e.target.value }));
+  // }
 
-  function handleSubmitForm(e) {
-    e.preventDefault();
-    // const postOptions = {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ user }),
-    // };
-    // fetch("http://localhost:3001/users", postOptions);
-  }
+  // function handleSubmitForm(e) {
+  //   e.preventDefault();
+  // const postOptions = {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: JSON.stringify({ user }),
+  // };
+  // fetch("http://localhost:3001/users", postOptions);
+  // }
 
-  function handlePaymentCardForm(e) {
-    e.preventDefault();
-  }
+  // function handlePaymentCardForm(e) {
+  //   e.preventDefault();
+  // }
 
-  function handlePaymentSwishForm(e) {
-    e.preventDefault();
-  }
+  // function handlePaymentSwishForm(e) {
+  //   e.preventDefault();
+  // }
 
   return (
     <>
@@ -114,70 +212,113 @@ function Payment() {
           Swish
         </button>{" "}
       </div>
-
       {paymentMethod === "card" && (
         <div className="payWithCard form-container">
-          <form
-            onSubmit={handlePaymentCardForm}
-            className="user-form user-form-swish"
-          >
-            <label>Card number:</label>
-            <input type="number" placeholder="1234 5678 9012 3456" max="16" />
-            <label>Security code:</label>
-            <input type="number" placeholder="CVV" max="3" />
-            <label>Expiration date:</label>
-            <input type="text" placeholder="MM/YY" />
-          </form>
+          {Object.keys(formErrors).length === 0 && isSubmit ? (
+            <div>
+              <h5>Det gick bra</h5>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="user-form user-form-swish">
+              <label>Card number:</label>
+              <input
+                type="number"
+                name="cardNumber"
+                placeholder="1234 5678 9012 3456"
+                value={user.cardNumber}
+                onChange={handleChange}
+              />
+              <p>{formErrors.cardNumber}</p>
+
+              <label>Security code:</label>
+              <input
+                type="number"
+                name="cvv"
+                placeholder="CVV"
+                value={user.cvv}
+                onChange={handleChange}
+              />
+              <p>{formErrors.cvv}</p>
+
+              <label>Expiration date:</label>
+              <input
+                type="text"
+                name="expirationDate"
+                placeholder="MM/YY"
+                value={user.expirationDate}
+                onChange={handleChange}
+              />
+              <p>{formErrors.expirationDate}</p>
+            </form>
+          )}
         </div>
       )}
-
       {paymentMethod === "swish" && (
         <div className="payWithSwish form-container">
-          <form
-            onSubmit={handlePaymentSwishForm}
-            className="user-form user-form-swish"
-          >
-            <label>Phone number:</label>
-            <input type="number" placeholder="555-34578" />
-          </form>
+          {Object.keys(formErrors).length === 0 && isSubmit ? (
+            <div className="reg-success">
+              <h3>Det gick bra</h3>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="user-form user-form-swish">
+              <label>Phone number:</label>
+              <input
+                type="number"
+                name="phoneNumber"
+                placeholder="555-34578"
+                value={user.phoneNumber}
+                onChange={handleChange}
+              />
+              <p>{formErrors.phoneNumber}</p>
+            </form>
+          )}
         </div>
       )}
-
-      {paymentMethod && ( // Visa formuläret för personuppgifter bara om en betalningsmetod har valts
-        <form onSubmit={handleSubmitForm} className="form-container">
+      {paymentMethod && Object.keys(formErrors).length === 0 && isSubmit ? (
+        <div className="reg-success">
+          <h3>Det gick bra</h3>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="form-container">
           <div className="user-form">
             <h2>Customer information:</h2>
             <label>First name:</label>
             <input
               type="text"
+              name="firstName"
               placeholder="first name"
               value={user.firstName}
-              onChange={handleFirstNameChange}
+              onChange={handleChange}
             />
+            <p>{formErrors.firstName}</p>
             <label>Last name:</label>
             <input
               type="text"
+              name="lastName"
               placeholder="last name"
               value={user.lastName}
-              onChange={handleLastNameChange}
+              onChange={handleChange}
             />
+            <p>{formErrors.lastName}</p>
             <label>Street name and number:</label>
             <input
               type="text"
+              name="address"
               placeholder="street name and number"
               value={user.address}
-              onChange={handleAddressChange}
+              onChange={handleChange}
             />
+            <p>{formErrors.address}</p>
             <label>City:</label>
             <input
               type="text"
+              name="city"
               placeholder="city"
               value={user.city}
-              onChange={handleCityChange}
+              onChange={handleChange}
             />
-
+            <p>{formErrors.city}</p>
             <button
-              //  to={`/confirmation/${order.Id}`}
               className="payment-btn place-order-btn"
               onClick={placeOrder}
             >
@@ -189,5 +330,4 @@ function Payment() {
     </>
   );
 }
-
 export default Payment;

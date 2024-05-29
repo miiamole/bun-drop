@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";   //PROBLRM 1 ---- MAN KAN KLICKA PÅ GÅ TO PAYMENT TROTS ATT CART:EN ÄR TOM
+import React, { useState, useEffect } from "react";   
                                                       //PROBLEM 2----- 3+1 BLIR 31 I CART:EN
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -105,13 +105,14 @@ function handleQuantityChange(e, itemId) {
       <h3>Total price: ${priceOfOrder()}</h3>
 
       <div className="cart-links-wrapper">
-        <Link
-          to="/payment"
-          //   onClick={goToPayment}
-          className="payment-btn place-order-btn"
-        >
-          Go to payment
-        </Link>
+       
+ {/* om kundvagnen är tom så visas inte länken */}
+        {cart.length > 0 && (
+          <Link to="/payment" className="payment-btn place-order-btn">
+            Go to payment
+          </Link>
+        )}
+
         <Link to="/menu" className="header-links cart-add-more-items">
           Add more items
         </Link>
