@@ -77,6 +77,36 @@ body {
   padding: 10px 20px;
 }
 /* PAYMENT PAGE */
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-container label,
+.form-container input,
+.form-container p {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.payment-btn {
+  margin-top: 20px;
+  align-self: center;
+}
+
+
+
+
+
+
+.payment-form{
+ display:flex;
+ justify-content: center;
+
+}
 .user-form-swish input[type=number]::-webkit-inner-spin-button,
 .user-form-swish input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
