@@ -24,7 +24,7 @@ function App() {
           <Route path="/login" element={<LogIn/>}/>
           <Route path="/favourites" element={<Favourites/>}/>
           <Route path="/cart/:menuId" element={<Cart />} />
-          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/confirmation/:orderId" element={<Confirmation />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/payment" element={<Payment />} />
         </Routes>

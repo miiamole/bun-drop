@@ -9,17 +9,27 @@ function useLocalStorage() {
     if (!localStorageItem) {
       localStorageItem = [];
     }
+    const existingItemIndex = localStorageItem.findIndex(
+      (cartItem) => cartItem.id === item.id
+    );
 
-    console.log("PUTTING IN CART: ", item);
-    console.log("EXISTING CART: ", localStorageItem);
-
-    const cartItem = item;
-
-    // Lägg till det nya objektet i den befintliga carten
-    localStorageItem.push(cartItem);
-
+    if (existingItemIndex >= 0) {
+      localStorageItem[existingItemIndex].quantity += 1;
+    } else {
+      // Gör om item:et (menuItem) till ett item för carten (med quantity)
+      const cartItem = {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        description: item.description,
+        image: item.image,
+        quantity: 1, // Om det redan finns en sån med samma title, öka istället med 1
+      };
+      // Lägg till det nya objektet i den befintliga carten
+      localStorageItem.push(cartItem);
+    }
     // Spara den uppdaterade carten till local storage
-    localStorage.setItem("cart", JSON.stringify(localStorageItem));
+    localStorage.setItem(key, JSON.stringify(localStorageItem));
   }
 
   function getLocalStorage(key) {
@@ -27,9 +37,9 @@ function useLocalStorage() {
 
     return JSON.parse(localStorageItem);
   }
-//MED DENNA TAS HELA CARTEN BORT
+  //MED DENNA TAS HELA CARTEN BORT
   //   function removeLocalStorage(key) {
-  //    
+  //
   //     localStorage.removeItem(key);
   //     console.log("deleting", key)
   //   }
@@ -53,37 +63,42 @@ function useLocalStorage() {
     localStorage.setItem(key, JSON.stringify(updatedCart));
   }
 
-//chat gpt ang ändra kvantitet
-function updateQuantityInLocalStorage(key, itemId, newQuantity) {
+  function clearLocalStorage(key) {
+    localStorage.setItem(key, JSON.stringify([]));
+  }
+
+  //chat gpt ang ändra kvantitet
+  function updateQuantityInLocalStorage(key, itemId, newQuantity) {
     console.log(
       "Updating quantity in local storage:",
       key,
       itemId,
       newQuantity
     );
-  // Hämta hela localStorage
-  let localStorageItem = getLocalStorage(key);
+    // Hämta hela localStorage-----DETTA FUNGERAR
+    let localStorageItem = getLocalStorage(key);
 
-  // Avsluta om det inte finns någon cart i localStorage
-  if (!localStorageItem) return;
+    // Avsluta om det inte finns någon cart i localStorage
+    if (!localStorageItem) return;
 
-  // Uppdatera siffran för den produkten jag klickat på
-  localStorageItem = localStorageItem.map((item) => {
-    if (item.id === itemId) {
-      return { ...item, quantity: newQuantity };
-    }
-    return item;
-  });
+    // Uppdatera siffran för den produkten jag klickat på
+    localStorageItem = localStorageItem.map((item) => {
+      if (item.id === itemId) {
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
 
-  // Spara den uppdaterade carten till localStorage
-  localStorage.setItem(key, JSON.stringify(localStorageItem));
-}
-
-
-
-
-
-  return { setLocalStorage, getLocalStorage, removeLocalStorage, updateQuantityInLocalStorage };
+    // Spara den uppdaterade carten till localStorage
+    localStorage.setItem(key, JSON.stringify(localStorageItem));
+  }
+  return {
+    setLocalStorage,
+    getLocalStorage,
+    removeLocalStorage,
+    updateQuantityInLocalStorage,
+    clearLocalStorage,
+  };
 }
 
 export default useLocalStorage;

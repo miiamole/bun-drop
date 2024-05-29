@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 function Payment() {
@@ -8,8 +8,10 @@ function Payment() {
   const [warning, setWarning] = useState("");
   const [cart, setCart] = useState([]);
   const [order, setOrder] = useState([]);
-  const { getLocalStorage, removeLocalStorage } = useLocalStorage();
+  const { getLocalStorage, removeLocalStorage, clearLocalStorage } =
+    useLocalStorage();
 
+  const navigate = useNavigate();
 
   //hämtar allt i carten från local storage
   useEffect(() => {
@@ -19,12 +21,21 @@ function Payment() {
     }
   }, []);
 
-  
   // Ta alla saker från cart i local storage till och lägger till det som ett order objekt på db.json
 
   function placeOrder() {
+    // Generera ett random id, tiden just nu
+
+    const orderId = Date.now().toString();
+    // Använd det id:t när du skapar din order
+    // Skicka det id:t till nästa sida (confirmation)
+    // Hämta korrekt order med det skickade id:t på nästa sida (confirmation)
+
     const order = {
+      id: orderId,
       items: cart.map((item) => ({
+        // id: item.id,
+        id: item.id,
         name: item.title,
         price: item.price,
         quantity: item.quantity,
@@ -39,12 +50,14 @@ function Payment() {
       body: JSON.stringify(order),
     };
 
-    fetch("http://localhost:3000/orders", postOptions)
-   
-    // Ta bort allt från cart efter att de har lagts till i order
-    removeLocalStorage("cart");
-    setOrder([]);
+    fetch("http://localhost:3000/orders", postOptions);
 
+    // // Ta bort allt från cart efter att de har lagts till i order
+    clearLocalStorage("cart");
+    setOrder([]); // kanske inte ska ha detta,
+
+    //navigate("/confirmation");
+    navigate(`/confirmation/${orderId}`);
     //här lägger jag till en order, måste också skicka just denna order till nästa sida, för att där displaya just denna order
   }
 
@@ -74,12 +87,12 @@ function Payment() {
 
   function handleSubmitForm(e) {
     e.preventDefault();
-    const postOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user }),
-    };
-    fetch("http://localhost:3001/users", postOptions);
+    // const postOptions = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ user }),
+    // };
+    // fetch("http://localhost:3001/users", postOptions);
   }
 
   function handlePaymentCardForm(e) {
@@ -163,21 +176,18 @@ function Payment() {
               onChange={handleCityChange}
             />
 
-            <Link
-            //  to={`/confirmation/${order.Id}`}
-            to="/confirmation"
-             
+            <button
+              //  to={`/confirmation/${order.Id}`}
               className="payment-btn place-order-btn"
               onClick={placeOrder}
             >
               Place order
-            </Link>
+            </button>
           </div>
         </form>
       )}
     </>
   );
 }
-
 
 export default Payment;

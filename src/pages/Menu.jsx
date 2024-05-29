@@ -19,6 +19,14 @@ function Menu() {
     //ha ngn error grej??
   }, []);
 
+  //HÄMTAR ALLT JAG HAR I MIN CART/// KAN JAG HA DETTA HÄR FÖR ATT SE VAD SOM REDAN FINNS I MIN CART NÄR JAG VILL LÄGGA TILL NGT
+  useEffect(() => {
+    const itemsInCart = getLocalStorage("cart");
+    if (itemsInCart) {
+      setCart(itemsInCart);
+    }
+  }, []);
+
   function filterList(category) {
     setFilter(category);
   }
@@ -26,17 +34,17 @@ function Menu() {
     ? menu.filter((item) => item.category === filter)
     : menu;
 
-  //LÄGG TILL I LOCAL STORAGE
-  const addToCart = (menuItem) => {
-    setLocalStorage("cart", menuItem);
-    console.log("adding ",menuItem)
-  };
+ // LÄGG TILL I LOCAL STORAGE
+    const addToCart = (menuItem) => {
+      setLocalStorage("cart", menuItem);
+      console.log("adding ",menuItem)
+    };
 
+  
 
-function addToFavoutite(){
-    console.log()
-}
-
+  function addToFavoutite() {
+    console.log();
+  }
 
   return (
     <>
@@ -72,12 +80,17 @@ function addToFavoutite(){
                   Add to cart
                 </Link>
               </button> */}
-              <Link onClick={() => addToCart(m)} className="order-link" to={`/cart/${m.id}`} >Add to cart</Link>
-              
+              <Link
+                onClick={() => addToCart(m)}
+                className="order-link"
+                to={`/cart/${m.id}`}
+              >
+                Add to cart
+              </Link>
+
               <button onClick={addToFavoutite} className="heart-btn">
-                 <FontAwesomeIcon icon={faHeart} className="heart-shape"/>
+                <FontAwesomeIcon icon={faHeart} className="heart-shape" />
               </button>
-             
             </div>
           </div>
         ))}

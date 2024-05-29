@@ -62,7 +62,7 @@ function Register() {
       <h1>Register</h1>
       {Object.keys(formErrors).length === 0 && isSubmit ? (
         <div className="reg-success">
-          <SuccessReg></SuccessReg>
+          <SuccessReg/>
         </div>
       ) : (
         // <pre>{JSON.stringify(user, undefined, 2)}</pre>

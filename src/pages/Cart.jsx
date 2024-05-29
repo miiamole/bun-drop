@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";   //PROBLRM 1 ---- MAN KAN KLICKA PÅ GÅ TO PAYMENT TROTS ATT CART:EN ÄR TOM
+                                                      //PROBLEM 2----- 3+1 BLIR 31 I CART:EN
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
@@ -23,14 +24,7 @@ function Cart() {
    
   }, []);
 
-  
-  //PROBLEM 1 ------varför syns inte alla bilder, ex första burgaren?
 
-  //PROBLEM 2 ----QUANTITY ÄNDRAS, MEN REFLEKTERAS EJ I TOTAL PRICE
-
-  //PROBLRM 3 ---- MAN KAN KLICKA PÅ GÅ TO PAYMENT TROTS ATT CART:EN ÄR TOM
-
-  
 function priceOfOrder() {
   let totalPrice = 0;  
   cart.forEach((item) => {
@@ -61,10 +55,6 @@ function handleQuantityChange(e, itemId) {
     })
   );
 }
-
-
-
-
 
   function handleChangeForm(e) {
     e.preventDefault();
