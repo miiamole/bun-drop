@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";  //PROBLEM----- DET LÄGGS TILL I DATABASEN OAVETT OM MAN SKRIVIT NGT ELLER INTE
-//import { Link } from "react-router-dom";
+
 import SuccessReg from "../components/SuccessReg";
 
 function Register() {
@@ -10,7 +10,7 @@ function Register() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     setUser({ ...user, [name]: value }); //minns ej vad detta innebar: [name]: value
   };
 

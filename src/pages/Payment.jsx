@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
-import { fireEvent } from "@testing-library/react";
+import PayForm from "../components/PayForm";
 
 function Payment() {
-  const initialValues = {
-    firstName: "",
-    lastName: "",
-    address: "",
-    city: "",
-    phoneNumber: "",
-    cardNumber: "",
-    expirationDate: "",
-    cvv: "",
-  };
+  // const initialValues = {
+  //   firstName: "",
+  //   lastName: "",
+  //   address: "",
+  //   city: "",
+  //   phoneNumber: "",
+  //   cardNumber: "",
+  //   expirationDate: "",
+  //   cvv: "",
+  // };
 
-  const [formErrors, setFormErrors] = useState({});
+ // const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
   const [user, setUser] = useState({});
-  const [paymentMethod, setPaymentMethod] = useState(""); //borde kanske ha null??
+  //const [paymentMethod, setPaymentMethod] = useState(""); //borde kanske ha null??
   //const [warning, setWarning] = useState(false);
   const [cart, setCart] = useState([]);
   const [order, setOrder] = useState([]);
@@ -36,68 +36,69 @@ function Payment() {
     }
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target; //minns ej vad detta  var bra för
-    setUser({ ...user, [name]: value }); // samma med detta
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target; //minns ej vad detta  var bra för
+  //   setUser({ ...user, [name]: value }); // samma med detta
+    
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  // };
 
-  useEffect(() => {
-    // console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      //   console.log(user);
-    }
-  }, [formErrors]);
+  // useEffect(() => {
+  //   // console.log(formErrors);
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //     //   console.log(user);
+  //   }
+  // }, [formErrors]);
 
-  const validate = (values) => {
-    const errors = {};
+  // const validate = (values) => {
+  //   const errors = {};
 
-    if (!values.firstName) {
-      errors.firstName = "Firstname is required!";
-    } else if (values.firstName.length < 2) {
-      errors.firstName = "Firstname must be at least 2 characters!";
-    }
-    if (!values.lastName) {
-      errors.lastName = "Lastname is required!";
-    } else if (values.lastName.length < 2) {
-      errors.lastName = "Lastname must be at least 2 characters!";
-    }
-    if (!values.address) {
-      errors.address = "Address is required!";
-    } else if (values.address.length < 5) {
-      errors.address = "Address must be at least 5 characters!";
-    }
-    if (!values.city) {
-      errors.city = "City is required!";
-    } else if (values.city.length < 2) {
-      errors.city = "City must be at least 2 characters!";
-    }
-    if (!values.cardNumber) {
-      errors.cardNumber = "Card number is required!";
-    } else if (values.cardNumber.length < 15) {
-      errors.cardNumber = "Card number must be at least 15 characters!";
-    }
-    if (!values.expirationDate) {
-      errors.expirationDate = "Expiration date is required!";
-    } else if (values.expirationDate.length < 4) {
-      errors.expirationDate = "Expiration date must be at least 4 characters!";
-    }
-    if (!values.cvv) {
-      errors.cvv = "CVV is required!";
-    } else if (values.cvv.length < 3) {
-      errors.cvv = "CVV must be at least 3 characters!";
-    }
-    if (!values.phoneNumber) {
-      errors.phoneNumber = "Phone number is required!";
-    } else if (values.phoneNumber.length < 10) {
-      errors.phoneNumber = "Phone number must be at least 10 characters!";
-    }
+  //   if (!values.firstName) {
+  //     errors.firstName = "Firstname is required!";
+  //   } else if (values.firstName.length < 2) {
+  //     errors.firstName = "Firstname must be at least 2 characters!";
+  //   }
+  //   if (!values.lastName) {
+  //     errors.lastName = "Lastname is required!";
+  //   } else if (values.lastName.length < 2) {
+  //     errors.lastName = "Lastname must be at least 2 characters!";
+  //   }
+  //   if (!values.address) {
+  //     errors.address = "Address is required!";
+  //   } else if (values.address.length < 5) {
+  //     errors.address = "Address must be at least 5 characters!";
+  //   }
+  //   if (!values.city) {
+  //     errors.city = "City is required!";
+  //   } else if (values.city.length < 2) {
+  //     errors.city = "City must be at least 2 characters!";
+  //   }
+  //   if (!values.cardNumber) {
+  //     errors.cardNumber = "Card number is required!";
+  //   } else if (values.cardNumber.length < 15) {
+  //     errors.cardNumber = "Card number must be at least 15 characters!";
+  //   }
+  //   if (!values.expirationDate) {
+  //     errors.expirationDate = "Expiration date is required!";
+  //   } else if (values.expirationDate.length < 4) {
+  //     errors.expirationDate = "Expiration date must be at least 4 characters!";
+  //   }
+  //   if (!values.cvv) {
+  //     errors.cvv = "CVV is required!";
+  //   } else if (values.cvv.length < 3) {
+  //     errors.cvv = "CVV must be at least 3 characters!";
+  //   }
+  //   if (!values.phoneNumber) {
+  //     errors.phoneNumber = "Phone number is required!";
+  //   } else if (values.phoneNumber.length < 10) {
+  //     errors.phoneNumber = "Phone number must be at least 10 characters!";
+  //   }
 
-    return errors;
-  };
+  //   return errors;
+  // };
 
   function addingCustomer() {
     const newCustomer = {
@@ -123,7 +124,8 @@ function Payment() {
   // Ta alla saker från cart i local storage till och lägger till det som ett order objekt på db.json
   function placeOrder() {
     // Validate- här ska jag göra det
-    setFormErrors(validate(user));
+  //  setFormErrors(validate(user));
+
     setIsSubmit(true);
 
     addingCustomer();
@@ -159,51 +161,17 @@ function Payment() {
     navigate(`/confirmation/${orderId}`);
   }
 
-  function chooseCard() {
-    setPaymentMethod("card");
-  }
-
-  function chooseSwish() {
-    setPaymentMethod("swish");
-  }
-
-  // function handleFirstNameChange(e) {
-  //     setUser((prev) => ({ ...prev, firstName: e.target.value }));
+  // function chooseCard() {
+  //   setPaymentMethod("card");
   // }
 
-  // function handleLastNameChange(e) {
-  //   setUser((prev) => ({ ...prev, lastName: e.target.value }));
+  // function chooseSwish() {
+  //   setPaymentMethod("swish");
   // }
-
-  // function handleAddressChange(e) {
-  //   setUser((prev) => ({ ...prev, address: e.target.value }));
-  // }
-
-  // function handleCityChange(e) {
-  //   setUser((prev) => ({ ...prev, city: e.target.value }));
-  // }
-
-  // function handleSubmitForm(e) {
-  //   e.preventDefault();
-  // const postOptions = {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify({ user }),
-  // };
-  // fetch("http://localhost:3001/users", postOptions);
-  // }
-
-  // function handlePaymentCardForm(e) {
-  //   e.preventDefault();
-  // }
-
-  // function handlePaymentSwishForm(e) {
-  //   e.preventDefault();
-  // }
-
   return (
     <>
-      <div className="payment-container">
+    <PayForm placeOrder={placeOrder}/>
+      {/* <div className="payment-container">
         <h2>Choose payment method:</h2>
         <button className="payment-btn" onClick={chooseCard}>
           Card
@@ -326,7 +294,7 @@ function Payment() {
             </button>
           </div>
         </form>
-      )}
+      )} */}
     </>
   );
 }
