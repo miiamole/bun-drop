@@ -229,6 +229,34 @@
     {
       "id": "a4fb",
       "newCustomer": {}
+    },
+    {
+      "id": "8766",
+      "newCustomer": {}
+    },
+    {
+      "id": "1370",
+      "newCustomer": {}
+    },
+    {
+      "id": "1fde",
+      "newCustomer": {}
+    },
+    {
+      "id": "bda9",
+      "newCustomer": {}
+    },
+    {
+      "id": "ca3b",
+      "newCustomer": {}
+    },
+    {
+      "id": "57ca",
+      "newCustomer": {}
+    },
+    {
+      "id": "cbb2",
+      "newCustomer": {}
     }
   ],
   "orders": [
@@ -244,6 +272,178 @@
         }
       ],
       "customer": "undefined undefined"
+    },
+    {
+      "id": "1717005384077",
+      "items": [
+        {
+          "id": "10",
+          "name": "Fresh Apples",
+          "price": 2.99,
+          "quantity": 1,
+          "image": "/images/sides 3.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1717006102874",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1717006232248",
+      "items": [
+        {
+          "id": "4",
+          "name": "No Carb Burger",
+          "price": 6.99,
+          "quantity": "3",
+          "image": "/images/burger 7.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1717006809682",
+      "items": [
+        {
+          "id": "8",
+          "name": "Party Sundae",
+          "price": 2.99,
+          "quantity": 1,
+          "image": "/images/dessert 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1717007358177",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1717007406449",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1717007473633",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "price": 8.99,
+          "quantity": 1,
+          "image": "/images/burger 1.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1717007857972",
+      "items": [
+        {
+          "id": "8",
+          "name": "Party Sundae",
+          "price": 2.99,
+          "quantity": 1,
+          "image": "/images/dessert 2.png"
+        }
+      ],
+      "customer": {
+        "paymentMethod": {}
+      }
+    },
+    {
+      "id": "1717008857755",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": {
+        "paymentMethod": {}
+      }
+    },
+    {
+      "id": "1717009035075",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": {
+        "paymentMethod": {}
+      }
+    },
+    {
+      "id": "1717009572531",
+      "items": [
+        {
+          "id": "4",
+          "name": "No Carb Burger",
+          "price": 6.99,
+          "quantity": 1,
+          "image": "/images/burger 7.png"
+        }
+      ],
+      "customer": {
+        "paymentMethod": {}
+      }
+    },
+    {
+      "id": "1717010588169",
+      "items": [
+        {
+          "id": "8",
+          "name": "Party Sundae",
+          "price": 2.99,
+          "quantity": 1,
+          "image": "/images/dessert 2.png"
+        }
+      ],
+      "customer": {
+        "firstName": "pappa",
+        "lastName": "gro",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "2222222221"
+        }
+      }
     }
   ]
 }

@@ -10,7 +10,7 @@ function Cart() {
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const { menuId } = useParams();
-  const { setLocalStorage, getLocalStorage, removeLocalStorage, updateQuantityInLocalStorage} =
+  const { getLocalStorage, removeLocalStorage, updateQuantityInLocalStorage} =
     useLocalStorage();
   const itemsInCart = [];
 
@@ -35,11 +35,6 @@ function priceOfOrder() {
   return totalPrice.toFixed(2);
 }
   
-
-//   function handleQuantityChange(e) {
-//     setQuantity(e.target.value);
-//   }
-
 function handleQuantityChange(e, itemId) {
   const newQuantity = e.target.value;
   console.log("New quantity:", newQuantity);
@@ -68,11 +63,6 @@ function handleQuantityChange(e, itemId) {
     setCart(cart.filter((item) => item.id !== itemToDelete.id));
   }
 
-  
-  //   function goToPayment() {
-
-  //   }
-
   return (
     <>
       <h3 className="cart-text">Your order:</h3>
@@ -90,7 +80,6 @@ function handleQuantityChange(e, itemId) {
                   className="cart-input-amount"
                   min="1"
                   max="40"
-                  //   onChange={handleQuantityChange}
                   onChange={(e) => handleQuantityChange(e, item.id)}
                 />
               </form>
