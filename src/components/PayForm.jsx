@@ -21,12 +21,17 @@ function PayForm(props) {
     setUser({ ...user, [name]: value }); // samma med detta
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(user));
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const errors = validate(user);
+  setFormErrors(errors);
 
+  // Endast om det inte finns några formulärsfel ska isSubmit sättas till true
+  if (Object.keys(errors).length === 0) {
     setIsSubmit(true);
-  };
+    processOrder(); // Kalla på processOrder om det inte finns några formulärsfel
+  }
+};
 
   function chooseCard() {
     setPaymentMethod("card");
@@ -39,7 +44,8 @@ function PayForm(props) {
   function processOrder() {
     // Validate
 
-    props.placeOrder();
+   // props.placeOrder();
+   props.placeOrder(user)
   }
 
   useEffect(() => {
@@ -169,6 +175,7 @@ function PayForm(props) {
           )}
         </div>
       )}
+      
       {paymentMethod && Object.keys(formErrors).length === 0 && isSubmit ? (
         <div className="reg-success">
           <h3>Det gick bra</h3>

@@ -214,6 +214,17 @@
         "userName": "",
         "password": ""
       }
+    },
+    {
+      "id": "fa0f",
+      "newUser": {
+        "userName": "222",
+        "password": "222"
+      }
+    },
+    {
+      "id": "09e5",
+      "newCustomer": {}
     }
   ],
   "orders": [
@@ -446,6 +457,81 @@
           "price": 6.99,
           "quantity": 1,
           "image": "/images/burger 7.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716987014581",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716987281113",
+      "items": [],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716987294098",
+      "items": [],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716987329045",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716987530111",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716987761248",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": "undefined undefined"
+    },
+    {
+      "id": "1716988800766",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
         }
       ],
       "customer": "undefined undefined"
