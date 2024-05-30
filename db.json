@@ -184,79 +184,18 @@
   "users": [
     {
       "id": "1",
-      "username": "user",
+      "userName": "user",
       "password": "password"
     },
     {
-      "id": "0043",
-      "newUser": {
-        "userName": "ss",
-        "password": "l"
-      }
+      "id": "7c5e",
+      "userName": "papper",
+      "password": "pennapenna"
     },
     {
-      "id": "03ab",
-      "newUser": {
-        "userName": "s",
-        "password": "s"
-      }
-    },
-    {
-      "id": "7431",
-      "newUser": {
-        "userName": "s",
-        "password": "s"
-      }
-    },
-    {
-      "id": "dffd",
-      "newUser": {
-        "userName": "",
-        "password": ""
-      }
-    },
-    {
-      "id": "fa0f",
-      "newUser": {
-        "userName": "222",
-        "password": "222"
-      }
-    },
-    {
-      "id": "09e5",
-      "newCustomer": {}
-    },
-    {
-      "id": "a4fb",
-      "newCustomer": {}
-    },
-    {
-      "id": "8766",
-      "newCustomer": {}
-    },
-    {
-      "id": "1370",
-      "newCustomer": {}
-    },
-    {
-      "id": "1fde",
-      "newCustomer": {}
-    },
-    {
-      "id": "bda9",
-      "newCustomer": {}
-    },
-    {
-      "id": "ca3b",
-      "newCustomer": {}
-    },
-    {
-      "id": "57ca",
-      "newCustomer": {}
-    },
-    {
-      "id": "cbb2",
-      "newCustomer": {}
+      "id": "df29",
+      "userName": "dator",
+      "password": "datordator"
     }
   ],
   "orders": [
@@ -442,6 +381,48 @@
         "city": "malmö",
         "paymentMethod": {
           "phoneNumber": "2222222221"
+        }
+      }
+    },
+    {
+      "id": "1717044063275",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "muu",
+        "address": "rolf13",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "5555555553"
+        }
+      }
+    },
+    {
+      "id": "1717045183226",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "price": 8.99,
+          "quantity": 1,
+          "image": "/images/burger 1.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "muu",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "33333333332"
         }
       }
     }

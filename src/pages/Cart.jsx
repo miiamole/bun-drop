@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";   
-                                                      //PROBLEM 2----- 3+1 BLIR 31 I CART:EN
+                                                      //PROBLEM----- 3+1 BLIR 31 I CART:EN (när man redan ändrat kvantitet och sedan går tillbaka till meny och lägger till en)
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";

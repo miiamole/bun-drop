@@ -40,8 +40,6 @@ function Menu() {
       console.log("adding ",menuItem)
     };
 
-  
-
   function addToFavoutite() {
     console.log();
   }

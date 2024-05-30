@@ -28,17 +28,19 @@ const capitalizeFirstLetter = (string) => {
 
   return (
     <>
-      <h3>
-        Thank you for your order {capitalizeFirstLetter(customer.firstName)}
-      </h3>
-      <p>it is now beeing prepared</p>
-      <p>Estimated time to delivery: {deliveryTime} minutes</p>
+      <div className="confirm-text">
+        <h2 className="confirm-thanks">
+          Thank you for your order {capitalizeFirstLetter(customer.firstName)}
+        </h2>
+        
+        <h3 className="confirm-time">Estimated time to delivery: {deliveryTime} minutes</h3>
 
-      <h4>
-        You can look forward to devouring{" "}
-        {order.length === 1 ? "this delicious item" : "these delicious items"}:
-      </h4>
-
+        <h4 className="confirm-items">
+          You can look forward to devouring{" "}
+          {order.length === 1 ? "this delicious item" : "these delicious items"}
+          :
+        </h4>
+      </div>
       <div className="menu-container">
         {Array.isArray(order) &&
           order.map((item) => (

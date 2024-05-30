@@ -96,12 +96,6 @@ body {
   margin-top: 20px;
   align-self: center;
 }
-
-
-
-
-
-
 .payment-form{
  display:flex;
  justify-content: center;
@@ -328,3 +322,29 @@ padding: 5px 10px;
   text-align: right;
   padding-right: 20px;
 }
+/* CONFIRMATION PAGE */
+.confirm-text{
+ text-align:center;
+}
+.confirm-thanks{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  font-weight: lighter;
+  color:rgba(12, 12, 12, 0.795);
+}
+.confirm-time{
+  font-weight:normal;
+  font-size: larger;
+  color:rgb(35, 94, 54);
+}
+.confirm-items{
+font-family: Arial, Helvetica, sans-serif;
+  font-size:larger;
+  font-weight: lighter;
+  color:black;
+}
+/* LOG IN PAGE */
+
+
+
+
