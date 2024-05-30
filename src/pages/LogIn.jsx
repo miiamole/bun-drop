@@ -17,6 +17,12 @@ function LogIn() {
       });
   }, []);
 
+
+ const saveUserToLocalStorage = (loggedInUser) => {
+   localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+ };
+
+
   function handleSubmitForm(e) {
     e.preventDefault();
 const currentUser = user;
@@ -26,9 +32,10 @@ const currentUser = user;
     );
     if (findUser) {
       console.log("found a user to log in");
-      //spara den inloggade i session storage??
+      // Spara den inloggade användaren i localStorage
+      saveUserToLocalStorage(currentUser);
       setLogInError(false);
-      navigate("/")
+      navigate("/");
     } else {
       console.log("did not find a user");
       setLogInError(true);

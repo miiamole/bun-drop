@@ -1,8 +1,17 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";   //PROBLEM----om någon är inloggad så ska knappen logga in bytas ut mot log out
+import { Link } from "react-router-dom";     //PROBLEM----fixa med localstorage för att kunna logga ut
  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  import { faCartShopping, faHouse, faBurger, faUser, faHeart} from "@fortawesome/free-solid-svg-icons";
 function Header() {
+
+// const logOut = () => {
+//   setUser({});
+//   setUserName("");
+//   setPassword("");
+//   localStorage.clear();
+// };
+
+
   return (
     <>
       <div className="header-wrapper">
@@ -24,6 +33,7 @@ function Header() {
             <FontAwesomeIcon icon={faHeart} />
             Favourites{" "}
           </Link>
+          {/* <button onClick={logOut}>Log out</button> */}
         </div>
         <Link className="cart-link" to="/cart/:menuId">
           <FontAwesomeIcon icon={faCartShopping} />
