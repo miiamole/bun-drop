@@ -135,7 +135,7 @@ function Menu() {
                 Add to cart
               </Link>
 
-              <button onClick={() => addToFavoutite(m.id)} className="heart-btn">
+              <button onClick={() => addToFavoutite(m)} className="heart-btn">
                 <FontAwesomeIcon icon={faHeart} className="heart-shape" />
               </button>
             </div>

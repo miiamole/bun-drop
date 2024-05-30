@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 function Favourites() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [userFavorites, setUserFavorites] = useState([]);
+   const { userId } = useParams();
+   const [listOfFavoutites, setListOfFavourites] = useState([]);
   const { getLocalStorage, removeLocalStorage, clearLocalStorage } =
     useLocalStorage();
+
+ useEffect(() => {
+   fetch(`http://localhost:3000/userss/${userId}`)
+     .then((res) => res.json())
+     .then((data) => {
+       console.log(data);
+    //    setOrder(data.items);
+    //    setCustomer(data.customer);
+    setListOfFavourites(data.users.Favourites)
+     });
+ }, [userId]);
+
+
+
 
   useEffect(() => {
     // Hämta inloggad user från localStorage --DETTA FUNGERAR

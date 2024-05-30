@@ -219,7 +219,23 @@
       "favorites": [
         {},
         {},
-        {}
+        {},
+        {
+          "id": "13",
+          "title": "Apple Juice",
+          "price": 1.99,
+          "description": "Ice cold apple juice.",
+          "category": "drinks",
+          "image": "/images/drink 2.png"
+        },
+        {
+          "id": "15",
+          "title": "Strawberry Smoothie",
+          "price": 2.99,
+          "description": "Freshly made strawberry smoothie with blueberries.",
+          "category": "drinks",
+          "image": "/images/drink 5.png"
+        }
       ]
     }
   ],
