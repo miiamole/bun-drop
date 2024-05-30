@@ -183,248 +183,45 @@
   ],
   "users": [
     {
-      "id": "1",
+      "id": "c219",
       "userName": "user",
-      "password": "password"
+      "password": "password",
+      "favorites": []
     },
     {
-      "id": "7c5e",
-      "userName": "papper",
-      "password": "pennapenna"
+      "id": "7619",
+      "userName": "mamma",
+      "password": "mammamamma",
+      "favorites": []
     },
     {
-      "id": "df29",
-      "userName": "dator",
-      "password": "datordator"
+      "id": "4a51",
+      "userName": "pappa",
+      "password": "pappapappa",
+      "favorites": []
+    },
+    {
+      "id": "0a8d",
+      "userName": "hemma",
+      "password": "hemmahemma",
+      "favorites": []
+    },
+    {
+      "id": "7455",
+      "userName": "slut",
+      "password": "slutslut",
+      "favorites": []
+    },
+    {
+      "id": "6002",
+      "userName": "träna",
+      "password": "tränaträna",
+      "favorites": [
+        {},
+        {},
+        {}
+      ]
     }
   ],
-  "orders": [
-    {
-      "id": "1716994213391",
-      "items": [
-        {
-          "id": "2",
-          "name": "Sweet Potato Fries",
-          "price": 4.99,
-          "quantity": 3,
-          "image": "/images/sides 2.png"
-        }
-      ],
-      "customer": "undefined undefined"
-    },
-    {
-      "id": "1717005384077",
-      "items": [
-        {
-          "id": "10",
-          "name": "Fresh Apples",
-          "price": 2.99,
-          "quantity": 1,
-          "image": "/images/sides 3.png"
-        }
-      ],
-      "customer": "undefined undefined"
-    },
-    {
-      "id": "1717006102874",
-      "items": [
-        {
-          "id": "2",
-          "name": "Sweet Potato Fries",
-          "price": 4.99,
-          "quantity": 1,
-          "image": "/images/sides 2.png"
-        }
-      ],
-      "customer": "undefined undefined"
-    },
-    {
-      "id": "1717006232248",
-      "items": [
-        {
-          "id": "4",
-          "name": "No Carb Burger",
-          "price": 6.99,
-          "quantity": "3",
-          "image": "/images/burger 7.png"
-        }
-      ],
-      "customer": "undefined undefined"
-    },
-    {
-      "id": "1717006809682",
-      "items": [
-        {
-          "id": "8",
-          "name": "Party Sundae",
-          "price": 2.99,
-          "quantity": 1,
-          "image": "/images/dessert 2.png"
-        }
-      ],
-      "customer": "undefined undefined"
-    },
-    {
-      "id": "1717007358177",
-      "items": [
-        {
-          "id": "2",
-          "name": "Sweet Potato Fries",
-          "price": 4.99,
-          "quantity": 1,
-          "image": "/images/sides 2.png"
-        }
-      ],
-      "customer": "undefined undefined"
-    },
-    {
-      "id": "1717007406449",
-      "items": [
-        {
-          "id": "2",
-          "name": "Sweet Potato Fries",
-          "price": 4.99,
-          "quantity": 1,
-          "image": "/images/sides 2.png"
-        }
-      ],
-      "customer": "undefined undefined"
-    },
-    {
-      "id": "1717007473633",
-      "items": [
-        {
-          "id": "1",
-          "name": "Classic Burger",
-          "price": 8.99,
-          "quantity": 1,
-          "image": "/images/burger 1.png"
-        }
-      ],
-      "customer": "undefined undefined"
-    },
-    {
-      "id": "1717007857972",
-      "items": [
-        {
-          "id": "8",
-          "name": "Party Sundae",
-          "price": 2.99,
-          "quantity": 1,
-          "image": "/images/dessert 2.png"
-        }
-      ],
-      "customer": {
-        "paymentMethod": {}
-      }
-    },
-    {
-      "id": "1717008857755",
-      "items": [
-        {
-          "id": "2",
-          "name": "Sweet Potato Fries",
-          "price": 4.99,
-          "quantity": 1,
-          "image": "/images/sides 2.png"
-        }
-      ],
-      "customer": {
-        "paymentMethod": {}
-      }
-    },
-    {
-      "id": "1717009035075",
-      "items": [
-        {
-          "id": "2",
-          "name": "Sweet Potato Fries",
-          "price": 4.99,
-          "quantity": 1,
-          "image": "/images/sides 2.png"
-        }
-      ],
-      "customer": {
-        "paymentMethod": {}
-      }
-    },
-    {
-      "id": "1717009572531",
-      "items": [
-        {
-          "id": "4",
-          "name": "No Carb Burger",
-          "price": 6.99,
-          "quantity": 1,
-          "image": "/images/burger 7.png"
-        }
-      ],
-      "customer": {
-        "paymentMethod": {}
-      }
-    },
-    {
-      "id": "1717010588169",
-      "items": [
-        {
-          "id": "8",
-          "name": "Party Sundae",
-          "price": 2.99,
-          "quantity": 1,
-          "image": "/images/dessert 2.png"
-        }
-      ],
-      "customer": {
-        "firstName": "pappa",
-        "lastName": "gro",
-        "address": "rolf12",
-        "city": "malmö",
-        "paymentMethod": {
-          "phoneNumber": "2222222221"
-        }
-      }
-    },
-    {
-      "id": "1717044063275",
-      "items": [
-        {
-          "id": "2",
-          "name": "Sweet Potato Fries",
-          "price": 4.99,
-          "quantity": 1,
-          "image": "/images/sides 2.png"
-        }
-      ],
-      "customer": {
-        "firstName": "mamma",
-        "lastName": "muu",
-        "address": "rolf13",
-        "city": "malmö",
-        "paymentMethod": {
-          "phoneNumber": "5555555553"
-        }
-      }
-    },
-    {
-      "id": "1717045183226",
-      "items": [
-        {
-          "id": "1",
-          "name": "Classic Burger",
-          "price": 8.99,
-          "quantity": 1,
-          "image": "/images/burger 1.png"
-        }
-      ],
-      "customer": {
-        "firstName": "mamma",
-        "lastName": "muu",
-        "address": "rolf12",
-        "city": "malmö",
-        "paymentMethod": {
-          "phoneNumber": "33333333332"
-        }
-      }
-    }
-  ]
+  "orders": []
 }

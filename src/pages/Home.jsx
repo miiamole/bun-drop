@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 function Home() {
+
+
+const [loggedInUser, setLoggedInUser] = useState("");
+
+useEffect(() => {
+  // Hämta loggedInUser från localStorage
+  const storedUser = localStorage.getItem("loggedInUserName");
+  if (storedUser) {
+    //tar bort citat tecken som annars är runt namnet
+    const name = storedUser.replace(/['"]+/g, "");
+    // Göra första bokstaven stor
+    const userName =
+      name.charAt(0).toUpperCase() + name.slice(1);
+    setLoggedInUser(userName);
+  }
+}, []);
+
+
   return (
     <>
       <div>
         <div className="home-wrapper">
           <div className="home-text-and-logo">
             <div className="home-text">
-              <h1 className="welcome">Welcome to Bun drop!</h1>
+              <h1 className="welcome">Welcome to Bun drop {loggedInUser}!</h1>
               <p className="welcome-text">
                 At Bun Drop, we're dedicated to delivering the hottest and most
                 delicious taste experiences right to your doorstep. With our

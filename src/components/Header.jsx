@@ -1,8 +1,8 @@
 import React, { Component } from "react";   //PROBLEM----om någon är inloggad så ska knappen logga in bytas ut mot log out
 import { Link } from "react-router-dom";     //PROBLEM----fixa med localstorage för att kunna logga ut
- import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   //PROBLEM----- favoriter ska endast ses om man är inloggad
  import { faCartShopping, faHouse, faBurger, faUser, faHeart} from "@fortawesome/free-solid-svg-icons";
-function Header() {
+function Header() {     //PROBLEM-----borde register knapp finnas?
 
 // const logOut = () => {
 //   setUser({});

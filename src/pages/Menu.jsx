@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"; 
-import { Link, json } from "react-router-dom";
+import React, { useState, useEffect } from "react"; // PROBLEM----- VARNING SKA SYNAS OM MAN KLICKAR PÅ HJÄRTA MEN EJ ÄR INLOGGAD
+import { Link, json } from "react-router-dom";       // ALTERNATIVT ATT DE EJ SKA SYNAS OM MAN EJ ÄR INLOGGAD
 import useLocalStorage from "../hooks/useLocalStorage";
  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  import { faHeart} from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +8,7 @@ function Menu() {
   const [menu, setMenu] = useState([]);
   const [filter, setFilter] = useState("");
   const [cart, setCart] = useState("");
+  const [favourite, setFavourite] =([]);
   //   const [order, setOrder] = useState([]);
   const { setLocalStorage, getLocalStorage, removeLocalStorage } =
     useLocalStorage();
@@ -19,7 +20,7 @@ function Menu() {
     //ha ngn error grej??
   }, []);
 
-  //HÄMTAR ALLT JAG HAR I MIN CART/// KAN JAG HA DETTA HÄR FÖR ATT SE VAD SOM REDAN FINNS I MIN CART NÄR JAG VILL LÄGGA TILL NGT
+  //HÄMTAR ALLT JAG HAR I MIN CART
   useEffect(() => {
     const itemsInCart = getLocalStorage("cart");
     if (itemsInCart) {
@@ -39,10 +40,58 @@ function Menu() {
       setLocalStorage("cart", menuItem);
       console.log("adding ",menuItem)
     };
+// LÄGG TILL favoriter I DB.JSON
+  const addToFavoutite = (menuItem) => {
+    const userId = localStorage.getItem("loggedInUserId");
 
-  function addToFavoutite() {
-    console.log();
-  }
+    // kolla om ngn är inloggd
+    if (!userId) {
+      console.log("no one is logged in");
+      return;
+    }
+
+    console.log("adding this to your list: ");
+    const favourite = {
+      id: menuItem.id,
+      title: menuItem.title,
+      price: menuItem.price,
+      description: menuItem.description,
+      category: menuItem.category,
+      image: menuItem.image,
+    };
+    fetch(`http://localhost:3000/users/${userId}`)
+      .then((response) => response.json())
+      .then((userData) => {
+        // Hämta användarens befintliga favoritlista
+        const favorites = userData.favorites;
+
+        // Lägg till den nya favoriten i favoritlistan
+        favorites.push(favourite);
+
+        // Skapa options för fetch-anropet
+        const patchOptions = {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ favorites: favorites }),
+        };
+
+        // Utför PATCH-anropet för att uppdatera användarens favoritlista
+        return fetch(`http://localhost:3000/users/${userId}`, patchOptions);
+      })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Favorite added successfully!");
+          // Uppdatera gränssnittet eller vidta andra åtgärder vid behov
+        } else {
+          console.error("Failed to add favorite.");
+          // Hantera situationen när det misslyckades att lägga till favoriten
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Hantera eventuella fel som kan uppstå vid anropet
+      });
+  };
 
   return (
     <>
@@ -86,7 +135,7 @@ function Menu() {
                 Add to cart
               </Link>
 
-              <button onClick={addToFavoutite} className="heart-btn">
+              <button onClick={() => addToFavoutite(m.id)} className="heart-btn">
                 <FontAwesomeIcon icon={faHeart} className="heart-shape" />
               </button>
             </div>
