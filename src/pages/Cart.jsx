@@ -91,7 +91,7 @@ function Cart() {
                       onClick={() => deleteItem(item)}
                       className="delete-btn"
                     >
-                      Remove item
+                      Remove
                     </button>
                   </div>
                 ))}
@@ -103,7 +103,7 @@ function Cart() {
                 Add more items
               </Link>
               <Link to="/payment" className="payment-btn place-order-btn">
-                Go to payment
+                Proceed to checkout
               </Link>
             </div>
           </div>

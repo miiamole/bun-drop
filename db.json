@@ -351,8 +351,30 @@
           "description": "Classic tomato ketchup.",
           "category": "sides",
           "image": "/images/dressing 3.png"
+        },
+        {
+          "id": "3",
+          "title": "Cheese Burger",
+          "price": 6.99,
+          "description": "A classic cheeseburger, plain and simple.",
+          "category": "burgers",
+          "image": "/images/burger 6.png"
+        },
+        {
+          "id": "4",
+          "title": "No Carb Burger",
+          "price": 6.99,
+          "description": "A burger without the bun.",
+          "category": "burgers",
+          "image": "/images/burger 7.png"
         }
       ]
+    },
+    {
+      "id": "8d4b",
+      "userName": "kassa",
+      "password": "kassa1234",
+      "favorites": []
     }
   ],
   "orders": [

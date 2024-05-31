@@ -96,7 +96,7 @@ function Register() {
       ) : (
         <form onSubmit={handleSubmit} className="form-container">
           <div className="user-form">
-            <h2>Username:</h2>
+            <label>Username:</label>
             <input
               type="text"
               name="userName"
@@ -106,7 +106,7 @@ function Register() {
             />
             <p>{formErrors.userName}</p>
 
-            <h2>Password:</h2>
+            <label>Password:</label>
             <input
               type="password"
               name="password"

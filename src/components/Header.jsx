@@ -16,27 +16,28 @@ function Header() {     //PROBLEM-----borde register knapp finnas?
     <>
       <div className="header-wrapper">
         <img className="logo-image" src="/images/logo color.png" alt="Logo" />
+
+        <Link className="header-links" to="/login">
+          <FontAwesomeIcon icon={faUser} className="header-icon"/>
+          Sign in
+        </Link>
         <div className="nav-links-wrapper">
-          <Link className="header-links" to="/login">
-            <FontAwesomeIcon icon={faUser} />
-            Log in
-          </Link>
           <Link className="header-links" to="/">
-            <FontAwesomeIcon icon={faHouse} />
+            <FontAwesomeIcon icon={faHouse} className="header-icon"/>
             Home
           </Link>
           <Link className="header-links" to="/menu">
-            <FontAwesomeIcon icon={faBurger} />
+            <FontAwesomeIcon icon={faBurger} className="header-icon" />
             Menu
           </Link>
           <Link className="header-links" to="/favourites/:userId">
-            <FontAwesomeIcon icon={faHeart} />
-            Favourites{" "}
+            <FontAwesomeIcon icon={faHeart} className="header-icon"/>
+            Favourites
           </Link>
           {/* <button onClick={logOut}>Log out</button> */}
         </div>
         <Link className="cart-link" to="/cart/:menuId">
-          <FontAwesomeIcon icon={faCartShopping} />
+          <FontAwesomeIcon icon={faCartShopping} className="header-icon" />
           Cart
         </Link>
       </div>

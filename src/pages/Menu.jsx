@@ -114,16 +114,23 @@ function Menu() {
             <button className="menu-btn" onClick={() => filterList("")}>
               All
             </button>
-            <button className="menu-btn" onClick={() => filterList("burgers")}>
-              Burgers
-            </button>
+            <div className="menu-btn-wrapper">
+              <button
+                className="menu-btn" onClick={() => filterList("burgers")} >
+                <img className="menu-btn-img" src="/images/burger 1.png" />
+                Burgers
+              </button>
+            </div>
             <button className="menu-btn" onClick={() => filterList("sides")}>
+              <img className="menu-btn-img" src="/images/sides 1.png" />
               Sides
             </button>
             <button className="menu-btn" onClick={() => filterList("drinks")}>
+              <img className="menu-btn-img" src="/images/drink 2.png" />
               Drinks
             </button>
             <button className="menu-btn" onClick={() => filterList("desserts")}>
+              <img className="menu-btn-img" src="/images/dessert 4.png" />
               Desserts
             </button>
           </div>
@@ -131,9 +138,12 @@ function Menu() {
             {filteredMenu.map((m) => (
               <div key={m.id} className="menu-card">
                 <img className="menu-image" src={`${m.image}`} />
-                <h3>{m.title}</h3>
-                <h3>${m.price}</h3>
-                <h3>{m.description}</h3>
+                <h3 className="menu-card-title menu-card-text">{m.title}</h3>
+
+                <h3 className="menu-card-description menu-card-text">
+                  {m.description}
+                </h3>
+                <h3 className="menu-card-price menu-card-text">${m.price}</h3>
                 <div className="add-to-cart-link-and-btn">
                   <Link
                     onClick={() => addToCart(m)}
@@ -142,7 +152,7 @@ function Menu() {
                   >
                     Add to cart
                   </Link>
-                 
+
                   {loggedInUser && (
                     <button
                       onClick={() => addToFavoutite(m)}

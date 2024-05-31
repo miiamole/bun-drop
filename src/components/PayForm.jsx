@@ -123,7 +123,7 @@ function PayForm(props) {
     <>
       <div className="place-order-wrapper color-wrapper">
         <div className="payment-container">
-          <h2>Choose payment method:</h2>
+          <h2>Choose payment method</h2>
           <button className="payment-btn" onClick={chooseCard}>
             Card
           </button>
@@ -169,11 +169,11 @@ function PayForm(props) {
               )}
 
               {paymentMethod === "swish" && (
-                <div className="payWithSwish form-container">
+                <div className="payWithSwish user-form">
                   <label>Phone number:</label>
                   <input
                     type="number"
-                    name="phoneNumber"
+                    name="PhoneNumber"
                     placeholder="555-34578"
                     value={user.phoneNumber}
                     onChange={handleChange}
@@ -183,12 +183,12 @@ function PayForm(props) {
               )}
 
               <div className="user-form">
-                <h2>Customer information:</h2>
+                <h2>Delivery information</h2>
                 <label>First name:</label>
                 <input
                   type="text"
                   name="firstName"
-                  placeholder="first name"
+                  placeholder="First name"
                   value={user.firstName}
                   onChange={handleChange}
                 />
@@ -197,7 +197,7 @@ function PayForm(props) {
                 <input
                   type="text"
                   name="lastName"
-                  placeholder="last name"
+                  placeholder="Last name"
                   value={user.lastName}
                   onChange={handleChange}
                 />
@@ -206,7 +206,7 @@ function PayForm(props) {
                 <input
                   type="text"
                   name="address"
-                  placeholder="street name and number"
+                  placeholder="Street name and number"
                   value={user.address}
                   onChange={handleChange}
                 />
@@ -215,7 +215,7 @@ function PayForm(props) {
                 <input
                   type="text"
                   name="city"
-                  placeholder="city"
+                  placeholder="City"
                   value={user.city}
                   onChange={handleChange}
                 />

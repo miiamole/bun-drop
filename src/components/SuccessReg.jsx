@@ -5,7 +5,7 @@ function SuccessReg() {
       <>
         <div className="color-wrapper">
           <h3>Your registration was successfull</h3>
-          <Link to="/login">Log in here</Link>
+          <Link to="/login">Sign in here</Link>
         </div>
       </>
     );
