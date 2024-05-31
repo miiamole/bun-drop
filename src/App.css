@@ -32,11 +32,9 @@ body {
   cursor: pointer;
 }
 
-
-.menu-btn-img{
-  height:4rem;
-  width:4rem;
-  
+.menu-btn-img {
+  height: 4rem;
+  width: 4rem;
 }
 
 .menu-btn-container {
@@ -54,8 +52,8 @@ body {
   padding: 10px 20px;
   background-color: rgba(243, 227, 219, 0.594);
 }
-.header-icon{
-margin-right: 7px;
+.header-icon {
+  margin-right: 7px;
 }
 
 .logo-image {
@@ -103,8 +101,7 @@ margin-right: 7px;
   align-items: flex-start;
 }
 
-
-.form-container ::placeholder{
+.form-container ::placeholder {
   color: rgba(73, 60, 68, 0.272);
 }
 
@@ -114,8 +111,8 @@ margin-right: 7px;
   width: 100%;
   text-align: left;
 }
-.form-container p{
-  color:red;
+.form-container p {
+  color: red;
 }
 
 .payment-btn {
@@ -210,8 +207,6 @@ input[type="text"] {
   height: 17rem;
   width: 17rem;
   object-fit: cover;
-  background-color: bisque;
- 
 }
 .menu-text {
   color: rgb(62, 11, 11);
@@ -220,23 +215,20 @@ input[type="text"] {
 }
 .menu-card-text {
   padding: 0;
-  
-  
 }
 .menu-card-title {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
- font-size: 1.5rem;
- text-align: left;
- 
-}
-.menu-card-price{
-  font-size: 1rem;
-  margin:0;
+  font-size: 1.5rem;
   text-align: left;
 }
-.menu-card-description{
-  font-size:small;
+.menu-card-price {
+  font-size: 1rem;
+  margin: 0;
+  text-align: left;
+}
+.menu-card-description {
+  font-size: small;
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
 }
@@ -266,7 +258,7 @@ input[type="text"] {
 .menu-container {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  justify-content: center;
   gap: 20px;
 }
 .footer-container {
@@ -407,18 +399,16 @@ input[type="text"] {
   top: 10px;
   right: 0%;
   transform: translateX(-50%);
-  
 }
 /* REGISTER PAGE */
-.succ-reg-text{
- display: inline; /* Gör att texten visas på en rad */
-  white-space: nowrap; 
-  position:absolute;
-  top:20px;
-  left:-70px;
+.succ-reg-text {
+  display: inline; /* Gör att texten visas på en rad */
+  white-space: nowrap;
+  position: absolute;
+  top: 20px;
+  left: -70px;
 }
-.succ-reg-btn{
-  
+.succ-reg-btn {
   display: inline-block; /* Gör att knappen visas på en rad */
   margin-top: 10px; /* Lägg till lite utrymme ovanför knappen */
 }
@@ -429,4 +419,21 @@ input[type="text"] {
   min-height: 100vh;
   margin: 0;
   padding-top: 7rem;
+}
+/* DELIVERY TIME */
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock {
+  color: rgb(138, 41, 41);
+  font-size: 4rem;
+  font-family: monospace;
+  text-align: center;
+  text-shadow: 3px, 3px, 5px green;
+}
+.confirm-text{
+   position: relative;
+    top: -80px; /* Justera detta värde efter behov */
 }

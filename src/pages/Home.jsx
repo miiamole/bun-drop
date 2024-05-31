@@ -38,7 +38,7 @@ useEffect(() => {
               alt="Logo"
             />
           </div>
-          <h2 className="home-page-text">Check out our most popular items</h2>
+          <h2 className="home-page-text">How yummy?</h2>
 
           <div className="img-collage">
             <img className="home-page-img" src="/images/burger 1.png" />

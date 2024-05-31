@@ -173,7 +173,7 @@ function PayForm(props) {
                   <label>Phone number:</label>
                   <input
                     type="number"
-                    name="PhoneNumber"
+                    name="phoneNumber"
                     placeholder="555-34578"
                     value={user.phoneNumber}
                     onChange={handleChange}
