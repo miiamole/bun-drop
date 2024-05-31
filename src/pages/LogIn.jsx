@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";   //PROBLEM---- NÄR MAN LOGGAR IN ÄRVER MAN DET SOM FINNA I CARTEN.
+import { Link, useNavigate } from "react-router-dom";   // BORDE KANSKE TÖMMA CART NÄR MAN KLICKAR PÅ LOGGA IN
 
 function LogIn() {
   const [user, setUser] = useState({ userName: "", password: "" });
@@ -7,7 +7,7 @@ function LogIn() {
   const [loginError, setLogInError] = useState(false);
   const navigate = useNavigate();
 
-  // Hämta alla användare från databasen vid komponentens montering
+  // Hämta alla användare från db.json
   useEffect(() => {
     fetch("http://localhost:3000/users")
       .then((res) => res.json())
@@ -16,27 +16,30 @@ function LogIn() {
       });
   }, []);
 
-  // Funktion för att logga in användaren och spara användar-ID till local storage
-  const handleLogin = () => {
+  // logga in användaren och spara id till local storage
+  const handleLogIn = (e) => {
+    e.preventDefault();
+
     const findUser = users.find(
       (u) => u.userName === user.userName && u.password === user.password
     );
 
     if (findUser) {
       localStorage.setItem("loggedInUserId", findUser.id);
+      console.log("id på logged in: ", findUser.id)
       localStorage.setItem("loggedInUserName", findUser.userName)
-      navigate("/"); // Navigera till startsidan efter inloggning
+      navigate("/"); 
     } else {
       setLogInError(true); // Visa felmeddelande om användaren inte hittades
     }
   };
 
-  // Hantera ändringar i användarnamnsfältet
+  
   const handleUserNameChange = (e) => {
     setUser((prevUser) => ({ ...prevUser, userName: e.target.value }));
   };
 
-  // Hantera ändringar i lösenordsfältet
+  
   const handlePasswordChange = (e) => {
     setUser((prevUser) => ({ ...prevUser, password: e.target.value }));
   };
@@ -49,9 +52,11 @@ function LogIn() {
           Click here
         </Link>
       </div>
+
       <div className="payment-container ">
         <h2>Log in</h2>
-        <form onSubmit={(e) => e.preventDefault()} className="form-container">
+
+        <form onSubmit={handleLogIn} className="form-container">
           <div className="user-form">
             <label>Username:</label>
             <input
@@ -68,7 +73,7 @@ function LogIn() {
               onChange={handlePasswordChange}
             />
             {loginError && <p>Incorrect username or password.</p>}
-            <button className="payment-btn" onClick={handleLogin}>
+            <button className="payment-btn" onClick={handleLogIn}>
               Log in
             </button>
           </div>

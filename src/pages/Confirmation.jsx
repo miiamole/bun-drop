@@ -6,6 +6,7 @@ function Confirmation() {
   const [deliveryTime, setDeliveryTime] = useState(null);
   const { orderId } = useParams();
   const [customer, setCustomer] = useState({});
+  
   useEffect(() => {
     fetch(`http://localhost:3000/orders/${orderId}`)
       .then((res) => res.json())

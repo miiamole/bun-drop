@@ -235,6 +235,84 @@
           "description": "Freshly made strawberry smoothie with blueberries.",
           "category": "drinks",
           "image": "/images/drink 5.png"
+        },
+        {
+          "id": "1",
+          "title": "Classic Burger",
+          "price": 8.99,
+          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "category": "burgers",
+          "image": "/images/burger 1.png"
+        },
+        {
+          "id": "20",
+          "title": "Honey Mustard",
+          "price": 1.99,
+          "description": "Sweet and tangy honey mustard sauce.",
+          "category": "sides",
+          "image": "/images/dressing 4.png"
+        }
+      ]
+    },
+    {
+      "id": "7596",
+      "userName": "fredag",
+      "password": "fredag1234",
+      "favorites": [
+        {
+          "id": "20",
+          "title": "Honey Mustard",
+          "price": 1.99,
+          "description": "Sweet and tangy honey mustard sauce.",
+          "category": "sides",
+          "image": "/images/dressing 4.png"
+        },
+        {
+          "id": "19",
+          "title": "Ketchup",
+          "price": 0.99,
+          "description": "Classic tomato ketchup.",
+          "category": "sides",
+          "image": "/images/dressing 3.png"
+        },
+        {
+          "id": "2",
+          "title": "Sweet Potato Fries",
+          "price": 4.99,
+          "description": "Crispy sweet potato fries topped with fresh parsley.",
+          "category": "sides",
+          "image": "/images/sides 2.png"
+        },
+        {
+          "id": "1",
+          "title": "Classic Burger",
+          "price": 8.99,
+          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "category": "burgers",
+          "image": "/images/burger 1.png"
+        }
+      ]
+    },
+    {
+      "id": "351e",
+      "userName": "soffa",
+      "password": "soffa1234",
+      "favorites": [
+        {
+          "id": "2",
+          "title": "Sweet Potato Fries",
+          "price": 4.99,
+          "description": "Crispy sweet potato fries topped with fresh parsley.",
+          "category": "sides",
+          "image": "/images/sides 2.png"
+        },
+        {
+          "id": "11",
+          "title": "Onion Rings",
+          "price": 2.99,
+          "description": "Freshly fried onion rings.",
+          "category": "sides",
+          "image": "/images/sides 4.png"
         }
       ]
     }

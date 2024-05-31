@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react"; // PROBLEM----- VARNING SKA SYNAS OM MAN KLICKAR PÅ HJÄRTA MEN EJ ÄR INLOGGAD
-import { Link, json } from "react-router-dom";       // ALTERNATIVT ATT DE EJ SKA SYNAS OM MAN EJ ÄR INLOGGAD
+import { Link, json } from "react-router-dom"; // ALTERNATIVT ATT DE EJ SKA SYNAS OM MAN EJ ÄR INLOGGAD
 import useLocalStorage from "../hooks/useLocalStorage";
- import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
- import { faHeart} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function Menu() {
   const [menu, setMenu] = useState([]);
   const [filter, setFilter] = useState("");
   const [cart, setCart] = useState("");
-  const [favourite, setFavourite] =([]);
+  const [favourite, setFavourite] = [];
+  const [loggedInUser, setLoggedInUser] = useState(null); //för att se om knapparna ska synas
   //   const [order, setOrder] = useState([]);
   const { setLocalStorage, getLocalStorage, removeLocalStorage } =
     useLocalStorage();
@@ -28,6 +29,16 @@ function Menu() {
     }
   }, []);
 
+  //kollar om ngn är inloggad i ls
+  useEffect(() => {
+    const lsUserId = localStorage.getItem("loggedInUserId");
+    if (lsUserId) {
+      setLoggedInUser(true);
+    } else {
+      setLoggedInUser(false);
+    }
+  }, []);
+
   function filterList(category) {
     setFilter(category);
   }
@@ -35,22 +46,20 @@ function Menu() {
     ? menu.filter((item) => item.category === filter)
     : menu;
 
- // LÄGG TILL I LOCAL STORAGE
-    const addToCart = (menuItem) => {
-      setLocalStorage("cart", menuItem);
-      console.log("adding ",menuItem)
-    };
-// LÄGG TILL favoriter I DB.JSON
+  // LÄGG TILL I LOCAL STORAGE
+  const addToCart = (menuItem) => {
+    setLocalStorage("cart", menuItem);
+    console.log("adding ", menuItem);
+  };
+  // LÄGG TILL favoriter I DB.JSON
   const addToFavoutite = (menuItem) => {
     const userId = localStorage.getItem("loggedInUserId");
 
-    // kolla om ngn är inloggd
-    if (!userId) {
-      console.log("no one is logged in");
-      return;
-    }
-
-    console.log("adding this to your list: ");
+    // kolla om ngn är inloggd--- behövs itne eftersom att knapparna är dolda om ingen är inloggad
+    // if (!userId) {
+    //   console.log("no one is logged in");
+    //   return;
+    // }
     const favourite = {
       id: menuItem.id,
       title: menuItem.title,
@@ -121,12 +130,6 @@ function Menu() {
             <h3>${m.price}</h3>
             <h3>{m.description}</h3>
             <div className="add-to-cart-link-and-btn">
-              {/* <button onClick={() => addToCart(m)} className="Add-to-cart-btn">
-                {" "}
-                <Link className="order-link" to={`/cart/${m.id}`}>
-                  Add to cart
-                </Link>
-              </button> */}
               <Link
                 onClick={() => addToCart(m)}
                 className="order-link"
@@ -134,10 +137,11 @@ function Menu() {
               >
                 Add to cart
               </Link>
-
-              <button onClick={() => addToFavoutite(m)} className="heart-btn">
-                <FontAwesomeIcon icon={faHeart} className="heart-shape" />
-              </button>
+              {loggedInUser && (
+                <button onClick={() => addToFavoutite(m)} className="heart-btn">
+                  <FontAwesomeIcon icon={faHeart} className="heart-shape" />
+                </button>
+              )}
             </div>
           </div>
         ))}

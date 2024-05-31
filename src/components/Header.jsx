@@ -29,7 +29,7 @@ function Header() {     //PROBLEM-----borde register knapp finnas?
             <FontAwesomeIcon icon={faBurger} />
             Menu
           </Link>
-          <Link className="header-links" to="/favourites">
+          <Link className="header-links" to="/favourites/:userId">
             <FontAwesomeIcon icon={faHeart} />
             Favourites{" "}
           </Link>

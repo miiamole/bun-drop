@@ -1,108 +1,107 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";  //PROBLEM---- HELA OBJEKTET HÄMTAS FRÅN DB.JSON, SÅ LÖSENORD SYNS I CONSOLE
 import { Link, useParams } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
+
 
 function Favourites() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [userFavorites, setUserFavorites] = useState([]);
-   const { userId } = useParams();
-   const [listOfFavoutites, setListOfFavourites] = useState([]);
-  const { getLocalStorage, removeLocalStorage, clearLocalStorage } =
-    useLocalStorage();
-
- useEffect(() => {
-   fetch(`http://localhost:3000/userss/${userId}`)
-     .then((res) => res.json())
-     .then((data) => {
-       console.log(data);
-    //    setOrder(data.items);
-    //    setCustomer(data.customer);
-    setListOfFavourites(data.users.Favourites)
-     });
- }, [userId]);
-
-
-
+  const { userId } = useParams();
+  const [listOfFavorites, setListOfFavourites] = useState([]);
+  const {
+    getLocalStorage,
+    removeLocalStorage,
+    clearLocalStorage,
+    setLocalStorage,
+  } = useLocalStorage();
 
   useEffect(() => {
+    console.log("funkar useEffect?");
     // Hämta inloggad user från localStorage --DETTA FUNGERAR
-    const storedUser = localStorage.getItem("loggedInUser");
-    if (storedUser) {
-        console.log("user in local storage: ", storedUser)
-      setLoggedInUser(JSON.parse(storedUser));
+    const lsUserId = localStorage.getItem("loggedInUserId");
+    if (lsUserId) {
+      console.log("user in local storage: ", lsUserId);
+      fetchUserFavorites(lsUserId);
+      //  setLoggedInUser(JSON.parse(lsUserId));
     }
   }, []);
 
-  useEffect(() => {
-    // Hämta användarens favoriter från db.json när användarnamnet finns
-    if (loggedInUser.username) {
-      fetchUserFavorites(loggedInUser.username);
-console.log("user in db.json: ",loggedInUser.userName)
-    }
-  }, [loggedInUser]);
-
-  const fetchUserFavorites = (username) => {
-    // hämta favoriter från db.json----PROBLEM------
-    // Användarnamnet skickas till DB.JSON för att hämta dess favoriter
-    fetch(`http://localhost:3000/users/${username}`)
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-        // setUserFavorites(data))
-      
+  const fetchUserFavorites = (userId) => {
+    console.log("funkar hämtning av userId? ", userId);
+    fetch(`http://localhost:3000/users/${userId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("hämtat från db.json", data);
+        setListOfFavourites(data.favorites || []);
+      })
       .catch((error) => console.error("Error fetching favorites:", error));
   };
 
   const handleRemoveFavorite = (favoriteId) => {
     // Ta bort en favorit från användarens favoriter
     // Använd favoriteId för att identifiera vilken favorit som ska tas bort
-    removeLocalStorage("favorites", favoriteId);
-    // Uppdatera state för att reflektera borttagningen av favoriten i användargränssnittet
+    
+    // Uppdatera state för att reflektera borttagningen av favoriten
     setUserFavorites(
       userFavorites.filter((favorite) => favorite.id !== favoriteId)
     );
   };
 
-  const handleClearFavorites = () => {
-    // Ta bort alla favoriter från användarens favoritlista
-    clearLocalStorage("favorites");
-    // Uppdatera state för att reflektera borttagningen av alla favoriter i användargränssnittet
-    setUserFavorites([]);
+//   const handleClearFavorites = () => {
+//     // Ta bort alla favoriter från db.json
+   
+//     // Uppdatera state för att reflektera borttagningen av alla favoriter
+//     setUserFavorites([]);
+//   };
+  // LÄGG TILL I LOCAL STORAGE
+  const addToCart = (menuItem) => {
+    setLocalStorage("cart", menuItem);
+    console.log("adding ", menuItem);
   };
-
   return (
     <>
+      <h1>Theese are your favourites</h1>
       {/* Visa en varning om ingen användare är inloggad */}
-      {!loggedInUser.username && (
+      {/* {!loggedInUser.id && (
         <h3>
           You need to be logged in order to save and see your favourite items
         </h3>
-      )}
+      )} */}
 
       {/* Visa användarens favoriter om användaren är inloggad */}
-      {loggedInUser.username && (
-        <div>
-          {/* Loopa över användarens favoriter och visa dem */}
-          {userFavorites.map((favorite) => (
-            <div key={favorite.id}>
-              {/* Visa favoritens titel och eventuellt annan information */}
-              <p>{favorite.title}</p>
-              {/* Lägg till knappar för att ta bort favoriter */}
-              <button onClick={() => handleRemoveFavorite(favorite.id)}>
-                Remove
-              </button>
+      {/* {loggedInUser.id && ( */}
+      <div className="menu-container">
+        {listOfFavorites.map((f) => (
+          <div key={f.id} className="menu-card">
+            <img className="menu-image" src={`${f.image}`} />
+            <h3>{f.title}</h3>
+            <h3>${f.price}</h3>
+            <h3>{f.description}</h3>
+            <div className="add-to-cart-link-and-btn">
+              <Link
+                onClick={() => addToCart(f)}
+                className="order-link"
+                to={`/cart/${f.id}`}
+              >
+                Add to cart
+              </Link>
+              <button onClick={() => handleRemoveFavorite(f)}>Remove from favourites</button>
             </div>
-          ))}
-          {/* Lägg till en knapp för att ta bort alla favoriter */}
-          <button onClick={handleClearFavorites}>Clear all favorites</button>
-          {/* Lägg till en länk för att komma till menyn för att lägga till fler favoriter */}
-          <Link to="/menu">Go to menu</Link>
-        </div>
-      )}
+          </div>
+        ))}
+      </div>
+      {/* ) } */}
     </>
   );
 }
 
 export default Favourites;
+
+
+
+
+
+
 
 // import React, {useState, UseEffect}from 'react';
 // function Favourites() {
