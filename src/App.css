@@ -312,7 +312,23 @@ opacity: 0.5;
   border: 2px solid rgb(223, 130, 130)
 }
 .cart-text{
+   position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
+}
+.empty-cart-text {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.total-price{
+  text-align: right;
+  padding-right: 60px;
 }
 .cart-input-amount{
   border-radius: 5px;
