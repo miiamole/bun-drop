@@ -87,7 +87,7 @@ function Register() {
   };
 
   return (
-    <div className="payment-container">
+    <div className="payment-container color-wrapper">
       <h1>Register here</h1>
       {Object.keys(formErrors).length === 0 && isSubmit ? (
         <div className="reg-success">

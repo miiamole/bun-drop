@@ -75,7 +75,9 @@ console.log("det som skickats: ",postOptions)
 
   return (
     <>
-      <PayForm placeOrder={placeOrder} />
+      <div className="color-wrapper">
+        <PayForm placeOrder={placeOrder} />
+      </div>
     </>
   );
 }

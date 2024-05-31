@@ -6,7 +6,7 @@ function Confirmation() {
   const [deliveryTime, setDeliveryTime] = useState(null);
   const { orderId } = useParams();
   const [customer, setCustomer] = useState({});
-  
+
   useEffect(() => {
     fetch(`http://localhost:3000/orders/${orderId}`)
       .then((res) => res.json())
@@ -29,27 +29,33 @@ const capitalizeFirstLetter = (string) => {
 
   return (
     <>
-      <div className="confirm-text">
-        <h2 className="confirm-thanks">
-          Thank you for your order {capitalizeFirstLetter(customer.firstName)}
-        </h2>
-        
-        <h3 className="confirm-time">Estimated time to delivery: {deliveryTime} minutes</h3>
+      <div className="color-wrapper">
+        <div className="confirm-text">
+          <h2 className="confirm-thanks">
+            Thank you for your order {capitalizeFirstLetter(customer.firstName)}
+          </h2>
 
-        <h4 className="confirm-items">
-          You can look forward to devouring{" "}
-          {order.length === 1 ? "this delicious item" : "these delicious items"}
-          :
-        </h4>
-      </div>
-      <div className="menu-container">
-        {Array.isArray(order) &&
-          order.map((item) => (
-            <div key={item.id} className="menu-card">
-              <img src={item.image} className="menu-image" />
-              <h3>{item.name}</h3>
-            </div>
-          ))}
+          <h3 className="confirm-time">
+            Estimated time to delivery: {deliveryTime} minutes
+          </h3>
+
+          <h4 className="confirm-items">
+            You can look forward to devouring{" "}
+            {order.length === 1
+              ? "this delicious item"
+              : "these delicious items"}
+            :
+          </h4>
+        </div>
+        <div className="menu-container">
+          {Array.isArray(order) &&
+            order.map((item) => (
+              <div key={item.id} className="menu-card">
+                <img src={item.image} className="menu-image" />
+                <h3>{item.name}</h3>
+              </div>
+            ))}
+        </div>
       </div>
     </>
   );

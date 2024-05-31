@@ -60,37 +60,42 @@ function Favourites() {
   };
   return (
     <>
-      <h1>Theese are your favourites</h1>
-      {/* Visa en varning om ingen användare är inloggad */}
-      {/* {!loggedInUser.id && (
+      <div className="color-wrapper">
+        <h1>Theese are your favourites</h1>
+        {/* Visa en varning om ingen användare är inloggad */}
+        {/* {!loggedInUser.id && (
         <h3>
           You need to be logged in order to save and see your favourite items
         </h3>
       )} */}
 
-      {/* Visa användarens favoriter om användaren är inloggad */}
-      {/* {loggedInUser.id && ( */}
-      <div className="menu-container">
-        {listOfFavorites.map((f) => (
-          <div key={f.id} className="menu-card">
-            <img className="menu-image" src={`${f.image}`} />
-            <h3>{f.title}</h3>
-            <h3>${f.price}</h3>
-            <h3>{f.description}</h3>
-            <div className="add-to-cart-link-and-btn">
-              <Link
-                onClick={() => addToCart(f)}
-                className="order-link"
-                to={`/cart/${f.id}`}
-              >
-                Add to cart
-              </Link>
-              <button onClick={() => handleRemoveFavorite(f)}>Remove from favourites</button>
+        {/* Visa användarens favoriter om användaren är inloggad */}
+        {/* {loggedInUser.id && ( */}
+
+        <div className="menu-container">
+          {listOfFavorites.map((f) => (
+            <div key={f.id} className="menu-card">
+              <img className="menu-image" src={`${f.image}`} />
+              <h3>{f.title}</h3>
+              <h3>${f.price}</h3>
+              <h3>{f.description}</h3>
+              <div className="add-to-cart-link-and-btn">
+                <Link
+                  onClick={() => addToCart(f)}
+                  className="payment-btn"
+                  to={`/cart/${f.id}`}
+                >
+                  Add to cart
+                </Link>
+                <button onClick={() => handleRemoveFavorite(f)}>
+                  Remove from favourites
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        {/* ) } */}
       </div>
-      {/* ) } */}
     </>
   );
 }

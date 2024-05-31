@@ -22,7 +22,7 @@ useEffect(() => {
   return (
     <>
       <div>
-        <div className="home-wrapper">
+        <div className="color-wrapper">
           <div className="home-text-and-logo">
             <div className="home-text">
               <h1 className="welcome">Welcome to Bun drop {loggedInUser}!</h1>
@@ -48,7 +48,7 @@ useEffect(() => {
             <img className="home-page-img" src="/images/dessert 4.png" />
           </div>
           <div>
-            <Link className="home-order-now order-link" to="/menu">Order now</Link>
+            <Link className="payment-btn" to="/menu">Order now</Link>
           </div>
         </div>
       </div>

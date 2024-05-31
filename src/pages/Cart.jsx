@@ -65,46 +65,47 @@ function handleQuantityChange(e, itemId) {
 
   return (
     <>
-      <h3 className="cart-text">Your order:</h3>
-      <div className="menu-container">
-        {Array.isArray(cart) &&
-          cart.map((item) => (
-            <div key={item.id} className="menu-card">
-              <img src={`${item.image}`} className="menu-image" />
-              <h3>{item.title}</h3>
-              <form onChange={handleChangeForm}>
-                <input
-                  type="number"
-                  placeholder={item.quantity}
-                  value={item.quantity || ""}
-                  className="cart-input-amount"
-                  min="1"
-                  max="40"
-                  onChange={(e) => handleQuantityChange(e, item.id)}
-                />
-              </form>
-              <h3>${item.price}</h3>
+      <div className="color-wrapper">
+        <h3 className="cart-text">Your order:</h3>
+        <div className="menu-container">
+          {Array.isArray(cart) &&
+            cart.map((item) => (
+              <div key={item.id} className="menu-card">
+                <img src={`${item.image}`} className="menu-image" />
+                <h3>{item.title}</h3>
+                <form onChange={handleChangeForm}>
+                  <input
+                    type="number"
+                    placeholder={item.quantity}
+                    value={item.quantity || ""}
+                    className="cart-input-amount"
+                    min="1"
+                    max="40"
+                    onChange={(e) => handleQuantityChange(e, item.id)}
+                  />
+                </form>
+                <h3>${item.price}</h3>
 
-              <button onClick={() => deleteItem(item)} className="delete-btn">
-                Remove item
-              </button>
-            </div>
-          ))}
-      </div>
-      <h3>Total price: ${priceOfOrder()}</h3>
+                <button onClick={() => deleteItem(item)} className="delete-btn">
+                  Remove item
+                </button>
+              </div>
+            ))}
+        </div>
+        <h3>Total price: ${priceOfOrder()}</h3>
 
-      <div className="cart-links-wrapper">
-       
- {/* om kundvagnen är tom så visas inte länken */}
-        {cart.length > 0 && (
-          <Link to="/payment" className="payment-btn place-order-btn">
-            Go to payment
+        <div className="cart-links-wrapper">
+          {/* om kundvagnen är tom så visas inte länken */}
+          {cart.length > 0 && (
+            <Link to="/payment" className="payment-btn place-order-btn">
+              Go to payment
+            </Link>
+          )}
+
+          <Link to="/menu" className="payment-btn">
+            Add more items
           </Link>
-        )}
-
-        <Link to="/menu" className="header-links cart-add-more-items">
-          Add more items
-        </Link>
+        </div>
       </div>
     </>
   );

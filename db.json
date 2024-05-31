@@ -192,7 +192,24 @@
       "id": "7619",
       "userName": "mamma",
       "password": "mammamamma",
-      "favorites": []
+      "favorites": [
+        {
+          "id": "1",
+          "title": "Classic Burger",
+          "price": 8.99,
+          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "category": "burgers",
+          "image": "/images/burger 1.png"
+        },
+        {
+          "id": "2",
+          "title": "Sweet Potato Fries",
+          "price": 4.99,
+          "description": "Crispy sweet potato fries topped with fresh parsley.",
+          "category": "sides",
+          "image": "/images/sides 2.png"
+        }
+      ]
     },
     {
       "id": "4a51",
@@ -315,7 +332,99 @@
           "image": "/images/sides 4.png"
         }
       ]
+    },
+    {
+      "id": "2fd0",
+      "userName": "lampa",
+      "password": "lampa1234",
+      "favorites": []
+    },
+    {
+      "id": "2466",
+      "userName": "springa",
+      "password": "springa123",
+      "favorites": [
+        {
+          "id": "19",
+          "title": "Ketchup",
+          "price": 0.99,
+          "description": "Classic tomato ketchup.",
+          "category": "sides",
+          "image": "/images/dressing 3.png"
+        }
+      ]
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "1717143106316",
+      "items": [
+        {
+          "id": "13",
+          "name": "Apple Juice",
+          "price": 1.99,
+          "quantity": 1,
+          "image": "/images/drink 2.png"
+        }
+      ],
+      "customer": {
+        "firstName": "kakas",
+        "lastName": "mamam",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "9999999999"
+        }
+      }
+    },
+    {
+      "id": "1717143617775",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "mamam",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "1111111110"
+        }
+      }
+    },
+    {
+      "id": "1717149337497",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "price": 8.99,
+          "quantity": 2,
+          "image": "/images/burger 1.png"
+        },
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": {
+        "firstName": "pappa",
+        "lastName": "muu",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "2222222222"
+        }
+      }
+    }
+  ]
 }

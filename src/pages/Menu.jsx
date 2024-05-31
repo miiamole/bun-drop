@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"; // PROBLEM----- VARNING SKA SYNAS OM MAN KLICKAR PÅ HJÄRTA MEN EJ ÄR INLOGGAD
-import { Link, json } from "react-router-dom"; // ALTERNATIVT ATT DE EJ SKA SYNAS OM MAN EJ ÄR INLOGGAD
+import React, { useState, useEffect } from "react"; 
+import { Link, json } from "react-router-dom"; 
 import useLocalStorage from "../hooks/useLocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -13,6 +13,8 @@ function Menu() {
   //   const [order, setOrder] = useState([]);
   const { setLocalStorage, getLocalStorage, removeLocalStorage } =
     useLocalStorage();
+
+
 
   useEffect(() => {
     fetch("http://localhost:3000/menu")
@@ -50,6 +52,7 @@ function Menu() {
   const addToCart = (menuItem) => {
     setLocalStorage("cart", menuItem);
     console.log("adding ", menuItem);
+    
   };
   // LÄGG TILL favoriter I DB.JSON
   const addToFavoutite = (menuItem) => {
@@ -104,47 +107,55 @@ function Menu() {
 
   return (
     <>
-      <h1 className="menu-text">Our menu</h1>
-      <div className="menu-btn-container">
-        <button className="menu-btn" onClick={() => filterList("")}>
-          All
-        </button>
-        <button className="menu-btn" onClick={() => filterList("burgers")}>
-          Burgers
-        </button>
-        <button className="menu-btn" onClick={() => filterList("sides")}>
-          Sides
-        </button>
-        <button className="menu-btn" onClick={() => filterList("drinks")}>
-          Drinks
-        </button>
-        <button className="menu-btn" onClick={() => filterList("desserts")}>
-          Desserts
-        </button>
-      </div>
-      <div className="menu-container">
-        {filteredMenu.map((m) => (
-          <div key={m.id} className="menu-card">
-            <img className="menu-image" src={`${m.image}`} />
-            <h3>{m.title}</h3>
-            <h3>${m.price}</h3>
-            <h3>{m.description}</h3>
-            <div className="add-to-cart-link-and-btn">
-              <Link
-                onClick={() => addToCart(m)}
-                className="order-link"
-                to={`/cart/${m.id}`}
-              >
-                Add to cart
-              </Link>
-              {loggedInUser && (
-                <button onClick={() => addToFavoutite(m)} className="heart-btn">
-                  <FontAwesomeIcon icon={faHeart} className="heart-shape" />
-                </button>
-              )}
-            </div>
+      <div>
+        <div className="color-wrapper">
+          <h1 className="menu-text">Our menu</h1>
+          <div className="menu-btn-container">
+            <button className="menu-btn" onClick={() => filterList("")}>
+              All
+            </button>
+            <button className="menu-btn" onClick={() => filterList("burgers")}>
+              Burgers
+            </button>
+            <button className="menu-btn" onClick={() => filterList("sides")}>
+              Sides
+            </button>
+            <button className="menu-btn" onClick={() => filterList("drinks")}>
+              Drinks
+            </button>
+            <button className="menu-btn" onClick={() => filterList("desserts")}>
+              Desserts
+            </button>
           </div>
-        ))}
+          <div className="menu-container">
+            {filteredMenu.map((m) => (
+              <div key={m.id} className="menu-card">
+                <img className="menu-image" src={`${m.image}`} />
+                <h3>{m.title}</h3>
+                <h3>${m.price}</h3>
+                <h3>{m.description}</h3>
+                <div className="add-to-cart-link-and-btn">
+                  <Link
+                    onClick={() => addToCart(m)}
+                    className="payment-btn"
+                    to={`/cart/${m.id}`}
+                  >
+                    Add to cart
+                  </Link>
+                 
+                  {loggedInUser && (
+                    <button
+                      onClick={() => addToFavoutite(m)}
+                      className="heart-btn"
+                    >
+                      <FontAwesomeIcon icon={faHeart} className="heart-shape" />
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

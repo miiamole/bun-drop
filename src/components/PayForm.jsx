@@ -52,7 +52,7 @@ function PayForm(props) {
   function processOrder() {
     props.placeOrder(user);
     console.log("the user is:", user) // här får jag fram infor om användaren från formuläret
-    
+
   }
 
   useEffect(() => {
@@ -121,7 +121,7 @@ function PayForm(props) {
 
   return (
     <>
-      <div className="place-order-wrapper">
+      <div className="place-order-wrapper color-wrapper">
         <div className="payment-container">
           <h2>Choose payment method:</h2>
           <button className="payment-btn" onClick={chooseCard}>
