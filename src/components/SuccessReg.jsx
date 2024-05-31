@@ -4,8 +4,12 @@ function SuccessReg() {
     return (
       <>
         <div className="color-wrapper">
-          <h3>Your registration was successfull</h3>
-          <Link to="/login">Sign in here</Link>
+          
+            <h3 className='succ-reg-text'>Your registration was successfull!</h3>
+            <Link to="/login" className="payment-btn succ-reg-btn">
+              Sign in here
+            </Link>
+          
         </div>
       </>
     );

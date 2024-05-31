@@ -65,14 +65,14 @@ function PayForm(props) {
     const errors = {};
 
     if (!values.firstName) {
-      errors.firstName = "Firstname is required!";
+      errors.firstName = "First name is required!";
     } else if (values.firstName.length < 2) {
-      errors.firstName = "Firstname must be at least 2 characters!";
+      errors.firstName = "First name must be at least 2 characters!";
     }
     if (!values.lastName) {
-      errors.lastName = "Lastname is required!";
+      errors.lastName = "Last name is required!";
     } else if (values.lastName.length < 2) {
-      errors.lastName = "Lastname must be at least 2 characters!";
+      errors.lastName = "Last name must be at least 2 characters!";
     }
     if (!values.address) {
       errors.address = "Address is required!";

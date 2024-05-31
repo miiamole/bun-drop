@@ -114,6 +114,9 @@ margin-right: 7px;
   width: 100%;
   text-align: left;
 }
+.form-container p{
+  color:red;
+}
 
 .payment-btn {
   margin-top: 20px;
@@ -375,11 +378,7 @@ input[type="text"] {
   justify-content: space-between;
   padding: 40px;
 }
-/* LOG IN PAGE */
-.register {
-  text-align: right;
-  padding-right: 20px;
-}
+
 /* CONFIRMATION PAGE */
 .confirm-text {
   text-align: center;
@@ -403,6 +402,26 @@ input[type="text"] {
 }
 /* LOG IN PAGE */
 
+.register {
+  position: absolute;
+  top: 10px;
+  right: 0%;
+  transform: translateX(-50%);
+  
+}
+/* REGISTER PAGE */
+.succ-reg-text{
+ display: inline; /* Gör att texten visas på en rad */
+  white-space: nowrap; 
+  position:absolute;
+  top:20px;
+  left:-70px;
+}
+.succ-reg-btn{
+  
+  display: inline-block; /* Gör att knappen visas på en rad */
+  margin-top: 10px; /* Lägg till lite utrymme ovanför knappen */
+}
 /* ALL PAGES */
 .color-wrapper {
   position: relative;

@@ -47,12 +47,14 @@ function LogIn() {
   return (
     <>
       <div className="color-wrapper">
-        <div className="register">
-          <h3>Not registered yet? </h3>
-          <Link to="/register" className="payment-btn place-order-btn">
-            Click here
-          </Link>
-        </div>
+        
+          <div className="register">
+            <h3>Not registered yet? </h3>
+            <Link to="/register" className="payment-btn place-order-btn">
+              Click here
+            </Link>
+          </div>
+        
 
         <div className="payment-container ">
           <h2>Sign in</h2>

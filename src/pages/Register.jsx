@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";   //PROBLEM---- "REGISTER" BORDE INTE SYNAS NÄR MAN REGISTRERAT OCH LOGGA IN KNAPPEN SYNS
+import { useState, useEffect } from "react";
 import SuccessReg from "../components/SuccessReg";
 
 function Register() {
@@ -65,7 +65,7 @@ function Register() {
     const newUser = {
       userName: user.userName,
       password: user.password,
-      favorites: [], // Lägg till en tom array för favoriter
+      favorites: [],
     };
     const postOptions = {
       method: "POST",
@@ -76,7 +76,7 @@ function Register() {
       .then((response) => {
         if (response.ok) {
           console.log("User added successfully!");
-          setUser(initialValues); // Återställ formuläret
+          setUser(initialValues);
         } else {
           console.error("Failed to add user.");
         }
@@ -88,45 +88,49 @@ function Register() {
 
   return (
     <div className="payment-container color-wrapper">
-      <h1>Register here</h1>
-      {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <div className="reg-success">
-          <SuccessReg />
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="form-container">
-          <div className="user-form">
-            <label>Username:</label>
-            <input
-              type="text"
-              name="userName"
-              placeholder="Username"
-              value={user.userName}
-              onChange={handleChange}
-            />
-            <p>{formErrors.userName}</p>
-
-            <label>Password:</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={user.password}
-              onChange={handleChange}
-            />
-            <p>{formErrors.password}</p>
-
-            <button className="payment-btn">Submit</button>
+      <div className="cart-text">
+        {Object.keys(formErrors).length === 0 && isSubmit ? (
+          <div className="reg-success">
+            <SuccessReg />
           </div>
-        </form>
-      )}
+        ) : (
+          <>
+            <h1>Register here</h1>
+            <form onSubmit={handleSubmit} className="form-container">
+              <div className="user-form">
+                <label>Username:</label>
+                <input
+                  type="text"
+                  name="userName"
+                  placeholder="Username"
+                  value={user.userName}
+                  onChange={handleChange}
+                />
+                <p>{formErrors.userName}</p>
+
+                <label>Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={user.password}
+                  onChange={handleChange}
+                />
+                <p>{formErrors.password}</p>
+
+                <button className="payment-btn">Submit</button>
+              </div>
+            </form>
+          </>
+        )}
+      </div>
     </div>
   );
 }
 
 export default Register;
 
-// import { useState, useEffect } from "react";   //PROBLEM------flera kan ha samma username (antar jag)
+// import { useState, useEffect } from "react";   //PROBLEM---- "REGISTER" BORDE INTE SYNAS NÄR MAN REGISTRERAT OCH LOGGA IN KNAPPEN SYNS
 // import SuccessReg from "../components/SuccessReg";
 
 // function Register() {
@@ -169,15 +173,31 @@ export default Register;
 
 //   useEffect(() => {
 //     if (isSubmit && Object.keys(formErrors).length === 0) {
-//       addingUser();
+//       checkUserNameExists(user.userName);
 //     }
 //   }, [formErrors, isSubmit]);
+
+//   const checkUserNameExists = (userName) => {
+//     fetch(`http://localhost:3000/users?userName=${userName}`)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         if (data.length > 0) {
+//           setFormErrors({ userName: "Username already exists!" });
+//           setIsSubmit(false);
+//         } else {
+//           addingUser();
+//         }
+//       })
+//       .catch((error) => {
+//         console.error("Error:", error);
+//       });
+//   };
 
 //   const addingUser = () => {
 //     const newUser = {
 //       userName: user.userName,
 //       password: user.password,
-//       favorites:[]
+//       favorites: [], // Lägg till en tom array för favoriter
 //     };
 //     const postOptions = {
 //       method: "POST",
@@ -188,7 +208,7 @@ export default Register;
 //       .then((response) => {
 //         if (response.ok) {
 //           console.log("User added successfully!");
-//           setUser(initialValues); // rensar formuläret
+//           setUser(initialValues); // Återställ formuläret
 //         } else {
 //           console.error("Failed to add user.");
 //         }
@@ -199,39 +219,41 @@ export default Register;
 //   };
 
 //   return (
-//     <div className="payment-container">
-//       <h1>Register here</h1>
-//       {Object.keys(formErrors).length === 0 && isSubmit ? (
-//         <div className="reg-success">
-//           <SuccessReg />
-//         </div>
-//       ) : (
-//         <form onSubmit={handleSubmit} className="form-container">
-//           <div className="user-form">
-//             <h2>Username:</h2>
-//             <input
-//               type="text"
-//               name="userName"
-//               placeholder="Username"
-//               value={user.userName}
-//               onChange={handleChange}
-//             />
-//             <p>{formErrors.userName}</p>
-
-//             <h2>Password:</h2>
-//             <input
-//               type="password"
-//               name="password"
-//               placeholder="Password"
-//               value={user.password}
-//               onChange={handleChange}
-//             />
-//             <p>{formErrors.password}</p>
-
-//             <button className="payment-btn">Submit</button>
+//     <div className="payment-container color-wrapper">
+//       <div className="cart-text">
+//         <h1>Register here</h1>
+//         {Object.keys(formErrors).length === 0 && isSubmit ? (
+//           <div className="reg-success">
+//             <SuccessReg />
 //           </div>
-//         </form>
-//       )}
+//         ) : (
+//           <form onSubmit={handleSubmit} className="form-container">
+//             <div className="user-form">
+//               <label>Username:</label>
+//               <input
+//                 type="text"
+//                 name="userName"
+//                 placeholder="Username"
+//                 value={user.userName}
+//                 onChange={handleChange}
+//               />
+//               <p>{formErrors.userName}</p>
+
+//               <label>Password:</label>
+//               <input
+//                 type="password"
+//                 name="password"
+//                 placeholder="Password"
+//                 value={user.password}
+//                 onChange={handleChange}
+//               />
+//               <p>{formErrors.password}</p>
+
+//               <button className="payment-btn">Submit</button>
+//             </div>
+//           </form>
+//         )}
+//       </div>
 //     </div>
 //   );
 // }
