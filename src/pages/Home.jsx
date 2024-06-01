@@ -28,8 +28,10 @@ useEffect(() => {
               <h1 className="welcome">Welcome to Bun drop {loggedInUser}!</h1>
               <p className="welcome-text">
                 At Bun Drop, we're dedicated to delivering the hottest and most
-                delicious taste experiences right to your doorstep. With our
-                passionate team of chefs, we craft each bite with love and care.
+                <br />
+                delicious taste experiences right to your doorstep.
+                <br /> With our passionate team of chefs, we craft each bite
+                with love and care.
               </p>
             </div>
             <img
@@ -38,17 +40,31 @@ useEffect(() => {
               alt="Logo"
             />
           </div>
-          <h2 className="home-page-text">How yummy?</h2>
-
-          <div className="img-collage">
-            <img className="home-page-img" src="/images/burger 1.png" />
-            <img className="home-page-img" src="/images/drink 2.png" />
-            <img className="home-page-img" src="/images/sides 1.png" />
-            <img className="home-page-img" src="/images/dressing 4.png" />
-            <img className="home-page-img" src="/images/dessert 4.png" />
+          <div className="collage-text"></div>
+          <div className="img-collage-wrapper">
+            <div className="img-collage">
+              <h2 className="home-page-text">How yummy?</h2>
+              <img className="img1 home-page-img" src="/images/burger 1.png" />
+              <img className="img2 home-page-img" src="/images/drink 1.png" />
+              <img className="img3 home-page-img" src="/images/sides 1.png" />
+              <img
+                className="img4 home-page-img"
+                src="/images/dressing 4.png"
+              />
+              <img className="img5 home-page-img" src="/images/dessert 4.png" />
+            </div>
+            
+            <div className="img-collage">
+              <h2 className="home-page-text">How healthy!</h2>
+              <img className="img1 home-page-img" src="/images/burger 7.png" />
+              <img className="img2 home-page-img" src="/images/drink 6.png" />
+              <img className="img3 home-page-img" src="/images/sides 3.png" />
+            </div>
           </div>
-          <div>
-            <Link className="payment-btn" to="/menu">Order now</Link>
+          <div className="home-btn">
+            <Link className="payment-btn" to="/menu">
+              Go to menu
+            </Link>
           </div>
         </div>
       </div>
