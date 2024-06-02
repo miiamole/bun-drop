@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";   //PROBLEM---- EJ ANPASSAD FÖR HALV DESKTOP
 import { Link } from "react-router-dom";
 function Home() {
 
@@ -40,22 +40,25 @@ useEffect(() => {
               alt="Logo"
             />
           </div>
+          <h2 className="home-page-text">
+            Fresh Greens or Decadent Dreams? We've got something for everyone!
+          </h2>
           <div className="collage-text"></div>
           <div className="img-collage-wrapper">
             <div className="img-collage">
-              <h2 className="home-page-text">How yummy?</h2>
-              <img className="img1 home-page-img" src="/images/burger 1.png" />
+              <h2 className="home-page-text collage-text">Guilty Pleasure Treasure</h2>
+              <img className="img1 home-page-img" src="/images/burger 2.png" />
               <img className="img2 home-page-img" src="/images/drink 1.png" />
               <img className="img3 home-page-img" src="/images/sides 1.png" />
               <img
                 className="img4 home-page-img"
                 src="/images/dressing 4.png"
               />
-              <img className="img5 home-page-img" src="/images/dessert 4.png" />
+              <img className="img5 home-page-img" src="/images/dessert 1.png" />
             </div>
-            
+
             <div className="img-collage">
-              <h2 className="home-page-text">How healthy!</h2>
+              <h2 className="home-page-text collage-text">The Green Machine Cuisine</h2>
               <img className="img1 home-page-img" src="/images/burger 7.png" />
               <img className="img2 home-page-img" src="/images/drink 6.png" />
               <img className="img3 home-page-img" src="/images/sides 3.png" />

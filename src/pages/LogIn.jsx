@@ -47,40 +47,40 @@ function LogIn() {
   return (
     <>
       <div className="color-wrapper">
-        
-          <div className="register">
-            <h3>Not registered yet? </h3>
-            <Link to="/register" className="payment-btn place-order-btn">
-              Click here
-            </Link>
+        <div className="register">
+          <h3>Not registered yet? </h3>
+          <Link to="/register" className="payment-btn place-order-btn">
+            Click here
+          </Link>
+        </div>
+
+        <div className="clock-container">
+          <div className="payment-container sign-in-container">
+            <h2>Sign in</h2>
+
+            <form onSubmit={handleLogIn} className="form-container">
+              <div className="user-form">
+                <label>Username:</label>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  value={user.userName}
+                  onChange={handleUserNameChange}
+                />
+                <label>Password:</label>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={user.password}
+                  onChange={handlePasswordChange}
+                />
+                {loginError && <p>Incorrect username or password.</p>}
+                <button className="payment-btn" onClick={handleLogIn}>
+                  Sign in
+                </button>
+              </div>
+            </form>
           </div>
-        
-
-        <div className="payment-container ">
-          <h2>Sign in</h2>
-
-          <form onSubmit={handleLogIn} className="form-container">
-            <div className="user-form">
-              <label>Username:</label>
-              <input
-                type="text"
-                placeholder="Username"
-                value={user.userName}
-                onChange={handleUserNameChange}
-              />
-              <label>Password:</label>
-              <input
-                type="password"
-                placeholder="Password"
-                value={user.password}
-                onChange={handlePasswordChange}
-              />
-              {loginError && <p>Incorrect username or password.</p>}
-              <button className="payment-btn" onClick={handleLogIn}>
-                Sign in
-              </button>
-            </div>
-          </form>
         </div>
       </div>
     </>

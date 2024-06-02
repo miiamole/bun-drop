@@ -126,11 +126,11 @@ function Menu() {
               Sides
             </button>
             <button className="menu-btn" onClick={() => filterList("drinks")}>
-              <img className="menu-btn-img" src="/images/drink 2.png" />
+              <img className="menu-btn-img" src="/images/drink 5.png" />
               Drinks
             </button>
             <button className="menu-btn" onClick={() => filterList("desserts")}>
-              <img className="menu-btn-img" src="/images/dessert 4.png" />
+              <img className="menu-btn-img" src="/images/dessert 1.png" />
               Desserts
             </button>
           </div>

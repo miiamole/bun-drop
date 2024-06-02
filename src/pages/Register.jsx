@@ -95,32 +95,36 @@ function Register() {
           </div>
         ) : (
           <>
-            <h1>Register here</h1>
-            <form onSubmit={handleSubmit} className="form-container">
-              <div className="user-form">
-                <label>Username:</label>
-                <input
-                  type="text"
-                  name="userName"
-                  placeholder="Username"
-                  value={user.userName}
-                  onChange={handleChange}
-                />
-                <p>{formErrors.userName}</p>
+            <div className="clock-container">
+              <div className="payment-container register-container">
+                <h1>Register</h1>
+                <form onSubmit={handleSubmit} className="form-container">
+                  <div className="user-form">
+                    <label>Username:</label>
+                    <input
+                      type="text"
+                      name="userName"
+                      placeholder="Username"
+                      value={user.userName}
+                      onChange={handleChange}
+                    />
+                    <p>{formErrors.userName}</p>
 
-                <label>Password:</label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={user.password}
-                  onChange={handleChange}
-                />
-                <p>{formErrors.password}</p>
+                    <label>Password:</label>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      value={user.password}
+                      onChange={handleChange}
+                    />
+                    <p>{formErrors.password}</p>
 
-                <button className="payment-btn">Submit</button>
+                    <button className="payment-btn">Submit</button>
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
           </>
         )}
       </div>
