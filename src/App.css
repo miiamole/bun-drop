@@ -47,6 +47,7 @@
   align-items: center;
   padding: 10px 20px;
   background-color: rgba(243, 227, 219, 0.594);
+ 
 }
 .header-icon {
   margin-right: 7px;
@@ -93,6 +94,11 @@
 .payment-text{
   display:flex;
   justify-content: space-between;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 .delivery-form-container{
   flex:1;
@@ -102,7 +108,6 @@
   flex-direction: column;
   align-items: flex-start;
 }
-
 
 .form-container ::placeholder {
   color: rgba(73, 60, 68, 0.272);
@@ -117,29 +122,20 @@
 .form-container p {
   color: red;
 }
-.payment-methods{
-  flex: 1; /* Tar upp all tillgänglig bredd */
-  padding-left: 20px; /* Lite mellanrum till vänster */
-}
+
 .payment-container {
   display: flex;
+  
 }
 
-.delivery-info {
-  flex: 1; /* Tar upp all tillgänglig bredd */
-  padding-right: 20px; /* Lite mellanrum till höger */
-   position: absolute;
-  top: 10px;
-  left: 30%;
-  transform: translateX(-50%);
-}
 .payment-btn {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   align-self: center;
 }
 .payment-form {
   display: flex;
   justify-content: center;
+  
 }
 .user-form-swish input[type="number"]::-webkit-inner-spin-button,
 .user-form-swish input[type="number"]::-webkit-outer-spin-button {
@@ -148,6 +144,7 @@
 }
 .payment-container {
   text-align: center;
+
 }
 .payment-btn {
   margin: 10px;
@@ -167,6 +164,7 @@
   align-items: center;
   min-height: 30vh;
   margin-top: 20px;
+ 
 }
 
 .user-form input,
@@ -524,15 +522,15 @@ input[type="text"] {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .succ-reg-text {
-  display: inline; /* Gör att texten visas på en rad */
+  display: inline; 
   white-space: nowrap;
   position: absolute;
   top: 20px;
   left: -70px;
 }
 .succ-reg-btn {
-  display: inline-block; /* Gör att knappen visas på en rad */
-  margin-top: 10px; /* Lägg till lite utrymme ovanför knappen */
+  display: inline-block; 
+  margin-top: 10px; 
 }
 /* ALL PAGES */
 .color-wrapper {
