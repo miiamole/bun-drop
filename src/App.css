@@ -547,6 +547,10 @@ input[type="text"] {
   margin-top: 10px;
 }
 /* FAVOURITE PAGE */
+.favo-sign-in{
+  display: flex;
+  justify-content: center;
+}
 .remove-favorite {
   background-color: rgba(248, 33, 9, 0.6);
   color: white;

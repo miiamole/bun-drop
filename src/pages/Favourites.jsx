@@ -90,9 +90,7 @@ function Favourites() {
         {isLoggedIn ? (
           <>
             <h1 className="cart-text">
-              {listOfFavorites.length > 0
-                ? "Your favourites"
-                : <EmptyFavo/>}
+              {listOfFavorites.length > 0 ? "Your favourites" : <EmptyFavo />}
             </h1>
             <div className="menu-container">
               {listOfFavorites.map((f) => (
@@ -121,7 +119,17 @@ function Favourites() {
             </div>
           </>
         ) : (
-          <h3>You need to be logged in to save and view your favorite items.</h3>
+          <>
+            <h3 className="cart-text">
+              Hey there! Want to keep your favorites safe? Sign in now!
+            </h3>
+            <div className="favo-sign-in">
+              <Link to="/logIn" className="payment-btn favo-sign-in">
+                {" "}
+                Just do it!
+              </Link>
+            </div>
+          </>
         )}
       </div>
     </>
