@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";  
+import React, { useEffect, useState } from "react";   //PROBLEM---- GÅR EJ ATT RADERA FRÅN DATABASEN
 import { Link, useParams } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
-
 
 function Favourites() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -27,32 +26,60 @@ function Favourites() {
   }, []);
 
   const fetchUserFavorites = (userId) => {
-    console.log("funkar hämtning av userId? ", userId);
+    // console.log("funkar hämtning av userId? ", userId);
     fetch(`http://localhost:3000/users/${userId}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("hämtat från db.json", data);
+        // console.log("hämtat från db.json", data);
         setListOfFavourites(data.favorites || []);
       })
       .catch((error) => console.error("Error fetching favorites:", error));
   };
 
-  const handleRemoveFavorite = (favoriteId) => {
-    // Ta bort en favorit från användarens favoriter
-    // Använd favoriteId för att identifiera vilken favorit som ska tas bort
-    
-    // Uppdatera state för att reflektera borttagningen av favoriten
-    setUserFavorites(
-      userFavorites.filter((favorite) => favorite.id !== favoriteId)
-    );
-  };
+//   const handleRemoveFavorite = (favoriteToDelete) => {
+//    let tempFavorites = [...listOfFavorites];
+//    tempFavorites = tempFavorites.filter((f) => f.id !== favoriteToDelete.id);
+//    setListOfFavourites(tempFavorites);
 
-//   const handleClearFavorites = () => {
-//     // Ta bort alla favoriter från db.json
-   
-//     // Uppdatera state för att reflektera borttagningen av alla favoriter
-//     setUserFavorites([]);
+//    const updatedUser = {
+//     favorites: tempFavorites,
+//    }
+
+//     fetch(`http://localhost:3000/users/${userId}`, {
+//       method: "PATCH",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(updatedUser),
+//     })
+//       .then((res) => res.json())
+//       .then((data) => {
+       
+//         console.log("Favorite removed from user data", data);
+//       })
+//       .catch((error) => console.error("Error removing favorite:", error));
 //   };
+
+
+ const handleRemoveFavorite = (favoriteToDelete) => {
+let tempFavorites = [...listOfFavorites];
+
+tempFavorites = tempFavorites.filter((f) => f.id !== favoriteToDelete.id);
+setListOfFavourites(tempFavorites);
+
+const deleteOptions = {
+  method: "DELETE",
+  headers: { "Content-Type": "application/json" },
+};
+fetch(`http://localhost:3000/users/${userId}/favorites/${favoriteToDelete.id}`, deleteOptions);
+
+ }
+
+
+
+
+
+
+
+  
   // LÄGG TILL I LOCAL STORAGE
   const addToCart = (menuItem) => {
     setLocalStorage("cart", menuItem);
@@ -62,16 +89,6 @@ function Favourites() {
     <>
       <div className="color-wrapper">
         <h1 className="cart-text">Your favourites</h1>
-        {/* Visa en varning om ingen användare är inloggad */}
-        {/* {!loggedInUser.id && (
-        <h3>
-          You need to be logged in order to save and see your favourite items
-        </h3>
-      )} */}
-
-        {/* Visa användarens favoriter om användaren är inloggad */}
-        {/* {loggedInUser.id && ( */}
-
         <div className="menu-container">
           {listOfFavorites.map((f) => (
             <div key={f.id} className="menu-card">
@@ -87,8 +104,11 @@ function Favourites() {
                 >
                   Add to cart
                 </Link>
-                <button onClick={() => handleRemoveFavorite(f)}>
-                  Remove from favourites
+                <button
+                  onClick={() => handleRemoveFavorite(f)}
+                  className="remove-favorite"
+                >
+                  Remove
                 </button>
               </div>
             </div>
@@ -101,12 +121,6 @@ function Favourites() {
 }
 
 export default Favourites;
-
-
-
-
-
-
 
 // import React, {useState, UseEffect}from 'react';
 // function Favourites() {

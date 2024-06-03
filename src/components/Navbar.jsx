@@ -2,7 +2,7 @@ import React, { Component } from "react";   //PROBLEM----om någon är inloggad 
 import { Link } from "react-router-dom";     //PROBLEM----fixa med localstorage för att kunna logga ut
  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   //PROBLEM----- favoriter ska endast ses om man är inloggad
  import { faCartShopping, faHouse, faBurger, faUser, faHeart} from "@fortawesome/free-solid-svg-icons";
-function Header() {     //PROBLEM-----borde register knapp finnas?
+function Navbar() {     //PROBLEM-----borde register knapp finnas?
 
 // const logOut = () => {
 //   setUser({});
@@ -45,4 +45,4 @@ function Header() {     //PROBLEM-----borde register knapp finnas?
   );
 }
 
-export default Header;
+export default Navbar;
