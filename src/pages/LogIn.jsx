@@ -26,7 +26,7 @@ function LogIn() {
 
     if (findUser) {
       localStorage.setItem("loggedInUserId", findUser.id);
-      console.log("id på logged in: ", findUser.id)
+    //   console.log("id på logged in: ", findUser.id)
       localStorage.setItem("loggedInUserName", findUser.userName)
       navigate("/"); 
     } else {
