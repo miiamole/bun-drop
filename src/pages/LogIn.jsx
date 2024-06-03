@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";   //PROBLEM---- NÄR MAN LOGGAR IN ÄRVER MAN DET SOM FINNA I CARTEN.
+import React, { useState, useEffect } from "react";   //PROBLEM---- NÄR MAN LOGGAR IN ÄRVER MAN DET SOM FINNs I CARTEN.
 import { Link, useNavigate } from "react-router-dom";   // BORDE KANSKE TÖMMA CART NÄR MAN KLICKAR PÅ LOGGA IN
 
 function LogIn() {

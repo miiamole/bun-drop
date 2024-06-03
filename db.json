@@ -679,6 +679,43 @@
           "cvv": "222"
         }
       }
+    },
+    {
+      "id": "1717407111476",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        },
+        {
+          "id": "19",
+          "name": "Ketchup",
+          "price": 0.99,
+          "quantity": "5",
+          "image": "/images/dressing 3.png"
+        },
+        {
+          "id": "4",
+          "name": "No Carb Burger",
+          "price": 6.99,
+          "quantity": 1,
+          "image": "/images/burger 7.png"
+        }
+      ],
+      "customer": {
+        "firstName": "miia",
+        "lastName": "growat",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "cardNumber": "2222222222",
+          "expirationDate": "",
+          "cvv": ""
+        }
+      }
     }
   ]
 }

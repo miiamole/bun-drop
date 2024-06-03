@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";  //PROBLEM---- HELA OBJEKTET HÄMTAS FRÅN DB.JSON, SÅ LÖSENORD SYNS I CONSOLE
+import React, { useEffect, useState } from "react";  
 import { Link, useParams } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 
