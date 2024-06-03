@@ -21,16 +21,14 @@ function Payment() {
 
   // Ta alla saker från cart i local storage till och lägger till det som ett order objekt på db.json
   function placeOrder(user) {  //ÄNDRAT SÅ ATT DEN TAR EMOT EN USER
-    // Validate- här ska jag göra det
-    //  setFormErrors(validate(user));
-
+   
     setIsSubmit(true);
 
-    //addingCustomer();
+   
 
     const orderId = Date.now().toString(); // Generera ett random id baserat på tiden just nu
 
-    // Använd det id:t när du skapar din order
+    // Använder det id:t när ordern skapas
     const order = {
       id: orderId,
       items: cart.map((item) => ({

@@ -186,47 +186,7 @@
       "id": "c219",
       "userName": "user",
       "password": "password",
-      "favorites": [
-        {
-          "id": "8",
-          "title": "Party Sundae",
-          "price": 2.99,
-          "description": "Sundae with sprinkles.",
-          "category": "desserts",
-          "image": "/images/dessert 2.png"
-        },
-        {
-          "id": "9",
-          "title": "Pistachio Sundae",
-          "price": 4.99,
-          "description": "Sundae with crushed pistachios.",
-          "category": "desserts",
-          "image": "/images/dessert 3.png"
-        }
-      ]
-    },
-    {
-      "id": "7619",
-      "userName": "mamma",
-      "password": "mammamamma",
-      "favorites": [
-        {
-          "id": "1",
-          "title": "Classic Burger",
-          "price": 8.99,
-          "description": "A classic beef burger with lettuce, tomato, and cheese.",
-          "category": "burgers",
-          "image": "/images/burger 1.png"
-        },
-        {
-          "id": "2",
-          "title": "Sweet Potato Fries",
-          "price": 4.99,
-          "description": "Crispy sweet potato fries topped with fresh parsley.",
-          "category": "sides",
-          "image": "/images/sides 2.png"
-        }
-      ]
+      "favorites": []
     },
     {
       "id": "4a51",
@@ -678,6 +638,27 @@
           "cardNumber": "2222222221333332",
           "expirationDate": "2233",
           "cvv": "222"
+        }
+      }
+    },
+    {
+      "id": "1717436160330",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "ko",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "33333333329"
         }
       }
     }

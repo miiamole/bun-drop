@@ -1,5 +1,5 @@
 function useLocalStorage() {
-  //HUR HADE JAG LYCKATS FÅ IN NULL I LOCAL STORAGE???
+  
   function setLocalStorage(key, item) {
     // Hämta hela localStorage
     // Gör om det till en array

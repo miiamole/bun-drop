@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"; 
-import { Link, json } from "react-router-dom"; 
+import React, { useState, useEffect } from "react";
+import { Link, json } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -8,13 +8,11 @@ function Menu() {
   const [menu, setMenu] = useState([]);
   const [filter, setFilter] = useState("");
   const [cart, setCart] = useState("");
-  const [favourite, setFavourite] = ([]);
+  const [favourite, setFavourite] = [];
   const [loggedInUser, setLoggedInUser] = useState(null); //för att se om knapparna ska synas
   //   const [order, setOrder] = useState([]);
   const { setLocalStorage, getLocalStorage, removeLocalStorage } =
     useLocalStorage();
-
-
 
   useEffect(() => {
     fetch("http://localhost:3000/menu")
@@ -51,18 +49,11 @@ function Menu() {
   // LÄGG TILL I LOCAL STORAGE
   const addToCart = (menuItem) => {
     setLocalStorage("cart", menuItem);
-    console.log("adding ", menuItem);
-    
   };
   // LÄGG TILL favoriter I DB.JSON
   const addToFavourite = (menuItem) => {
     const userId = localStorage.getItem("loggedInUserId");
 
-    // kolla om ngn är inloggd--- behövs inte eftersom att knapparna är dolda om ingen är inloggad
-    // if (!userId) {
-    //   console.log("no one is logged in");
-    //   return;
-    // }
     const favourite = {
       id: menuItem.id,
       title: menuItem.title,
@@ -80,32 +71,25 @@ function Menu() {
         // Lägg till den nya favoriten i favoritlistan
         favorites.push(favourite);
 
-        
         const patchOptions = {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ favorites: favorites }),
         };
 
-    
         return fetch(`http://localhost:3000/users/${userId}`, patchOptions);
       })
       .then((response) => {
         if (response.ok) {
           console.log("Favorite added");
-          
         } else {
           console.error("Failed to add favorite.");
-          
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        
       });
   };
-
-
 
   return (
     <>
@@ -165,8 +149,6 @@ function Menu() {
                       <FontAwesomeIcon icon={faHeart} className="heart-shape" />
                     </button>
                   )}
-
-                 
                 </div>
               </div>
             ))}

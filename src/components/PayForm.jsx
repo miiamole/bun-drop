@@ -126,118 +126,120 @@ function PayForm(props) {
           <div className="payment-text">
             <h2>Choose payment method</h2>
           </div>
-          <div className="payment-container payment-form">
-            <button className="payment-btn" onClick={chooseCard}>
-              Card
-            </button>
-            <button className="payment-btn" onClick={chooseSwish}>
-              Swish
-            </button>
-          </div>
-          <div className="payment-container payment-form">
-            {paymentMethod && (
-              <form onSubmit={handleSubmit} className="form-container">
-                {paymentMethod === "card" && (
-                  <div className="payWithCard user-form">
-                    <label>Card number:</label>
-                    <input
-                      type="number"
-                      name="cardNumber"
-                      placeholder="1234 5678 9012 3456"
-                      value={user.cardNumber}
-                      onChange={handleChange}
-                    />
-                    <p>{formErrors.cardNumber}</p>
+          <div className="pay-wrapper">
+            <div className="payment-container payment-form">
+              <button className="payment-btn" onClick={chooseCard}>
+                Card
+              </button>
+              <button className="payment-btn" onClick={chooseSwish}>
+                Swish
+              </button>
+            </div>
+            <div className="payment-container payment-form">
+              {paymentMethod && (
+                <form onSubmit={handleSubmit} className="form-container">
+                  {paymentMethod === "card" && (
+                    <div className="payWithCard user-form">
+                      <label>Card number:</label>
+                      <input
+                        type="number"
+                        name="cardNumber"
+                        placeholder="1234 5678 9012 3456"
+                        value={user.cardNumber}
+                        onChange={handleChange}
+                      />
+                      <p>{formErrors.cardNumber}</p>
 
-                    <label>Security code:</label>
-                    <input
-                      type="number"
-                      name="cvv"
-                      placeholder="CVV"
-                      value={user.cvv}
-                      onChange={handleChange}
-                    />
-                    <p>{formErrors.cvv}</p>
+                      <label>Security code:</label>
+                      <input
+                        type="number"
+                        name="cvv"
+                        placeholder="CVV"
+                        value={user.cvv}
+                        onChange={handleChange}
+                      />
+                      <p>{formErrors.cvv}</p>
 
-                    <label>Expiration date:</label>
+                      <label>Expiration date:</label>
+                      <input
+                        type="text"
+                        name="expirationDate"
+                        placeholder="MM/YY"
+                        value={user.expirationDate}
+                        onChange={handleChange}
+                      />
+                      <p>{formErrors.expirationDate}</p>
+                    </div>
+                  )}
+
+                  {paymentMethod === "swish" && (
+                    <div className="payWithSwish user-form">
+                      <label>Phone number:</label>
+                      <input
+                        type="number"
+                        name="phoneNumber"
+                        placeholder="555-34578"
+                        value={user.phoneNumber}
+                        onChange={handleChange}
+                      />
+                      <p>{formErrors.phoneNumber}</p>
+                    </div>
+                  )}
+
+                  <div className="user-form">
+                    <h2>Delivery information</h2>
+                    <label>First name:</label>
                     <input
                       type="text"
-                      name="expirationDate"
-                      placeholder="MM/YY"
-                      value={user.expirationDate}
+                      name="firstName"
+                      placeholder="First name"
+                      value={user.firstName}
                       onChange={handleChange}
                     />
-                    <p>{formErrors.expirationDate}</p>
-                  </div>
-                )}
-
-                {paymentMethod === "swish" && (
-                  <div className="payWithSwish user-form">
-                    <label>Phone number:</label>
+                    <p>{formErrors.firstName}</p>
+                    <label>Last name:</label>
                     <input
-                      type="number"
-                      name="phoneNumber"
-                      placeholder="555-34578"
-                      value={user.phoneNumber}
+                      type="text"
+                      name="lastName"
+                      placeholder="Last name"
+                      value={user.lastName}
                       onChange={handleChange}
                     />
-                    <p>{formErrors.phoneNumber}</p>
+                    <p>{formErrors.lastName}</p>
+                    <label>Street name and number:</label>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="Street name and number"
+                      value={user.address}
+                      onChange={handleChange}
+                    />
+                    <p>{formErrors.address}</p>
+                    <label>City:</label>
+                    <input
+                      type="text"
+                      name="city"
+                      placeholder="City"
+                      value={user.city}
+                      onChange={handleChange}
+                    />
+                    <p>{formErrors.city}</p>
                   </div>
-                )}
 
-                <div className="user-form">
-                  <h2>Delivery information</h2>
-                  <label>First name:</label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    placeholder="First name"
-                    value={user.firstName}
-                    onChange={handleChange}
-                  />
-                  <p>{formErrors.firstName}</p>
-                  <label>Last name:</label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    placeholder="Last name"
-                    value={user.lastName}
-                    onChange={handleChange}
-                  />
-                  <p>{formErrors.lastName}</p>
-                  <label>Street name and number:</label>
-                  <input
-                    type="text"
-                    name="address"
-                    placeholder="Street name and number"
-                    value={user.address}
-                    onChange={handleChange}
-                  />
-                  <p>{formErrors.address}</p>
-                  <label>City:</label>
-                  <input
-                    type="text"
-                    name="city"
-                    placeholder="City"
-                    value={user.city}
-                    onChange={handleChange}
-                  />
-                  <p>{formErrors.city}</p>
+                  <button className="payment-btn place-order-btn" type="submit">
+                    Place order
+                  </button>
+                </form>
+              )}
+            </div>
+            {paymentMethod &&
+              Object.keys(formErrors).length === 0 &&
+              isSubmit && (
+                <div className="reg-success">
+                  <h3>Det gick bra</h3>
                 </div>
-
-                <button className="payment-btn place-order-btn" type="submit">
-                  Place order
-                </button>
-              </form>
-            )}
+              )}
           </div>
-          {paymentMethod &&
-            Object.keys(formErrors).length === 0 &&
-            isSubmit && (
-              <div className="reg-success">
-                <h3>Det gick bra</h3>
-              </div>
-            )}
         </div>
       </div>
     </>

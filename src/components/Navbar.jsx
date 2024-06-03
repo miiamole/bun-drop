@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";   //PROBLEM----Log out knappen ses endast om man uppdaterar sidan manuellt
-import { Link } from "react-router-dom";     
+import { Link, useNavigate } from "react-router-dom";     
  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   //PROBLEM----- favoriter ska endast ses om man är inloggad
  import { faCartShopping, faHouse, faBurger, faUser, faHeart} from "@fortawesome/free-solid-svg-icons";
-function Navbar() {     //PROBLEM-----borde register knapp finnas?
+function Navbar() {     
 
 const [isLoggedIn, setIsLoggedIn] = useState(false);
 const [user, setUser] = useState({ userName: "", password: "" });
+const navigate = useNavigate();
 
 useEffect(() => {
   const lsUserId = localStorage.getItem("loggedInUserId");
@@ -22,9 +23,8 @@ const logOut = () => {
   setIsLoggedIn(false);
   console.log("User logged out")
   setUser({userName: "", password: ""});
-  // setUserName("");
-  // setPassword("");
   localStorage.clear();
+  navigate("/menu")
 };
 
 
