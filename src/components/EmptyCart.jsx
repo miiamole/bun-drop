@@ -7,9 +7,9 @@ function EmptyCart() {
           <div className="empty-cart-text">
             <h2>
               Unlock the menu's treasures and add some sparkle to your
-              favorites!
+              cart!
             </h2>
-            <h3>Check out our wonderful menu</h3>
+            
             <Link to="/menu" className="payment-btn">
               Menu
             </Link>
