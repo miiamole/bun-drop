@@ -599,3 +599,10 @@ input[type="text"] {
   height: 160px;
   margin-top: -70px;
 }
+/* NOT FOUND PAGE */
+.not-found-container{
+  text-align: center;
+  padding: 40px;
+  margin-top:-40px;
+
+}
