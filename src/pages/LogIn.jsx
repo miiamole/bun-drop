@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";   //PROBLEM---- NÄR MAN LOGGAR IN ÄRVER MAN DET SOM FINNs I CARTEN.
-import { Link, useNavigate } from "react-router-dom";   // BORDE KANSKE TÖMMA CART NÄR MAN KLICKAR PÅ LOGGA IN
+import React, { useState, useEffect } from "react";   
+import { Link, useNavigate } from "react-router-dom";   
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function LogIn() {
   const [user, setUser] = useState({ userName: "", password: "" });
   const [users, setUsers] = useState([]);
   const [loginError, setLogInError] = useState(false);
   const navigate = useNavigate();
+   const {clearLocalStorage } =
+     useLocalStorage();
 
   // Hämta alla användare från db.json
   useEffect(() => {
@@ -28,6 +31,8 @@ function LogIn() {
       localStorage.setItem("loggedInUserId", findUser.id);
     //   console.log("id på logged in: ", findUser.id)
       localStorage.setItem("loggedInUserName", findUser.userName)
+      // tömmer cart:en när man loggas in så att man ej ärver den förra inloggade personens cart
+      clearLocalStorage("cart") 
       navigate("/"); 
     } else {
       setLogInError(true); // Visa felmeddelande om användaren inte hittades

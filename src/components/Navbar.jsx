@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";   //PROBLEM----Log out knappen ses endast om man uppdaterar sidan manuellt
 import { Link, useNavigate } from "react-router-dom";     
- import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";   //PROBLEM----- favoriter ska endast ses om man är inloggad
+ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";  
  import { faCartShopping, faHouse, faBurger, faUser, faHeart} from "@fortawesome/free-solid-svg-icons";
 function Navbar() {     
 
