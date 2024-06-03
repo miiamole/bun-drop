@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, json } from "react-router-dom"; 
 import useLocalStorage from "../hooks/useLocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function Menu() {
   const [menu, setMenu] = useState([]);
   const [filter, setFilter] = useState("");
   const [cart, setCart] = useState("");
-  const [favourite, setFavourite] = [];
+  const [favourite, setFavourite] = ([]);
   const [loggedInUser, setLoggedInUser] = useState(null); //för att se om knapparna ska synas
   //   const [order, setOrder] = useState([]);
   const { setLocalStorage, getLocalStorage, removeLocalStorage } =
@@ -55,10 +55,10 @@ function Menu() {
     
   };
   // LÄGG TILL favoriter I DB.JSON
-  const addToFavoutite = (menuItem) => {
+  const addToFavourite = (menuItem) => {
     const userId = localStorage.getItem("loggedInUserId");
 
-    // kolla om ngn är inloggd--- behövs itne eftersom att knapparna är dolda om ingen är inloggad
+    // kolla om ngn är inloggd--- behövs inte eftersom att knapparna är dolda om ingen är inloggad
     // if (!userId) {
     //   console.log("no one is logged in");
     //   return;
@@ -80,43 +80,47 @@ function Menu() {
         // Lägg till den nya favoriten i favoritlistan
         favorites.push(favourite);
 
-        // Skapa options för fetch-anropet
+        
         const patchOptions = {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ favorites: favorites }),
         };
 
-        // Utför PATCH-anropet för att uppdatera användarens favoritlista
+    
         return fetch(`http://localhost:3000/users/${userId}`, patchOptions);
       })
       .then((response) => {
         if (response.ok) {
-          console.log("Favorite added successfully!");
-          // Uppdatera gränssnittet eller vidta andra åtgärder vid behov
+          console.log("Favorite added");
+          
         } else {
           console.error("Failed to add favorite.");
-          // Hantera situationen när det misslyckades att lägga till favoriten
+          
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-        // Hantera eventuella fel som kan uppstå vid anropet
+        
       });
   };
+
+
 
   return (
     <>
       <div>
         <div className="color-wrapper">
-          <h1 className="menu-text">Our menu</h1>
+          <h1 className="cart-text">Our menu</h1>
           <div className="menu-btn-container">
             <button className="menu-btn" onClick={() => filterList("")}>
               All
             </button>
             <div className="menu-btn-wrapper">
               <button
-                className="menu-btn" onClick={() => filterList("burgers")} >
+                className="menu-btn"
+                onClick={() => filterList("burgers")}
+              >
                 <img className="menu-btn-img" src="/images/burger 1.png" />
                 Burgers
               </button>
@@ -155,12 +159,14 @@ function Menu() {
 
                   {loggedInUser && (
                     <button
-                      onClick={() => addToFavoutite(m)}
+                      onClick={() => addToFavourite(m)}
                       className="heart-btn"
                     >
                       <FontAwesomeIcon icon={faHeart} className="heart-shape" />
                     </button>
                   )}
+
+                 
                 </div>
               </div>
             ))}

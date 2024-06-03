@@ -61,7 +61,7 @@ function Favourites() {
   return (
     <>
       <div className="color-wrapper">
-        <h1 className="menu-text">Your favourites</h1>
+        <h1 className="cart-text">Your favourites</h1>
         {/* Visa en varning om ingen användare är inloggad */}
         {/* {!loggedInUser.id && (
         <h3>

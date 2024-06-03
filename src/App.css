@@ -128,10 +128,7 @@
   
 }
 
-.payment-btn {
-  /* margin-top: 20px; */
-  align-self: center;
-}
+
 .payment-form {
   display: flex;
   justify-content: center;
@@ -144,13 +141,16 @@
 }
 .payment-container {
   text-align: center;
-
 }
 .payment-btn {
   margin: 10px;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
+}
+.payment-btn {
+  /* margin-top: 20px; */
+  align-self: center;
 }
 .user-form {
   display: flex;
@@ -501,7 +501,7 @@ input[type="text"] {
 .sign-in-container
 {
   background-color: antiquewhite;
-  height: 350px;
+  height: 400px;
   width:350px;
   padding-top: 2rem;
   padding-right: 1rem;
@@ -539,6 +539,9 @@ input[type="text"] {
   min-height: 100vh;
   margin: 0;
   padding-top: 7rem;
+}
+.ceter-text{
+  align-self: center;
 }
 /* DELIVERY TIME */
 

@@ -55,10 +55,9 @@ function LogIn() {
         </div>
 
         <div className="clock-container">
-          <div className="payment-container sign-in-container">
-            <h2>Sign in</h2>
-
+          <div className="sign-in-container">
             <form onSubmit={handleLogIn} className="form-container">
+              <h2 className="center-text">Sign in</h2>
               <div className="user-form">
                 <label>Username:</label>
                 <input

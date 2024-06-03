@@ -453,6 +453,53 @@
       "userName": "kalas3",
       "password": "kalas3",
       "favorites": []
+    },
+    {
+      "id": "32b2",
+      "userName": "Mamma Mu",
+      "password": "hejsan",
+      "favorites": [
+        {
+          "id": "1",
+          "title": "Classic Burger",
+          "price": 8.99,
+          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "category": "burgers",
+          "image": "/images/burger 1.png"
+        },
+        {
+          "id": "2",
+          "title": "Sweet Potato Fries",
+          "price": 4.99,
+          "description": "Crispy sweet potato fries topped with fresh parsley.",
+          "category": "sides",
+          "image": "/images/sides 2.png"
+        },
+        {
+          "id": "8",
+          "title": "Party Sundae",
+          "price": 2.99,
+          "description": "Sundae with sprinkles.",
+          "category": "desserts",
+          "image": "/images/dessert 2.png"
+        },
+        {
+          "id": "7",
+          "title": "Sundae Treat",
+          "price": 3.99,
+          "description": "Sundae with sprinkles and caramel sauce.",
+          "category": "desserts",
+          "image": "/images/dessert 1.png"
+        },
+        {
+          "id": "6",
+          "title": "Bacon Burger",
+          "price": 9.99,
+          "description": "Bacon and cheese in perfect combination.",
+          "category": "burgers",
+          "image": "/images/burger 2.png"
+        }
+      ]
     }
   ],
   "orders": [
@@ -607,6 +654,29 @@
         "city": "malmö",
         "paymentMethod": {
           "phoneNumber": "3333333333"
+        }
+      }
+    },
+    {
+      "id": "1717389631654",
+      "items": [
+        {
+          "id": "8",
+          "name": "Party Sundae",
+          "price": 2.99,
+          "quantity": 1,
+          "image": "/images/dessert 2.png"
+        }
+      ],
+      "customer": {
+        "firstName": "22222",
+        "lastName": "2222",
+        "address": "3333333",
+        "city": "malmö",
+        "paymentMethod": {
+          "cardNumber": "2222222221333332",
+          "expirationDate": "2233",
+          "cvv": "222"
         }
       }
     }

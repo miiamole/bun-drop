@@ -96,9 +96,10 @@ function Register() {
         ) : (
           <>
             <div className="clock-container">
-              <div className="payment-container register-container">
-                <h1>Register</h1>
+              {/* <div className="payment-container register-container"> */}
+              <div className="register-container">
                 <form onSubmit={handleSubmit} className="form-container">
+                  <h2 className="center-text">Register</h2>
                   <div className="user-form">
                     <label>Username:</label>
                     <input
