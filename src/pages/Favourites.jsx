@@ -120,14 +120,16 @@ function Favourites() {
           </>
         ) : (
           <>
-            <h3 className="cart-text">
-              Hey there! Want to keep your favorites safe? Sign in now!
-            </h3>
-            <div className="favo-sign-in">
-              <Link to="/logIn" className="payment-btn favo-sign-in">
-                {" "}
-                Just do it!
-              </Link>
+            <div className="sign-in-fav-container favvo">
+              <h3 className="cart-text">
+                Hey there! Want to keep your favorites safe? Sign in now!
+              </h3>
+              <div className="favo-sign-in">
+                <Link to="/logIn" className="payment-btn favo-sign-in">
+                  {" "}
+                  Just do it!
+                </Link>
+              </div>
             </div>
           </>
         )}

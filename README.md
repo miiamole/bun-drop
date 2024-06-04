@@ -1,3 +1,8 @@
+npm start
+json-server --watch db.json 
+(det är port 3000 på db.json)
+
+
 en 
 personlig reflektion (inte Chat GPTs) över projektets arkitektur och 
 uppbyggnad, valda tekniska lösningar, och de utmaningar och lärdomar du stött på under projektets 

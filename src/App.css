@@ -559,7 +559,9 @@ input[type="text"] {
 .favo-sign-in{
   display: flex;
   justify-content: center;
+  
 }
+
 .remove-favorite {
   background-color: rgba(248, 33, 9, 0.6);
   color: white;

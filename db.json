@@ -186,56 +186,7 @@
       "id": "c219",
       "userName": "user",
       "password": "password",
-      "favorites": [
-        {
-          "id": "2",
-          "title": "Sweet Potato Fries",
-          "price": 4.99,
-          "description": "Crispy sweet potato fries topped with fresh parsley.",
-          "category": "sides",
-          "image": "/images/sides 2.png"
-        },
-        {
-          "id": "3",
-          "title": "Cheese Burger",
-          "price": 6.99,
-          "description": "A classic cheeseburger, plain and simple.",
-          "category": "burgers",
-          "image": "/images/burger 6.png"
-        },
-        {
-          "id": "2",
-          "title": "Sweet Potato Fries",
-          "price": 4.99,
-          "description": "Crispy sweet potato fries topped with fresh parsley.",
-          "category": "sides",
-          "image": "/images/sides 2.png"
-        },
-        {
-          "id": "3",
-          "title": "Cheese Burger",
-          "price": 6.99,
-          "description": "A classic cheeseburger, plain and simple.",
-          "category": "burgers",
-          "image": "/images/burger 6.png"
-        },
-        {
-          "id": "4",
-          "title": "No Carb Burger",
-          "price": 6.99,
-          "description": "A burger without the bun.",
-          "category": "burgers",
-          "image": "/images/burger 7.png"
-        },
-        {
-          "id": "4",
-          "title": "No Carb Burger",
-          "price": 6.99,
-          "description": "A burger without the bun.",
-          "category": "burgers",
-          "image": "/images/burger 7.png"
-        }
-      ]
+      "favorites": []
     },
     {
       "id": "4a51",
@@ -801,6 +752,66 @@
         "city": "malmö",
         "paymentMethod": {
           "phoneNumber": "1111111110"
+        }
+      }
+    },
+    {
+      "id": "1717530369232",
+      "items": [
+        {
+          "id": "10",
+          "name": "Fresh Apples",
+          "price": 2.99,
+          "quantity": 2,
+          "image": "/images/sides 3.png"
+        },
+        {
+          "id": "4",
+          "name": "No Carb Burger",
+          "price": 6.99,
+          "quantity": 12,
+          "image": "/images/burger 7.png"
+        },
+        {
+          "id": "7",
+          "name": "Sundae Treat",
+          "price": 3.99,
+          "quantity": 1,
+          "image": "/images/dessert 1.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "muu",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "cardNumber": "111111111111111",
+          "expirationDate": " aaaaa",
+          "cvv": "23333333333"
+        }
+      }
+    },
+    {
+      "id": "1717530829486",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 1,
+          "image": "/images/sides 2.png"
+        }
+      ],
+      "customer": {
+        "firstName": "gerry",
+        "lastName": "gro",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "cardNumber": "111111111111111",
+          "expirationDate": "12/24",
+          "cvv": "3333"
         }
       }
     }

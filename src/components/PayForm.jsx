@@ -88,36 +88,62 @@ function PayForm(props) {
     return errors;
   };
 
-  const validatePaymentInfo = (values) => {
-    const errors = {};
 
-    if (paymentMethod === "card") {
-      if (!values.cardNumber) {
-        errors.cardNumber = "Card number is required!";
-      } else if (values.cardNumber.length < 15) {
-        errors.cardNumber = "Card number must be at least 15 characters!";
-      }
-      if (!values.expirationDate) {
-        errors.expirationDate = "Expiration date is required!";
-      } else if (values.expirationDate.length < 4) {
-        errors.expirationDate =
-          "Expiration date must be at least 4 characters!";
-      }
-      if (!values.cvv) {
-        errors.cvv = "CVV is required!";
-      } else if (values.cvv.length < 3) {
-        errors.cvv = "CVV must be at least 3 characters!";
-      }
-    } else if (paymentMethod === "swish") {
-      if (!values.phoneNumber) {
-        errors.phoneNumber = "Phone number is required!";
-      } else if (values.phoneNumber.length < 10) {
-        errors.phoneNumber = "Phone number must be at least 10 characters!";
+const validatePaymentInfo = (values) => {
+  const errors = {};
+
+  if (paymentMethod === "card") {
+    if (!values.cardNumber) {
+      errors.cardNumber = "Card number is required!";
+    } else if (values.cardNumber.length < 15) {
+      errors.cardNumber = "Card number must be at least 15 characters!";
+    }
+    if (!values.expirationDate) {             //VALIDERINGEN AV DATUM FIXADE CHAT GPT
+      errors.expirationDate = "Expiration date is required!";
+    } else {
+      const [month, year] = values.expirationDate.split("/");
+
+      if (!month || !year || month.length !== 2 || year.length !== 2) {
+        errors.expirationDate = "Expiration date must be in MM/YY format!";
+      } else {
+        const monthNum = parseInt(month, 10);
+        const yearNum = parseInt(year, 10);
+
+        if (
+          isNaN(monthNum) ||
+          isNaN(yearNum) ||
+          monthNum < 1 ||
+          monthNum > 12
+        ) {
+          errors.expirationDate = "Expiration date is invalid!";
+        } else {
+          const currentYear = new Date().getFullYear() % 100; // ger de sista två siffrorna av detta året
+          const currentMonth = new Date().getMonth() + 1; // Månaderna får 0 innan???
+
+          if (
+            yearNum < currentYear ||
+            (yearNum === currentYear && monthNum < currentMonth)
+          ) {
+            errors.expirationDate = "Expiration date cannot be in the past!";
+          }
+        }
       }
     }
+    if (!values.cvv) {
+      errors.cvv = "CVV is required!";
+    } else if (values.cvv.length < 3) {
+      errors.cvv = "CVV must be at least 3 characters!";
+    }
+  } else if (paymentMethod === "swish") {
+    if (!values.phoneNumber) {
+      errors.phoneNumber = "Phone number is required!";
+    } else if (values.phoneNumber.length < 10) {
+      errors.phoneNumber = "Phone number must be at least 10 characters!";
+    }
+  }
 
-    return errors;
-  };
+  return errors;
+};
 
   return (
     <>
