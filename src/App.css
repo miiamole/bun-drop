@@ -146,7 +146,11 @@
 .form-container p {
   color: red;
 }
-
+.form-error{
+  color:red;
+  text-align: center;
+  font-size: larger;
+}
 .payment-container {
   display: flex;
 }
