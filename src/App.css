@@ -460,6 +460,9 @@ input[type="text"] {
   text-align: center;
 }
 .empty-cart-text {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  height:180px;
   position: absolute;
   top: -40px;
   left: 50%;

@@ -667,6 +667,27 @@
           "phoneNumber": "33333333329"
         }
       }
+    },
+    {
+      "id": "1717442029919",
+      "items": [
+        {
+          "id": "3",
+          "name": "Cheese Burger",
+          "price": 6.99,
+          "quantity": 1,
+          "image": "/images/burger 6.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "muu",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "3333333332"
+        }
+      }
     }
   ]
 }

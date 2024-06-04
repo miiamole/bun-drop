@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";   //PROBLEM----Log out knappen ses endast om man uppdaterar sidan manuellt
-import { Link, useNavigate } from "react-router-dom";     
+import { Link, useNavigate } from "react-router-dom";     //PROBLEM--- borde dirigeras till home vid utloggning, men då står namnet kvar på sidan
  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";  
  import { faCartShopping, faHouse, faBurger, faUser, faHeart} from "@fortawesome/free-solid-svg-icons";
 function Navbar() {     
