@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";   //PROBLEM---- EJ ANPASSAD FÖR HALV DESKTOP
+import React, { useEffect, useState } from "react";   
 import { Link } from "react-router-dom";
 function Home() {
 

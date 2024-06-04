@@ -188,44 +188,12 @@
       "password": "password",
       "favorites": [
         {
-          "id": "8",
-          "title": "Party Sundae",
-          "price": 2.99,
-          "description": "Sundae with sprinkles.",
-          "category": "desserts",
-          "image": "/images/dessert 2.png"
-        },
-        {
-          "id": "4",
-          "title": "No Carb Burger",
-          "price": 6.99,
-          "description": "A burger without the bun.",
-          "category": "burgers",
-          "image": "/images/burger 7.png"
-        },
-        {
-          "id": "19",
-          "title": "Ketchup",
-          "price": 0.99,
-          "description": "Classic tomato ketchup.",
+          "id": "2",
+          "title": "Sweet Potato Fries",
+          "price": 4.99,
+          "description": "Crispy sweet potato fries topped with fresh parsley.",
           "category": "sides",
-          "image": "/images/dressing 3.png"
-        },
-        {
-          "id": "1",
-          "title": "Classic Burger",
-          "price": 8.99,
-          "description": "A classic beef burger with lettuce, tomato, and cheese.",
-          "category": "burgers",
-          "image": "/images/burger 1.png"
-        },
-        {
-          "id": "19",
-          "title": "Ketchup",
-          "price": 0.99,
-          "description": "Classic tomato ketchup.",
-          "category": "sides",
-          "image": "/images/dressing 3.png"
+          "image": "/images/sides 2.png"
         },
         {
           "id": "3",
@@ -236,28 +204,36 @@
           "image": "/images/burger 6.png"
         },
         {
-          "id": "1",
-          "title": "Classic Burger",
-          "price": 8.99,
-          "description": "A classic beef burger with lettuce, tomato, and cheese.",
-          "category": "burgers",
-          "image": "/images/burger 1.png"
+          "id": "2",
+          "title": "Sweet Potato Fries",
+          "price": 4.99,
+          "description": "Crispy sweet potato fries topped with fresh parsley.",
+          "category": "sides",
+          "image": "/images/sides 2.png"
         },
         {
-          "id": "1",
-          "title": "Classic Burger",
-          "price": 8.99,
-          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "id": "3",
+          "title": "Cheese Burger",
+          "price": 6.99,
+          "description": "A classic cheeseburger, plain and simple.",
           "category": "burgers",
-          "image": "/images/burger 1.png"
+          "image": "/images/burger 6.png"
         },
         {
-          "id": "1",
-          "title": "Classic Burger",
-          "price": 8.99,
-          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "id": "4",
+          "title": "No Carb Burger",
+          "price": 6.99,
+          "description": "A burger without the bun.",
           "category": "burgers",
-          "image": "/images/burger 1.png"
+          "image": "/images/burger 7.png"
+        },
+        {
+          "id": "4",
+          "title": "No Carb Burger",
+          "price": 6.99,
+          "description": "A burger without the bun.",
+          "category": "burgers",
+          "image": "/images/burger 7.png"
         }
       ]
     },
@@ -759,6 +735,34 @@
         "city": "malmö",
         "paymentMethod": {
           "phoneNumber": "3333333332"
+        }
+      }
+    },
+    {
+      "id": "1717492285230",
+      "items": [
+        {
+          "id": "2",
+          "name": "Sweet Potato Fries",
+          "price": 4.99,
+          "quantity": 2,
+          "image": "/images/sides 2.png"
+        },
+        {
+          "id": "3",
+          "name": "Cheese Burger",
+          "price": 6.99,
+          "quantity": 1,
+          "image": "/images/burger 6.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "muu",
+        "address": "rolf12",
+        "city": "malml",
+        "paymentMethod": {
+          "phoneNumber": "44444444443"
         }
       }
     }

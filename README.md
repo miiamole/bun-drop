@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+en 
+personlig reflektion (inte Chat GPTs) över projektets arkitektur och 
+uppbyggnad, valda tekniska lösningar, och de utmaningar och lärdomar du stött på under projektets 
+gång. Beskriv varför vissa beslut togs, hur de påverkade projektets utfall, och vilka insikter du fått som 
+en framtida systemutvecklare.
+
+Till att börja med så att jag ändå nöjd med att jag inte bestämde hela min design innan jag började koda. Visst har jag fått göra om saker under arbetets gång men det gör mig inget. Jag fick själslig ro av att göra det på mitt sätt även om det var krångligare och tog mer tid. Men på det viset så visste jag att jag skulle ha tid med allt i och med att jag jobbade med det paralellt. 
+
+Det jag fortfarande behöver göra är att refaktorera en massa kod. Jag har en massa useEffects som jag misstänker skulle kunna finnas i en custom hook, men det har jag inte hunnit sätta mig in i. Många av mina beslut har tagits av stress över att inte hinna färdigt. Vissa grejer borde jag ha gjort bättre från början, tex att se till att jag inte upprepar en massa kod men, jag tänker alltid att det ärbättre att få det gjort än att få det gjort bra. För man kan alltid gå tillbaka och fixa senare men så är det sällan jag hinner fixa allt jag vill. Tex borde EmptyCart och EmptyFavo slås samman till en komponent som tar emot props från sina respektive föräldrar.
+
+Sen blev det också så att jag gjorde sådant som jag tyckte var roligt för stunden. Jag hade ju haft tid att refaktorera lite kod om jag inte istället lärde mig att göra en timer som räknade ner, exempelvis.
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +81,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

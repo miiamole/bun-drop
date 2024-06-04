@@ -1,5 +1,4 @@
-import React, { useState, useEffect} from "react";  //FIXA så att modalen även tar emot prop message, så att added to cart kan visas.
-import { Link, json } from "react-router-dom";   //FIXA så att man ej skickas till cart när man addar till den, ist. visas modal.
+import React, { useState, useEffect} from "react"; 
 import useLocalStorage from "../hooks/useLocalStorage"; //FIXA så att modalen stänger sig självt
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +8,7 @@ function Menu() {
   const [menu, setMenu] = useState([]);
   const [filter, setFilter] = useState("");
   const [cart, setCart] = useState("");
+  const [modalMessage, setModalMessage] = useState("");
   //const [favourite, setFavourite] = [];
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null); //för att se om knapparna ska synas
@@ -16,7 +16,7 @@ function Menu() {
   const { setLocalStorage, getLocalStorage, removeLocalStorage } =
     useLocalStorage();
     
-
+//Hämtar hela menyn
   useEffect(() => {
     fetch("http://localhost:3000/menu")
       .then((res) => res.json())
@@ -52,6 +52,8 @@ function Menu() {
   // LÄGG TILL I LOCAL STORAGE
   const addToCart = (menuItem) => {
     setLocalStorage("cart", menuItem);
+    setModalMessage("Added to cart"); 
+    setIsModalOpen(true); //öppna modalen- cart
   };
   // LÄGG TILL favoriter I DB.JSON
   const addToFavourite = (menuItem) => {
@@ -85,7 +87,8 @@ function Menu() {
       .then((response) => {
         if (response.ok) {
           console.log("Favorite added");
-          setIsModalOpen(true);
+          setModalMessage("Added to favourites");
+          setIsModalOpen(true); //öppna modal - favo
         } else {
           console.error("Failed to add favorite.");
         }
@@ -141,13 +144,13 @@ const toggleModal = () => {
                 </h3>
                 <h3 className="menu-card-price menu-card-text">${m.price}</h3>
                 <div className="add-to-cart-link-and-btn">
-                  <Link
+                  <button
                     onClick={() => addToCart(m)}
                     className="payment-btn"
-                    to={`/cart/${m.id}`}
+                    // to={`/cart/${m.id}`}
                   >
                     Add to cart
-                  </Link>
+                  </button>
 
                   {loggedInUser && (
                     <button
@@ -163,9 +166,11 @@ const toggleModal = () => {
           </div>
         </div>
       </div>
+
       <Modal
         isOpen={isModalOpen}
         toggleModal={toggleModal}
+        message={modalMessage}
       />
     </>
   );

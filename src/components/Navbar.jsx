@@ -33,7 +33,7 @@ const logOut = () => {
       <div className="header-wrapper">
         <img className="logo-image" src="/images/logo color.png" alt="Logo" />
         {isLoggedIn ? (
-          <button className="header-links" onClick={logOut}>
+          <button className="header-links log-out-btn" onClick={logOut}>
             <FontAwesomeIcon icon={faUser} className="header-icon" />
             Log out
           </button>

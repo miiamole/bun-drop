@@ -54,9 +54,6 @@ function Cart() {
 
   function deleteItem(itemToDelete) {
     removeLocalStorage("cart", itemToDelete);
-
-    console.log("deleting??", itemToDelete);
-
     setCart(cart.filter((item) => item.id !== itemToDelete.id));
   }
 

@@ -51,7 +51,9 @@
 .header-icon {
   margin-right: 7px;
 }
-
+.log-out-btn{
+  border:none;
+}
 .logo-image {
   height: 7rem;
   margin-bottom: 20px;
@@ -638,7 +640,7 @@ input[type="text"] {
   background-color: rgba(230, 19, 19, 0.941); 
 }
 
-.close-modal {
+/* .close-modal {
     position: absolute;
     top: 20px;
     right: 10px;
@@ -654,4 +656,4 @@ transform: scale(1.05);
   background-color: rgba(255, 77, 0, 0.925);
   color: white;
   transition: transform 0.3s, background-color 0.3s, color 0.3s;
-}
+} */
