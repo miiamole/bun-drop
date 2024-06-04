@@ -41,12 +41,12 @@ function useLocalStorage() {
     function removeWholeCartLocalStorage(key) {
   
       localStorage.removeItem(key);
-      console.log("deleting", key)
+    //   console.log("deleting", key)
     }
 
   //MED DENNA TAS rätt sak bort
   function removeLocalStorage(key, itemToDelete) {
-    console.log("deleting", itemToDelete);
+    // console.log("deleting", itemToDelete);
     //hämta hela cart:en
     let localStorageItem = localStorage.getItem(key);
     localStorageItem = JSON.parse(localStorageItem);
@@ -69,12 +69,12 @@ function useLocalStorage() {
 
   //chat gpt ang ändra kvantitet
   function updateQuantityInLocalStorage(key, itemId, newQuantity) {
-    console.log(
-      "Updating quantity in local storage:",
-      key,
-      itemId,
-      newQuantity
-    );
+    // console.log(
+    //   "Updating quantity in local storage:",
+    //   key,
+    //   itemId,
+    //   newQuantity
+    //);
     // Hämta hela localStorage-----DETTA FUNGERAR
     let localStorageItem = getLocalStorage(key);
 

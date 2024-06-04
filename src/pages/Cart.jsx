@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-//PROBLEM----- 3+1 BLIR 31 I CART:EN (när man redan ändrat kvantitet och sedan går tillbaka till meny och lägger till en)
+import React, { useState, useEffect } from "react"; //PROBLEM--- MAN KAN GÅ TILL CHECKOUT ÄVEN OM TOTAL PRISET ÄR 0
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
@@ -20,24 +19,40 @@ function Cart() {
     const itemsInCart = getLocalStorage("cart");
     if (itemsInCart) {
       setCart(itemsInCart);
+     
     }
-  }, []);
+  }, [totalPrice]);
+
+
+
 
   function priceOfOrder() {
     let totalPrice = 0;
     cart.forEach((item) => {
       totalPrice += item.price * item.quantity;
     });
-
+  
     return totalPrice.toFixed(2);
   }
 
   function handleQuantityChange(e, itemId) {
-    const newQuantity = e.target.value;
-    console.log("New quantity:", newQuantity);
+    let newQuantity;
+    const inputValue = e.target.value; // Get the input value
+    if (inputValue === "") {
+      const defaultQuantity = 0; // raderar man siffran så står det 0
+      newQuantity = defaultQuantity;
+    } else {
+      newQuantity = parseInt(inputValue, 10); // för så att inputen är en siffra
+    }
+
+    // console.log("New quantity:", newQuantity);
     updateQuantityInLocalStorage("cart", itemId, newQuantity);
 
-    // Uppdatera state för carten med den nya kvantiteten
+    // Update total price after quantity change// DETTA ÄER NYTT FÖR ATT FIXA PROB.
+    const updatedTotalPrice = priceOfOrder(); // Calculate new total price
+    setTotalPrice(updatedTotalPrice);
+
+    // Uppdatera för carten med ny quantity
     setCart((prevCart) =>
       prevCart.map((item) => {
         if (item.id === itemId) {
@@ -55,6 +70,10 @@ function Cart() {
   function deleteItem(itemToDelete) {
     removeLocalStorage("cart", itemToDelete);
     setCart(cart.filter((item) => item.id !== itemToDelete.id));
+
+    // Update total price after deleting item---DETTA ÄR NYTT FÖR ATT FIXA PROB.
+    const updatedTotalPrice = priceOfOrder(); // Calculate new total price
+    setTotalPrice(updatedTotalPrice);
   }
 
   return (
@@ -99,9 +118,15 @@ function Cart() {
               <Link to="/menu" className="payment-btn">
                 Add more items
               </Link>
-              <Link to="/payment" className="payment-btn place-order-btn">
-                Proceed to checkout
-              </Link>
+             
+                <Link
+                  to="/payment"
+                  className="payment-btn place-order-btn"
+                  disabled={totalPrice === 0}
+                >
+                  Proceed to checkout
+                </Link>
+              
             </div>
           </div>
         )}

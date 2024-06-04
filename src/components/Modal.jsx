@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";  //FIXA så modalen stänger sig självt, alt. att man kan klicka utanför den.
+import React, {useEffect} from "react"; 
 
 
 export default function Modal({ isOpen, toggleModal, message }) {
@@ -15,9 +15,6 @@ export default function Modal({ isOpen, toggleModal, message }) {
 
 
     if (!isOpen) return null;
-    console.log("closing modal");
-   
-
   return (
     <>
       {/* {modal && ( */}

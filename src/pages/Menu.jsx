@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from "react"; 
-import useLocalStorage from "../hooks/useLocalStorage"; //FIXA så att modalen stänger sig självt
+import React, { useState, useEffect} from "react"; //Fixa message "adding one more to cart"
+import useLocalStorage from "../hooks/useLocalStorage"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCheck } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../components/Modal";
@@ -13,7 +13,7 @@ function Menu() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null); //för att se om knapparna ska synas
   //   const [order, setOrder] = useState([]);
-  const { setLocalStorage, getLocalStorage, removeLocalStorage } =
+  const { setLocalStorage, getLocalStorage} =
     useLocalStorage();
     
 //Hämtar hela menyn
@@ -56,47 +56,53 @@ function Menu() {
     setIsModalOpen(true); //öppna modalen- cart
   };
   // LÄGG TILL favoriter I DB.JSON
-  const addToFavourite = (menuItem) => {
-    const userId = localStorage.getItem("loggedInUserId");
+const addToFavourite = (menuItem) => {
+  const userId = localStorage.getItem("loggedInUserId");
 
-    const favourite = {
-      id: menuItem.id,
-      title: menuItem.title,
-      price: menuItem.price,
-      description: menuItem.description,
-      category: menuItem.category,
-      image: menuItem.image,
-    };
-    fetch(`http://localhost:3000/users/${userId}`)
-      .then((response) => response.json())
-      .then((userData) => {
-        // Hämta användarens befintliga favoritlista
-        const favorites = userData.favorites;
+  fetch(`http://localhost:3000/users/${userId}`)
+    .then((response) => response.json())
+    .then((userData) => {
+      const favorites = userData.favorites;
 
-        // Lägg till den nya favoriten i favoritlistan
-        favorites.push(favourite);
+      const isFavouriteExists = favorites.some((fav) => fav.id === menuItem.id);
 
-        const patchOptions = {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ favorites: favorites }),
-        };
+      if (isFavouriteExists) {
+        setModalMessage("Already in favourites");
+        setIsModalOpen(true);
+        return;
+      }
 
-        return fetch(`http://localhost:3000/users/${userId}`, patchOptions);
-      })
-      .then((response) => {
-        if (response.ok) {
-          console.log("Favorite added");
-          setModalMessage("Added to favourites");
-          setIsModalOpen(true); //öppna modal - favo
-        } else {
-          console.error("Failed to add favorite.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });      
-  };
+      const favourite = {
+        id: menuItem.id,
+        title: menuItem.title,
+        price: menuItem.price,
+        description: menuItem.description,
+        category: menuItem.category,
+        image: menuItem.image,
+      };
+
+      favorites.push(favourite);
+
+      const patchOptions = {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ favorites: favorites }),
+      };
+
+      return fetch(`http://localhost:3000/users/${userId}`, patchOptions);
+    })
+    .then((response) => {
+      if (response.ok) {
+        setModalMessage("Added to favourites");
+        setIsModalOpen(true);
+      } else {
+        console.error("Failed to add favorite.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+};
 
 const toggleModal = () => {
   setIsModalOpen(!isModalOpen);

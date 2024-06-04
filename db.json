@@ -503,7 +503,24 @@
       "id": "1870",
       "userName": "orange",
       "password": "orange",
-      "favorites": []
+      "favorites": [
+        {
+          "id": "3",
+          "title": "Cheese Burger",
+          "price": 6.99,
+          "description": "A classic cheeseburger, plain and simple.",
+          "category": "burgers",
+          "image": "/images/burger 6.png"
+        },
+        {
+          "id": "2",
+          "title": "Sweet Potato Fries",
+          "price": 4.99,
+          "description": "Crispy sweet potato fries topped with fresh parsley.",
+          "category": "sides",
+          "image": "/images/sides 2.png"
+        }
+      ]
     },
     {
       "id": "6d38",
@@ -763,6 +780,27 @@
         "city": "malml",
         "paymentMethod": {
           "phoneNumber": "44444444443"
+        }
+      }
+    },
+    {
+      "id": "1717495776106",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "price": 8.99,
+          "quantity": null,
+          "image": "/images/burger 1.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "mamam",
+        "address": "rolf13",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "1111111110"
         }
       }
     }
