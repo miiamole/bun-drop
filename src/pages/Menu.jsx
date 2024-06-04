@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { Link, json } from "react-router-dom";
-import useLocalStorage from "../hooks/useLocalStorage";
+import React, { useState, useEffect} from "react";  //FIXA så att modalen även tar emot prop message, så att added to cart kan visas.
+import { Link, json } from "react-router-dom";   //FIXA så att man ej skickas till cart när man addar till den, ist. visas modal.
+import useLocalStorage from "../hooks/useLocalStorage"; //FIXA så att modalen stänger sig självt
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCheck } from "@fortawesome/free-solid-svg-icons";
+import Modal from "../components/Modal";
 
 function Menu() {
   const [menu, setMenu] = useState([]);
   const [filter, setFilter] = useState("");
   const [cart, setCart] = useState("");
-  const [favourite, setFavourite] = [];
+  //const [favourite, setFavourite] = [];
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null); //för att se om knapparna ska synas
   //   const [order, setOrder] = useState([]);
   const { setLocalStorage, getLocalStorage, removeLocalStorage } =
     useLocalStorage();
+    
 
   useEffect(() => {
     fetch("http://localhost:3000/menu")
@@ -82,14 +85,19 @@ function Menu() {
       .then((response) => {
         if (response.ok) {
           console.log("Favorite added");
+          setIsModalOpen(true);
         } else {
           console.error("Failed to add favorite.");
         }
       })
       .catch((error) => {
         console.error("Error:", error);
-      });
+      });      
   };
+
+const toggleModal = () => {
+  setIsModalOpen(!isModalOpen);
+};
 
   return (
     <>
@@ -155,6 +163,10 @@ function Menu() {
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        toggleModal={toggleModal}
+      />
     </>
   );
 }

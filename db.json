@@ -186,7 +186,80 @@
       "id": "c219",
       "userName": "user",
       "password": "password",
-      "favorites": []
+      "favorites": [
+        {
+          "id": "8",
+          "title": "Party Sundae",
+          "price": 2.99,
+          "description": "Sundae with sprinkles.",
+          "category": "desserts",
+          "image": "/images/dessert 2.png"
+        },
+        {
+          "id": "4",
+          "title": "No Carb Burger",
+          "price": 6.99,
+          "description": "A burger without the bun.",
+          "category": "burgers",
+          "image": "/images/burger 7.png"
+        },
+        {
+          "id": "19",
+          "title": "Ketchup",
+          "price": 0.99,
+          "description": "Classic tomato ketchup.",
+          "category": "sides",
+          "image": "/images/dressing 3.png"
+        },
+        {
+          "id": "1",
+          "title": "Classic Burger",
+          "price": 8.99,
+          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "category": "burgers",
+          "image": "/images/burger 1.png"
+        },
+        {
+          "id": "19",
+          "title": "Ketchup",
+          "price": 0.99,
+          "description": "Classic tomato ketchup.",
+          "category": "sides",
+          "image": "/images/dressing 3.png"
+        },
+        {
+          "id": "3",
+          "title": "Cheese Burger",
+          "price": 6.99,
+          "description": "A classic cheeseburger, plain and simple.",
+          "category": "burgers",
+          "image": "/images/burger 6.png"
+        },
+        {
+          "id": "1",
+          "title": "Classic Burger",
+          "price": 8.99,
+          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "category": "burgers",
+          "image": "/images/burger 1.png"
+        },
+        {
+          "id": "1",
+          "title": "Classic Burger",
+          "price": 8.99,
+          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "category": "burgers",
+          "image": "/images/burger 1.png"
+        },
+        {
+          "id": "1",
+          "title": "Classic Burger",
+          "price": 8.99,
+          "description": "A classic beef burger with lettuce, tomato, and cheese.",
+          "category": "burgers",
+          "image": "/images/burger 1.png"
+        }
+      ]
     },
     {
       "id": "4a51",

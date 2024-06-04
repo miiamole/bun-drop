@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"; //Borde fixa---- har två li
 
 import { Link, useParams } from "react-router-dom"; //Borde fixa----upprepar kod från Navbar
 import useLocalStorage from "../hooks/useLocalStorage"; //Borde anv. min local S hook
-import EmptyFavo from "../components/EmptyFavo";
+import EmptyFavo from "../components/EmptyFavo";   //PROBLEM- MAN KAN LÄGGA TILL SAMMA TVÅ GÅNGER- knas när man sen ska ta bort dem
 
 function Favourites() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

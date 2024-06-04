@@ -607,5 +607,51 @@ input[type="text"] {
   text-align: center;
   padding: 40px;
   margin-top:-40px;
+}
+/* MODAL */
 
+.modal-content {
+    background-color: rgb(227, 147, 159);
+    border-radius: 10px;
+    max-width: 100px;
+    min-width: 200px;
+    color: white;
+    text-align: center;
+     box-shadow: 4px 6px 6px 6px rgb(159, 123, 123);
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: rgba(224, 109, 109, 0.941); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+   box-shadow: 4px 6px 6px 6px rgb(159, 123, 123);
+}
+.modal:hover{
+  box-shadow: 4px 6px 6px 6px rgb(111, 63, 63);
+  background-color: rgba(230, 19, 19, 0.941); 
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    padding: 5px 7px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 1rem;
+}
+.close-modal:hover{
+transform: scale(1.05);
+  background-color: rgba(255, 77, 0, 0.925);
+  color: white;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
