@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";    //PROBLEM--- KAN GÅ TILL PAYMENT TROTS ATT EN AV FLERA PRODUKTER STÅR PÅ 0 i quantity;
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
@@ -32,6 +32,14 @@ function Cart() {
 
   const handleQuantityChange = (e, itemId) => {
     const newQuantity = parseInt(e.target.value, 10);
+
+//MED DETTA KAN MAN EJ TA BORT 1, KAN EJ SKRIVA 0 MEN HELLER EJ 22, MÅSTE SCROLLA TILL HÖGRE SIFFROR
+// if (isNaN(newQuantity) || newQuantity <= 0) {
+//   setFormError("Quantity must be at least 1.");
+//   return;
+// }
+
+
 
     updateQuantityInLocalStorage("cart", itemId, newQuantity);
 

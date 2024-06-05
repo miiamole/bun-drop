@@ -7,7 +7,7 @@ export default function Modal({ isOpen, toggleModal, message }) {
     if (isOpen) {
       const timer = setTimeout(() => {
         toggleModal();
-      }, 1000); // Stänger modalen efter 1 sek
+      }, 700); // Stänger modalen efter 0,7 sekund
 
       return () => clearTimeout(timer); // Rensa timeout om modalen stängs innan 3 sekunder
     }
