@@ -195,5 +195,55 @@
       "favorites": []
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "1717573308144",
+      "items": [
+        {
+          "id": "3",
+          "name": "Cheese Burger",
+          "price": 6.99,
+          "quantity": 2,
+          "image": "/images/burger 6.png"
+        },
+        {
+          "id": "4",
+          "name": "No Carb Burger",
+          "price": 6.99,
+          "quantity": 1,
+          "image": "/images/burger 7.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "mu",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "1111111111"
+        }
+      }
+    },
+    {
+      "id": "1717573564441",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "price": 8.99,
+          "quantity": 1,
+          "image": "/images/burger 1.png"
+        }
+      ],
+      "customer": {
+        "firstName": "mamma",
+        "lastName": "mu",
+        "address": "rolf12",
+        "city": "malmö",
+        "paymentMethod": {
+          "phoneNumber": "1111111109"
+        }
+      }
+    }
+  ]
 }

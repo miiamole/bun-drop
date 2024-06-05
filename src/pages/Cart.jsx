@@ -18,7 +18,7 @@ function Cart() {
       setCart(itemsInCart);
       updateTotalPrice(itemsInCart); 
     }
-  }, []);
+  }, [cart]);
 
   const updateTotalPrice = (cartItems) => {
     const total = cartItems.reduce((sum, item) => {
@@ -35,8 +35,10 @@ function Cart() {
 
 //MED DETTA KAN MAN EJ TA BORT 1, KAN EJ SKRIVA 0 MEN HELLER EJ 22, MÅSTE SCROLLA TILL HÖGRE SIFFROR
 // if (isNaN(newQuantity) || newQuantity <= 0) {
-//   setFormError("Quantity must be at least 1.");
-//   return;
+//     // om det är tomt, parsa ej
+//     setFormError("Quantity must be at least 1.");
+//     return;
+    
 // }
 
 
@@ -103,6 +105,7 @@ function Cart() {
                     type="number"
                     value={item.quantity || ""}
                     className="cart-input-amount"
+                
                     min="1"
                     max="40"
                     onChange={(e) => handleQuantityChange(e, item.id)}

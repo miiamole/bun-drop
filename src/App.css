@@ -488,6 +488,12 @@ input[type="text"] {
   font-size: 16px;
   text-align: center;
 }
+.cart-input-amount .up-arrow,
+.cart-input-amount .down-arrow{
+  font-size: 55px; 
+    width: 30px; 
+    height: 30px; 
+}
 .cart-links-wrapper {
   display: flex;
   justify-content: space-around;

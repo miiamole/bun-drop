@@ -24,7 +24,8 @@ function Navbar() {
     console.log("User logged out");
     setUser({ userName: "", password: "" });
     localStorage.clear();
-    navigate("/menu");
+    //window.location.reload()
+    navigate("/");
   };
 
   return (
