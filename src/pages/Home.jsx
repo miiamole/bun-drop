@@ -21,10 +21,6 @@ useEffect(() => {
   }
 }, [loggedInUser]);
 
-
- 
-
-
   return (
     <>
       <div>
