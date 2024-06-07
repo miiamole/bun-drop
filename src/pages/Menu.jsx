@@ -3,6 +3,7 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCheck } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../components/Modal";
+import { Link} from "react-router-dom";   
 
 function Menu() {
   const [menu, setMenu] = useState([]);
@@ -153,7 +154,7 @@ const toggleModal = () => {
                   <button
                     onClick={() => addToCart(m)}
                     className="payment-btn"
-                    // to={`/cart/${m.id}`}
+                    to={`/cart/${m.id}`}
                   >
                     Add to cart
                   </button>
@@ -169,6 +170,11 @@ const toggleModal = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="clock-container">
+            <Link to={`/cart/:menuId`} className="go-to-cart-btn">
+              Go to cart
+            </Link>
           </div>
         </div>
       </div>

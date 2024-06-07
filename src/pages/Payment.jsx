@@ -60,7 +60,7 @@ function Payment() {
     };
 
     fetch("http://localhost:3000/orders", postOptions);
-console.log("det som skickats: ",postOptions)
+// console.log("det som skickats: ",postOptions)
     // // Ta bort allt från cart efter att de har lagts till i order
     clearLocalStorage("cart");
     setOrder([]);

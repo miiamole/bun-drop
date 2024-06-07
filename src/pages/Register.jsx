@@ -75,7 +75,7 @@ function Register() {
     fetch("http://localhost:3000/users", postOptions)
       .then((response) => {
         if (response.ok) {
-          console.log("User added successfully!");
+          // console.log("User added successfully!");
           setUser(initialValues);
         } else {
           console.error("Failed to add user.");

@@ -12,7 +12,7 @@ function Confirmation() {
     fetch(`http://localhost:3000/orders/${orderId}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setOrder(data.items);
         setCustomer(data.customer);
       });

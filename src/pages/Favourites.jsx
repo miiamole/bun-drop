@@ -21,10 +21,10 @@ function Favourites() {
     const lsUserId = localStorage.getItem("loggedInUserId");
     if (lsUserId) {
       setIsLoggedIn(true);
-      console.log("is logged in ", true);
+    //   console.log("is logged in ", true);
     } else {
       setIsLoggedIn(false);
-      console.log("is logged in ", false);
+    //   console.log("is logged in ", false);
     }
   }, [isLoggedIn]);
 
@@ -32,7 +32,7 @@ function Favourites() {
     // Hämta inloggad user från localStorage
     const lsUserId = localStorage.getItem("loggedInUserId");
     if (lsUserId) {
-      console.log("user in local storage: ", lsUserId);
+    //   console.log("user in local storage: ", lsUserId);
       fetchUserFavorites(lsUserId);
       //  setLoggedInUser(JSON.parse(lsUserId));
     }

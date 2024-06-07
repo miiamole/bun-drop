@@ -51,8 +51,8 @@
 .header-icon {
   margin-right: 7px;
 }
-.log-out-btn{
-  border:none;
+.log-out-btn {
+  border: none;
 }
 .logo-image {
   height: 7rem;
@@ -145,8 +145,8 @@
 .form-container p {
   color: red;
 }
-.form-error{
-  color:red;
+.form-error {
+  color: red;
   text-align: center;
   font-size: larger;
 }
@@ -171,10 +171,9 @@
   text-decoration: none;
   text-align: center;
   font-weight: bold;
-}
-.payment-btn {
   align-self: center;
 }
+
 .user-form {
   display: flex;
   flex-direction: column;
@@ -222,6 +221,30 @@ input[type="text"] {
   display: flex;
   justify-content: space-between;
   position: relative;
+}
+.go-to-cart-btn {
+background-color: rgba(28, 116, 94, 0.772);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  width: 90px;
+  height: 2rem;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  padding:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.go-to-cart-btn:hover{
+transform: scale(1.05);
+  background-color: rgba(28, 116, 94, 0.6);
+  color: white;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 .heart-shape {
   height: 1.4rem;
@@ -309,6 +332,7 @@ input[type="text"] {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8rem;
 }
+
 .menu-btn:hover,
 .order-link:hover,
 .header-links:hover,
@@ -354,7 +378,7 @@ input[type="text"] {
 }
 @media (max-width: 768px) {
   .home-text-and-logo {
-    flex-direction: column; 
+    flex-direction: column;
   }
 }
 .img-collage-wrapper {
@@ -446,7 +470,7 @@ input[type="text"] {
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
-  position: absolute; 
+  position: absolute;
   bottom: 5px;
   right: 9px;
 }
@@ -469,7 +493,7 @@ input[type="text"] {
 .empty-cart-text {
   background-color: antiquewhite;
   border-radius: 10px;
-  height:180px;
+  height: 180px;
   position: absolute;
   top: -40px;
   left: 50%;
@@ -519,15 +543,14 @@ input[type="text"] {
   box-shadow: 1px 2px rgb(159, 123, 123);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.reg-link-container{
+.reg-link-container {
   position: relative;
 }
-.reg-link{
-color:green;
-position: absolute;
-top:30%;
-left: 60%;
-
+.reg-link {
+  color: green;
+  position: absolute;
+  top: 30%;
+  left: 60%;
 }
 /* REGISTER PAGE */
 .register-container {
@@ -542,10 +565,9 @@ left: 60%;
 }
 
 /* FAVOURITE PAGE */
-.favo-sign-in{
+.favo-sign-in {
   display: flex;
   justify-content: center;
-  
 }
 .remove-favorite {
   background-color: rgba(248, 33, 9, 0.6);
@@ -594,21 +616,21 @@ left: 60%;
   margin-top: -0px;
 }
 /* NOT FOUND PAGE */
-.not-found-container{
+.not-found-container {
   text-align: center;
   padding: 40px;
-  margin-top:-40px;
+  margin-top: -40px;
 }
 /* MODAL */
 
 .modal-content {
-    background-color: rgb(227, 147, 159);
-    border-radius: 10px;
-    max-width: 100px;
-    min-width: 200px;
-    color: white;
-    text-align: center;
-     box-shadow: 4px 6px 6px 6px rgb(159, 123, 123);
+  background-color: rgb(227, 147, 159);
+  border-radius: 10px;
+  max-width: 100px;
+  min-width: 200px;
+  color: white;
+  text-align: center;
+  box-shadow: 4px 6px 6px 6px rgb(159, 123, 123);
 }
 .modal {
   position: fixed;
@@ -617,16 +639,14 @@ left: 60%;
   transform: translate(-50%, -50%);
   width: 300px;
   height: 200px;
-  background-color: rgba(224, 109, 109, 0.941); 
+  background-color: rgba(224, 109, 109, 0.941);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-   box-shadow: 4px 6px 6px 6px rgb(159, 123, 123);
+  box-shadow: 4px 6px 6px 6px rgb(159, 123, 123);
 }
-.modal:hover{
+.modal:hover {
   box-shadow: 4px 6px 6px 6px rgb(111, 63, 63);
-  background-color: rgba(230, 19, 19, 0.941); 
+  background-color: rgba(230, 19, 19, 0.941);
 }
-
-

@@ -11,17 +11,17 @@ function Navbar() {
     const lsUserId = localStorage.getItem("loggedInUserId");
     if (lsUserId) {
       setIsLoggedIn(true);
-      console.log("is logged in ", true);
+      // console.log("is logged in ", true);
     } else {
       setIsLoggedIn(false);
-      console.log("is logged in ", false);
+      // console.log("is logged in ", false);
     }
     
   }, [isLoggedIn, localStorage.getItem("loggedInUserId")]); 
 
   const logOut = () => {
     setIsLoggedIn(false);
-    console.log("User logged out");
+    // console.log("User logged out");
     setUser({ userName: "", password: "" });
     localStorage.clear();
     navigate("/"); 

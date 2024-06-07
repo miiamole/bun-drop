@@ -51,13 +51,13 @@ function PayForm(props) {
 
   function processOrder() {
     props.placeOrder(user);
-    console.log("the user is:", user) // här får jag fram infor om användaren från formuläret
+    // console.log("the user is:", user) // här får jag fram infor om användaren från formuläret
 
   }
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(user);
+        console.log(user);
     }
   }, [formErrors]);
 
