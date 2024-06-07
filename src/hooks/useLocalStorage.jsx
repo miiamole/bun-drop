@@ -1,5 +1,4 @@
 function useLocalStorage() {
-  
   function setLocalStorage(key, item) {
     // Hämta hela localStorage
     // Gör om det till en array
@@ -37,12 +36,11 @@ function useLocalStorage() {
 
     return JSON.parse(localStorageItem);
   }
- // MED DENNA TAS HELA CARTEN BORT- används för att tömma cart:en när man loggar in
-    function removeWholeCartLocalStorage(key) {
-  
-      localStorage.removeItem(key);
+  // MED DENNA TAS HELA CARTEN BORT- används för att tömma cart:en när man loggar in
+  function removeWholeCartLocalStorage(key) {
+    localStorage.removeItem(key);
     //   console.log("deleting", key)
-    }
+  }
 
   //MED DENNA TAS rätt sak bort
   function removeLocalStorage(key, itemToDelete) {

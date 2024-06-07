@@ -3,11 +3,14 @@ import React, { useEffect, useState } from "react"; //Borde fixa---- har två li
 import { Link, useParams } from "react-router-dom"; //Borde fixa----upprepar kod från Navbar
 import useLocalStorage from "../hooks/useLocalStorage"; //Borde anv. min local S hook
 import Message from "../components/Message";
+import Modal from "../components/Modal";
 
 function Favourites() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
- // const [loggedInUser, setLoggedInUser] = useState({});
- // const [userFavorites, setUserFavorites] = useState([]);
+  // const [loggedInUser, setLoggedInUser] = useState({});
+  // const [userFavorites, setUserFavorites] = useState([]);
+  const [modalMessage, setModalMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { userId } = useParams();
   const [listOfFavorites, setListOfFavourites] = useState([]);
   const {
@@ -21,10 +24,10 @@ function Favourites() {
     const lsUserId = localStorage.getItem("loggedInUserId");
     if (lsUserId) {
       setIsLoggedIn(true);
-    //   console.log("is logged in ", true);
+      //   console.log("is logged in ", true);
     } else {
       setIsLoggedIn(false);
-    //   console.log("is logged in ", false);
+      //   console.log("is logged in ", false);
     }
   }, [isLoggedIn]);
 
@@ -32,7 +35,7 @@ function Favourites() {
     // Hämta inloggad user från localStorage
     const lsUserId = localStorage.getItem("loggedInUserId");
     if (lsUserId) {
-    //   console.log("user in local storage: ", lsUserId);
+      //   console.log("user in local storage: ", lsUserId);
       fetchUserFavorites(lsUserId);
       //  setLoggedInUser(JSON.parse(lsUserId));
     }
@@ -82,6 +85,12 @@ function Favourites() {
   const addToCart = (menuItem) => {
     setLocalStorage("cart", menuItem);
     console.log("adding ", menuItem);
+    setModalMessage("Added to cart");
+    setIsModalOpen(true); //öppna modalen
+  };
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
@@ -111,13 +120,13 @@ function Favourites() {
                   <h3>${f.price}</h3>
                   <h3>{f.description}</h3>
                   <div className="add-to-cart-link-and-btn">
-                    <Link
+                    <button
                       onClick={() => addToCart(f)}
                       className="payment-btn"
                       to={`/cart/${f.id}`}
                     >
                       Add to cart
-                    </Link>
+                    </button>
                     <button
                       onClick={() => handleRemoveFavorite(f)}
                       className="remove-favorite"
@@ -152,6 +161,11 @@ function Favourites() {
           </>
         )}
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        toggleModal={toggleModal}
+        message={modalMessage}
+      />
     </>
   );
 }
