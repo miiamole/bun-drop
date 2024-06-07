@@ -23,3 +23,5 @@ Som vanligt kan jag inte påstå att jag har något vettigt att säga om arkitek
 Något jag börjar lära mig är att släppa saker som inte funkar och istället hitta på någon annan lösning. Jag höll på i evigheter med att försöka göra så att man inte kan komma vidare från payment om man har flera produkter i sin cart men en av dem har tomt i fältet för quantity. Jag lyckades inte fixa det på något bra sätt men jag fattar nu i alla fall att jag bara borde ha designat om det för att passa mina alternativa lösningar.
 
 Summan av kardemumman är i alla fall att detta är det första slutprojektet som jag är nöjd med så jag har egentligen inga egentliga klagomål mot mig själv.
+
+Ps. jag är förresten onöjd med payment sidan, där ser man att jag inte riktigt tänkt till innan. Jag försökte göra om den men det blev inte som jag ville (vill ha delivery info till vänster och sen väljer man betalningsmetod till höger, så att sidan inte är så tom till att börja med). + Störigt att man måste scrolla upp för att hitta knapparna för att välja betalningsform.
