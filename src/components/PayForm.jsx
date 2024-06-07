@@ -204,7 +204,7 @@ const validatePaymentInfo = (values) => {
                       <input
                         type="number"
                         name="phoneNumber"
-                        placeholder="555-34578"
+                        placeholder="555-3457821"
                         value={user.phoneNumber}
                         onChange={handleChange}
                       />
