@@ -193,6 +193,12 @@
       "userName": "Mamma Mu",
       "password": "password",
       "favorites": []
+    },
+    {
+      "id": "a13b",
+      "userName": "offer",
+      "password": "kofta",
+      "favorites": []
     }
   ],
   "orders": []
