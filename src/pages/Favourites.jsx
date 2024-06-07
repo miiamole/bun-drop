@@ -84,7 +84,7 @@ function Favourites() {
   // LÄGG TILL I LOCAL STORAGE
   const addToCart = (menuItem) => {
     setLocalStorage("cart", menuItem);
-    console.log("adding ", menuItem);
+    // console.log("adding ", menuItem);
     setModalMessage("Added to cart");
     setIsModalOpen(true); //öppna modalen
   };
@@ -140,17 +140,6 @@ function Favourites() {
           </>
         ) : (
           <>
-            {/* <div className="sign-in-fav-container favvo">
-              <h3 className="cart-text">
-                Hey there! Want to keep your favorites safe? Sign in now!
-              </h3>
-              <div className="favo-sign-in">
-                <Link to="/logIn" className="payment-btn favo-sign-in">
-                  {" "}
-                  Just do it!
-                </Link>
-              </div>
-            </div> */}
             <div className="cart-text">
               <Message
                 message="Want to keep your favourites safe? Sign in below!"
