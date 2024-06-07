@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react";   // tycker inte denna sidan funkar ordentligt
 function NotFound() {
   return (
     <>

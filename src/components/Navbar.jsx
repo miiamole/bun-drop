@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";   
-import { Link, useNavigate } from "react-router-dom";     //PROBLEM--- borde dirigeras till home vid utloggning, men då står namnet kvar på sidan
+import { Link, useNavigate } from "react-router-dom";     
  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  import { faCartShopping, faHouse, faBurger, faUser, faHeart} from "@fortawesome/free-solid-svg-icons";
 function Navbar() {
@@ -24,8 +24,9 @@ function Navbar() {
     console.log("User logged out");
     setUser({ userName: "", password: "" });
     localStorage.clear();
-    //window.location.reload()
-    navigate("/");
+    navigate("/"); 
+     window.location.reload(); // tips från David för att lösa problemet med att 
+     //personens namn står kvar på sidan trots att de loggat ut.
   };
 
   return (

@@ -52,13 +52,6 @@ function LogIn() {
   return (
     <>
       <div className="color-wrapper">
-        <div className="register">
-          <h3>Not registered yet? </h3>
-          <Link to="/register" className="payment-btn place-order-btn">
-            Click here
-          </Link>
-        </div>
-
         <div className="clock-container">
           <div className="sign-in-container">
             <form onSubmit={handleLogIn} className="form-container">
@@ -82,6 +75,10 @@ function LogIn() {
                 <button className="payment-btn" onClick={handleLogIn}>
                   Sign in
                 </button>
+                <div className="reg-link-container">
+                  <h5>Not registerd yet?</h5>
+                  <Link className="reg-link" link to="/register">Click here</Link>
+                </div>
               </div>
             </form>
           </div>

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react"; //Borde fixa---- har två li
 
 import { Link, useParams } from "react-router-dom"; //Borde fixa----upprepar kod från Navbar
 import useLocalStorage from "../hooks/useLocalStorage"; //Borde anv. min local S hook
-import EmptyFavo from "../components/EmptyFavo";   //PROBLEM- MAN KAN LÄGGA TILL SAMMA TVÅ GÅNGER- knas när man sen ska ta bort dem
+import Message from "../components/Message";
 
 function Favourites() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loggedInUser, setLoggedInUser] = useState({});
-  const [userFavorites, setUserFavorites] = useState([]);
+ // const [loggedInUser, setLoggedInUser] = useState({});
+ // const [userFavorites, setUserFavorites] = useState([]);
   const { userId } = useParams();
   const [listOfFavorites, setListOfFavourites] = useState([]);
   const {
@@ -90,7 +90,18 @@ function Favourites() {
         {isLoggedIn ? (
           <>
             <h1 className="cart-text">
-              {listOfFavorites.length > 0 ? "Your favourites" : <EmptyFavo />}
+              {listOfFavorites.length > 0 ? (
+                "Your favourites"
+              ) : (
+                <div className="empty-fav-text">
+                  <Message
+                    message="Add some sparkle to your
+              favorites!"
+                    linkText="Menu"
+                    linkTo="/menu"
+                  />
+                </div>
+              )}
             </h1>
             <div className="menu-container">
               {listOfFavorites.map((f) => (
@@ -120,7 +131,7 @@ function Favourites() {
           </>
         ) : (
           <>
-            <div className="sign-in-fav-container favvo">
+            {/* <div className="sign-in-fav-container favvo">
               <h3 className="cart-text">
                 Hey there! Want to keep your favorites safe? Sign in now!
               </h3>
@@ -130,6 +141,13 @@ function Favourites() {
                   Just do it!
                 </Link>
               </div>
+            </div> */}
+            <div className="cart-text">
+              <Message
+                message="Want to keep your favourites safe? Sign in below!"
+                linkText="Sign in"
+                linkTo="/logIn"
+              />
             </div>
           </>
         )}

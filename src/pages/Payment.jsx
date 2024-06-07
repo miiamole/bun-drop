@@ -24,8 +24,6 @@ function Payment() {
    
     setIsSubmit(true);
 
-   
-
     const orderId = Date.now().toString(); // Generera ett random id baserat på tiden just nu
 
     // Använder det id:t när ordern skapas

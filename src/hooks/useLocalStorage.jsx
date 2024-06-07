@@ -67,7 +67,7 @@ function useLocalStorage() {
     localStorage.setItem(key, JSON.stringify([]));
   }
 
-  //chat gpt ang ändra kvantitet
+  //chatGPT ang ändra kvantitet
   function updateQuantityInLocalStorage(key, itemId, newQuantity) {
     // console.log(
     //   "Updating quantity in local storage:",

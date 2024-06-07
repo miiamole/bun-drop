@@ -62,7 +62,6 @@
 
 .nav-links-wrapper {
   display: flex;
-  /* flex: 1; */
   justify-content: center;
 }
 
@@ -174,7 +173,6 @@
   font-weight: bold;
 }
 .payment-btn {
-  /* margin-top: 20px; */
   align-self: center;
 }
 .user-form {
@@ -323,9 +321,7 @@ input[type="text"] {
 .menu-btn:hover {
   background-color: rgba(255, 140, 0, 0.6);
 }
-/* .order-link:hover {
-  background-color: rgba(255, 140, 0, 0.6);
-} */
+
 .header-links:hover,
 .cart-link:hover {
   background-color: rgba(255, 140, 0, 0.6);
@@ -450,7 +446,7 @@ input[type="text"] {
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
-  position: absolute; /* Lägg till absolut position */
+  position: absolute; 
   bottom: 5px;
   right: 9px;
 }
@@ -485,20 +481,6 @@ input[type="text"] {
   text-align: right;
   padding-right: 22%;
 }
-/* .cart-input-amount {
-  border-radius: 5px;
-  border: 1px solid black;
-  padding: 5px 10px;
-  width: 50px;
-  font-size: 16px;
-  text-align: center;
-}
-.cart-input-amount .up-arrow,
-.cart-input-amount .down-arrow{
-  font-size: 55px; 
-    width: 30px; 
-    height: 30px; 
-} */
 .cart-links-wrapper {
   display: flex;
   justify-content: space-around;
@@ -527,13 +509,6 @@ input[type="text"] {
   color: black;
 }
 /* Sign IN PAGE */
-
-.register {
-  position: absolute;
-  top: 10px;
-  right: 0%;
-  transform: translateX(-50%);
-}
 .sign-in-container {
   background-color: antiquewhite;
   height: 400px;
@@ -543,6 +518,16 @@ input[type="text"] {
   border-radius: 10px;
   box-shadow: 1px 2px rgb(159, 123, 123);
   transition: transform 0.3s, box-shadow 0.3s;
+}
+.reg-link-container{
+  position: relative;
+}
+.reg-link{
+color:green;
+position: absolute;
+top:30%;
+left: 60%;
+
 }
 /* REGISTER PAGE */
 .register-container {
@@ -555,24 +540,13 @@ input[type="text"] {
   box-shadow: 1px 2px rgb(159, 123, 123);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.succ-reg-text {
-  display: inline;
-  white-space: nowrap;
-  position: absolute;
-  top: 20px;
-  left: -70px;
-}
-.succ-reg-btn {
-  display: inline-block;
-  margin-top: 10px;
-}
+
 /* FAVOURITE PAGE */
 .favo-sign-in{
   display: flex;
   justify-content: center;
   
 }
-
 .remove-favorite {
   background-color: rgba(248, 33, 9, 0.6);
   color: white;
@@ -613,13 +587,11 @@ input[type="text"] {
   position: relative;
   top: -80px;
 }
-/* EMPTY FAVOURITE COMPONENET */
+/* FAVOURITE */
 .empty-fav-text {
   font-size: 1rem;
-  background-color: antiquewhite;
-  border-radius: 10px;
   height: 160px;
-  margin-top: -70px;
+  margin-top: -0px;
 }
 /* NOT FOUND PAGE */
 .not-found-container{
@@ -657,20 +629,4 @@ input[type="text"] {
   background-color: rgba(230, 19, 19, 0.941); 
 }
 
-/* .close-modal {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    padding: 5px 7px;
-    border-radius: 10px;
-    border: none;
-    background-color: transparent;
-    color: black;
-    font-size: 1rem;
-}
-.close-modal:hover{
-transform: scale(1.05);
-  background-color: rgba(255, 77, 0, 0.925);
-  color: white;
-  transition: transform 0.3s, background-color 0.3s, color 0.3s;
-} */
+

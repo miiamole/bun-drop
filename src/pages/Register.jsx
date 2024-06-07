@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SuccessReg from "../components/SuccessReg";
+import Message from "../components/Message";
 
 function Register() {
   const initialValues = { userName: "", password: "" };
@@ -90,13 +90,14 @@ function Register() {
     <div className="payment-container color-wrapper">
       <div className="cart-text">
         {Object.keys(formErrors).length === 0 && isSubmit ? (
-          <div className="reg-success">
-            <SuccessReg />
+          <div className="empty-fav-text">
+            <Message message="Your registration was successfull!"
+            linkText="Sign in here"
+            linkTo="/login" />
           </div>
         ) : (
           <>
             <div className="clock-container">
-              {/* <div className="payment-container register-container"> */}
               <div className="register-container">
                 <form onSubmit={handleSubmit} className="form-container">
                   <h2 className="center-text">Register</h2>

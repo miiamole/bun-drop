@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";  //Inspiration från BroCode -> React Full Course for free (2024) + chat Gpt
-
+import React, { useEffect, useState } from "react";  //CodaAlong med BroCode för att skapa en klocka -> React Full Course for free (2024) 
+                                                     // sen chatGPT ändrat det till en nedräknande klocka
 function DeliveryTime() {
   const getRandomTime = () => Math.floor(Math.random() * 36) + 10; // Ger ett nummer mellan 10 och 45
 

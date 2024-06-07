@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";    //PROBLEM--- KAN GÅ TILL PAYMENT TROTS ATT EN AV FLERA PRODUKTER STÅR PÅ 0 i quantity;
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // blir konstig loop om jag toppar in cart i dependency arrayn.
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
-import EmptyCart from "../components/EmptyCart";
+import Message from "../components/Message";
 
 function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -18,7 +18,7 @@ function Cart() {
       setCart(itemsInCart);
       updateTotalPrice(itemsInCart); 
     }
-  }, [cart]);
+  }, []);
 
   const updateTotalPrice = (cartItems) => {
     const total = cartItems.reduce((sum, item) => {
@@ -40,8 +40,6 @@ function Cart() {
 //     return;
     
 // }
-
-
 
     updateQuantityInLocalStorage("cart", itemId, newQuantity);
 
@@ -91,7 +89,14 @@ function Cart() {
   return (
     <div className="color-wrapper">
       {cart.length === 0 ? (
-        <EmptyCart />
+        <div className="cart-text">
+          <Message
+            message="Add some sparkle to your
+              cart!"
+            linkText="Menu"
+            linkTo="/menu"
+          />
+        </div>
       ) : (
         <div>
           <h3 className="cart-text">Your order:</h3>
@@ -105,7 +110,6 @@ function Cart() {
                     type="number"
                     value={item.quantity || ""}
                     className="cart-input-amount"
-                
                     min="1"
                     max="40"
                     onChange={(e) => handleQuantityChange(e, item.id)}
